@@ -43,8 +43,12 @@ export function retrieveAnswer(question, search, history=[]) {
     const prior=[...history].reverse().find(t=>t.role==='user');
     if(prior) query=prior.content.slice(0,500)+' '+q;
   }
-  const hits=search(query,3);
+  const candidates=search(query,9);
+  // Prefer a similarly ranked general policy to an isolated sub-option, such as
+  // "Fiction: 2.00 per day", when the visitor asked about overdue fines broadly.
+  const general=candidates.find(s=>!s.option && s.score>=candidates[0]?.score*0.85);
+  const hits=(general?[general,...candidates.filter(s=>s.id!==general.id)]:candidates).slice(0,3);
   if(!hits.length || hits[0].score<2 || hits[0].coverage<0.5 || (hits[0].titleCoverage===0 && hits[0].coverage<1)) return {answer:REFUSAL,sources:[],mode:'faq',refused:true};
-  const sources=hits.filter(s=>s.score>=hits[0].score*0.48).map((s,i)=>({n:i+1,id:s.id,ref:s.source_ref,refs:s.source_refs,question:s.question,category:s.category,text:s.answer,score:Number(s.score.toFixed(2))}));
-  return {answer:sources[0].text+' [1]',sources,mode:'faq',refused:false,retrievalQuery:query};
+  const sources=hits.filter(s=>s.score>=hits[0].score*0.48).map((s,i)=>({n:i+1,id:s.id,ref:s.source_ref,refs:s.source_refs,question:s.question+(s.option?' · '+s.option:''),option:s.option,category:s.category,text:s.answer,score:Number(s.score.toFixed(2))}));
+  return {answer:(sources[0].option?sources[0].option+': ':'')+sources[0].text+' [1]',sources,mode:'faq',refused:false,retrievalQuery:query};
 }
