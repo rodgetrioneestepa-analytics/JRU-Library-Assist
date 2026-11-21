@@ -1,0 +1,873 @@
+{
+  "manifest": {
+    "project": "PewPewPew",
+    "dataset": "CONSOLIDATED FAQs for VLA.xlsx",
+    "dataset_sha256": "87c3407927e546fa50682b6c92052d34ee5f33221f189d18bd274b6646cb1adb",
+    "worksheets": [
+      "FAQs",
+      "From Bert",
+      "Sequential Questions",
+      "Basic Information",
+      "Renewals",
+      "Fines",
+      "Mobile Resources",
+      "Learning comons",
+      "How to Borrowreturn",
+      "OPAC",
+      "Comp Workstation",
+      "E-resources",
+      "Otherservices",
+      "Policy and other libraryrules"
+    ],
+    "raw_records": 542,
+    "unique_records": 293,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "groq_model": "openai/gpt-oss-20b",
+    "vector_database": "ChromaDB (cosine)",
+    "embedding_device": "cpu",
+    "configs": [
+      {
+        "id": "A",
+        "size": 400,
+        "overlap": 50,
+        "top_k": 3
+      },
+      {
+        "id": "B",
+        "size": 800,
+        "overlap": 100,
+        "top_k": 3
+      },
+      {
+        "id": "C",
+        "size": 1200,
+        "overlap": 150,
+        "top_k": 3
+      },
+      {
+        "id": "D",
+        "size": 800,
+        "overlap": 200,
+        "top_k": 3
+      },
+      {
+        "id": "E",
+        "size": 800,
+        "overlap": 100,
+        "top_k": 5
+      }
+    ],
+    "active_config": "B",
+    "python_version": "3.13.18",
+    "groq_response_rows": 12
+  },
+  "chunking_comparison": [
+    {
+      "config": "A",
+      "Precision@3": "0.2962962962962963",
+      "Recall@3": "0.7222222222222222",
+      "MRR@3": "0.6296296296296295",
+      "retrieval_s": "0.024972770555551606",
+      "chunk_size": "400",
+      "overlap": "50",
+      "top_k": "3",
+      "chunks": "333",
+      "chunking_s": "0.029552835999993476",
+      "embedding_s": "14.454123821999985",
+      "chroma_s": "0.5687886110000022",
+      "indexing_s": "15.052465268999981"
+    },
+    {
+      "config": "B",
+      "Precision@3": "0.37037037037037035",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.6851851851851851",
+      "retrieval_s": "0.02364555722221616",
+      "chunk_size": "800",
+      "overlap": "100",
+      "top_k": "3",
+      "chunks": "296",
+      "chunking_s": "0.005498271000021759",
+      "embedding_s": "9.847802496999975",
+      "chroma_s": "0.4177152039999896",
+      "indexing_s": "10.271015971999987"
+    },
+    {
+      "config": "C",
+      "Precision@3": "0.4074074074074074",
+      "Recall@3": "0.8888888888888888",
+      "MRR@3": "0.7037037037037037",
+      "retrieval_s": "0.025260778666677197",
+      "chunk_size": "1200",
+      "overlap": "150",
+      "top_k": "3",
+      "chunks": "293",
+      "chunking_s": "0.0034765569999990475",
+      "embedding_s": "11.404428773999996",
+      "chroma_s": "0.4274407919999703",
+      "indexing_s": "11.835346122999965"
+    },
+    {
+      "config": "D",
+      "Precision@3": "0.37037037037037035",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.6851851851851851",
+      "retrieval_s": "0.024175088555554995",
+      "chunk_size": "800",
+      "overlap": "200",
+      "top_k": "3",
+      "chunks": "296",
+      "chunking_s": "0.003670398999986446",
+      "embedding_s": "10.481380565999984",
+      "chroma_s": "0.45745245699998804",
+      "indexing_s": "10.942503421999959"
+    },
+    {
+      "config": "E",
+      "Precision@3": "0.37037037037037035",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.6851851851851851",
+      "retrieval_s": "0.025197320666658623",
+      "chunk_size": "800",
+      "overlap": "100",
+      "top_k": "5",
+      "chunks": "296",
+      "chunking_s": "0.003327188000014303",
+      "embedding_s": "16.28384274499996",
+      "chroma_s": "0.46521728999999823",
+      "indexing_s": "16.75238722299997"
+    }
+  ],
+  "difficulty_comparison": [
+    {
+      "config": "A",
+      "difficulty": "Average",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.5555555555555555"
+    },
+    {
+      "config": "A",
+      "difficulty": "Difficult",
+      "Precision@3": "0.2222222222222222",
+      "Recall@3": "0.3333333333333333",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "A",
+      "difficulty": "Easy",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.8333333333333334"
+    },
+    {
+      "config": "B",
+      "difficulty": "Average",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.5555555555555555"
+    },
+    {
+      "config": "B",
+      "difficulty": "Difficult",
+      "Precision@3": "0.4444444444444444",
+      "Recall@3": "0.6666666666666666",
+      "MRR@3": "0.6666666666666666"
+    },
+    {
+      "config": "B",
+      "difficulty": "Easy",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.8333333333333334"
+    },
+    {
+      "config": "C",
+      "difficulty": "Average",
+      "Precision@3": "0.4444444444444444",
+      "Recall@3": "1.0",
+      "MRR@3": "0.611111111111111"
+    },
+    {
+      "config": "C",
+      "difficulty": "Difficult",
+      "Precision@3": "0.4444444444444444",
+      "Recall@3": "0.6666666666666666",
+      "MRR@3": "0.6666666666666666"
+    },
+    {
+      "config": "C",
+      "difficulty": "Easy",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.8333333333333334"
+    },
+    {
+      "config": "D",
+      "difficulty": "Average",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.5555555555555555"
+    },
+    {
+      "config": "D",
+      "difficulty": "Difficult",
+      "Precision@3": "0.4444444444444444",
+      "Recall@3": "0.6666666666666666",
+      "MRR@3": "0.6666666666666666"
+    },
+    {
+      "config": "D",
+      "difficulty": "Easy",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.8333333333333334"
+    },
+    {
+      "config": "E",
+      "difficulty": "Average",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.8333333333333334",
+      "MRR@3": "0.5555555555555555"
+    },
+    {
+      "config": "E",
+      "difficulty": "Difficult",
+      "Precision@3": "0.4444444444444444",
+      "Recall@3": "0.6666666666666666",
+      "MRR@3": "0.6666666666666666"
+    },
+    {
+      "config": "E",
+      "difficulty": "Easy",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.8333333333333334"
+    }
+  ],
+  "per_question_retrieval_metrics": [
+    {
+      "config": "A",
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "retrieval_s": "0.04169968799999424",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "A",
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "retrieval_s": "0.022468083999967803",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "A",
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "retrieval_s": "0.020994933999986642",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "A",
+      "question_id": "A1",
+      "difficulty": "Average",
+      "retrieval_s": "0.02141738699998541",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "A",
+      "question_id": "A2",
+      "difficulty": "Average",
+      "retrieval_s": "0.021433529999967504",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "A",
+      "question_id": "A3",
+      "difficulty": "Average",
+      "retrieval_s": "0.021600373000012496",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "A",
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.02559666700000207",
+      "Precision@3": "0.0",
+      "Recall@3": "0.0",
+      "MRR@3": "0.0"
+    },
+    {
+      "config": "A",
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.02522817100003749",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "A",
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.024316101000010804",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "B",
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "retrieval_s": "0.03444541499999332",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "B",
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "retrieval_s": "0.02287032399999589",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "B",
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "retrieval_s": "0.02181458500001554",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "B",
+      "question_id": "A1",
+      "difficulty": "Average",
+      "retrieval_s": "0.024103174000003946",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "B",
+      "question_id": "A2",
+      "difficulty": "Average",
+      "retrieval_s": "0.021294866000005186",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "B",
+      "question_id": "A3",
+      "difficulty": "Average",
+      "retrieval_s": "0.02064662899999803",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "B",
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.022788967999986198",
+      "Precision@3": "0.6666666666666666",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "B",
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.023214703999997255",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "B",
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.02163134999995009",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "C",
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "retrieval_s": "0.036628203000020676",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "C",
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "retrieval_s": "0.022355572000037682",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "C",
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "retrieval_s": "0.024928952000038862",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "C",
+      "question_id": "A1",
+      "difficulty": "Average",
+      "retrieval_s": "0.031718057000034605",
+      "Precision@3": "0.6666666666666666",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "C",
+      "question_id": "A2",
+      "difficulty": "Average",
+      "retrieval_s": "0.021193068000002313",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "C",
+      "question_id": "A3",
+      "difficulty": "Average",
+      "retrieval_s": "0.021393792000026224",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "C",
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.023244862000012745",
+      "Precision@3": "0.6666666666666666",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "C",
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.023358532999964154",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "C",
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.022525968999957513",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "D",
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "retrieval_s": "0.036818884000012986",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "D",
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "retrieval_s": "0.02660399100000177",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "D",
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "retrieval_s": "0.020763735000002725",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "D",
+      "question_id": "A1",
+      "difficulty": "Average",
+      "retrieval_s": "0.021591845999978432",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "D",
+      "question_id": "A2",
+      "difficulty": "Average",
+      "retrieval_s": "0.021876523999992514",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "D",
+      "question_id": "A3",
+      "difficulty": "Average",
+      "retrieval_s": "0.021025467000015396",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "D",
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.02292847400002529",
+      "Precision@3": "0.6666666666666666",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "D",
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.023825028999965525",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "D",
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.022141847000000325",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "E",
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "retrieval_s": "0.041401367999981176",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "E",
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "retrieval_s": "0.024822805999974662",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "E",
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "retrieval_s": "0.02202203100000588",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "E",
+      "question_id": "A1",
+      "difficulty": "Average",
+      "retrieval_s": "0.022281292000002395",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "E",
+      "question_id": "A2",
+      "difficulty": "Average",
+      "retrieval_s": "0.02530779099998881",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "0.3333333333333333"
+    },
+    {
+      "config": "E",
+      "question_id": "A3",
+      "difficulty": "Average",
+      "retrieval_s": "0.022224264999977095",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "1.0",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "E",
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.023806938000006994",
+      "Precision@3": "0.6666666666666666",
+      "Recall@3": "1.0",
+      "MRR@3": "0.5"
+    },
+    {
+      "config": "E",
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.02328760099999272",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "1.0"
+    },
+    {
+      "config": "E",
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "retrieval_s": "0.021621793999997863",
+      "Precision@3": "0.3333333333333333",
+      "Recall@3": "0.5",
+      "MRR@3": "0.5"
+    }
+  ],
+  "human_answer_review": [
+    {
+      "question_id": "E1",
+      "difficulty": "Easy",
+      "question": "What does OPAC stand for?",
+      "answerable": "True",
+      "expected_answer": "OPAC means Online Public Access Catalog. A search engine used to identify related collection and references relative to a particular subject. Users can also access online/electronic, digital resources and facilitates self renewals of not overdue books",
+      "chatbot_answer": "OPAC stands for **Online Public Access Catalog**. It’s the library’s search engine that lets you find books, articles, and other resources, and even renew items that aren’t overdue. [1]",
+      "sources": "FAQs!8 | Basic Information!59 | Basic Information!60",
+      "refused": "False",
+      "retrieval_s": "0.02969387100000631",
+      "generation_s": "0.3177422490000481",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "E2",
+      "difficulty": "Easy",
+      "question": "What are the Main Library's Saturday hours according to the FAQ?",
+      "answerable": "True",
+      "expected_answer": "Regular library hours of the Main Library is from 7:00am to 9:00pm Monday to Friday and 7:00am to 6:00pm during Saturdays. During full online classes, the 2nd Floor is being used for all the library transactions.",
+      "chatbot_answer": "The Main Library is open on Saturdays from **7:00 am to 6:00 pm**【1】【2】【3】.",
+      "sources": "Basic Information!4 | From Bert!8 | FAQs!8",
+      "refused": "False",
+      "retrieval_s": "0.030674924000038573",
+      "generation_s": "0.33371011499997394",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "E3",
+      "difficulty": "Easy",
+      "question": "How many Learning Commons reservations can students make per day?",
+      "answerable": "True",
+      "expected_answer": "Only one reservation per day is allowed, especially during exams week, so that everyone has a chance to use the Learning Commons.",
+      "chatbot_answer": "Students can make only one reservation per day for the Learning Commons. This limit ensures everyone gets a chance to use the space, especially during exam week. [1]",
+      "sources": "FAQs!10 | Learning comons!7 | FAQs!11",
+      "refused": "False",
+      "retrieval_s": "0.02961106300000438",
+      "generation_s": "0.3286478759999909",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "A1",
+      "difficulty": "Average",
+      "question": "What are the online and email ways to renew a library book?",
+      "answerable": "True",
+      "expected_answer": "Users may go to library.jru.edu and log in using their JRU Gmail username and password. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional allowable days on their book/s(depending on your division;-ES-JHS-Sh-Col-LS and GS) | Library borrowers may send an email to libraryrenewals@jru.edu and indicate your name, student number, the title of the book/s and the barcode/s. The librarian will reply to your email once the book has been renewed.",
+      "chatbot_answer": "You can renew a book in two ways:\n\n- **Online** – Go to library.jru.edu, log in with your JRU Gmail username and password. A list of your borrowed books appears; check the box next to each book and click the “renew” button to get an extra 1‑3 days (or the division‑specific period) [1][3].\n- **By email** – Send an email to libraryrenewals@jru.edu. Include your name, student number, the book title(s), and the barcode(s) of the items you want to renew [1].",
+      "sources": "From Bert!8 | FAQs!8 | Renewals!2",
+      "refused": "False",
+      "retrieval_s": "0.033767216999990524",
+      "generation_s": "0.3831404759999941",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "A2",
+      "difficulty": "Average",
+      "question": "How does a student pay a library fine at the cashier?",
+      "answerable": "True",
+      "expected_answer": "Ask for a Library Payment Form from the library and pay at the cashier. After paying present the official receipt to the Librarian at the circulation counter.",
+      "chatbot_answer": "To pay a library fine at the cashier, follow these steps:  \n\n- Ask for a **Library Payment Form** from the library.  \n- Pay the fine at the cashier.  \n- Present the official receipt to the librarian at the circulation counter.  \n\nThis is the standard procedure for fine payment at JRU Library【1】.",
+      "sources": "FAQs!9 | FAQs!12 | Fines!4",
+      "refused": "False",
+      "retrieval_s": "0.034552428000040436",
+      "generation_s": "0.5969756320000101",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "A3",
+      "difficulty": "Average",
+      "question": "What should a student do if they left their ID at home?",
+      "answerable": "True",
+      "expected_answer": "For security purposes, the library enforces the \"no ID, no entry\" policy. Students who do not have their IDs and need to use the library may get a temporary ID permit from the Student Development Office (SDO).",
+      "chatbot_answer": "If you left your ID at home, you’ll need a temporary ID permit to enter the library.  \nGo to the Student Development Office (SDO) and request a temporary ID permit. Once you have it, you can use the library normally.  \n[1]",
+      "sources": "FAQs!22 | FAQs!23 | FAQs!41",
+      "refused": "False",
+      "retrieval_s": "0.021267475000001923",
+      "generation_s": "0.3222854240000288",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "D1",
+      "difficulty": "Difficult",
+      "question": "What should a student with an overdue book and unpaid fines do about renewal and payment?",
+      "answerable": "True",
+      "expected_answer": "If the book is already overdue, then the option to renew it online is disabled. This also happens if a student has unsettled library fines. | Ask for a Library Payment Form from the library and pay at the cashier. After paying present the official receipt to the Librarian at the circulation counter.",
+      "chatbot_answer": "If a book is overdue or you still owe fines, you can’t renew it online.  \nFirst return the book and settle the fines. Then you can renew it in person.  \n\n**Steps to resolve the issue**  \n- Return the overdue book to the circulation desk.  \n- Ask for a Library Payment Form and pay the fines at the cashier.  \n- Present the official receipt to the librarian when you renew the book.  \n\nThis follows the library policy that online renewal is disabled for overdue books or unsettled fines [3] and the payment procedure described in the FAQ [2].",
+      "sources": "FAQs!11 | Fines!4 | FAQs!9",
+      "refused": "False",
+      "retrieval_s": "0.0237266319999776",
+      "generation_s": "0.484415327000022",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "D2",
+      "difficulty": "Difficult",
+      "question": "Can a student take a borrowed library laptop into class and install extra workstation software themselves?",
+      "answerable": "True",
+      "expected_answer": "Students are allowed to use the laptop inside the library only. | If specific applications are needed but not available in the WS, you can approach the Circulation staff and coordinate with ITO Helpdesk with regards to your request.",
+      "chatbot_answer": "No. Students may only use the library‑borrowed laptop inside the library and for a maximum of two hours. They’re not allowed to bring it into class or install additional software themselves. If you need a laptop for class, you’ll have to arrange a different solution or ask a faculty member for a loan.",
+      "sources": "Mobile Resources!24 | FAQs!11 | Mobile Resources!16",
+      "refused": "False",
+      "retrieval_s": "0.025450095999985933",
+      "generation_s": "0.5928532540000333",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "D3",
+      "difficulty": "Difficult",
+      "question": "How long may a student borrow a library laptop and reserve a Learning Commons room?",
+      "answerable": "True",
+      "expected_answer": "Students can borrow laptop for 2 hours that can be used inside the library only | Use of the Learning Commons is limited to two (2) hours only, though an extra hour may be added if no other group has made a reservation to use the LC.",
+      "chatbot_answer": "I'm sorry, but I couldn't confirm that from the JRU Library FAQs I have. The library staff can help you verify it.",
+      "sources": "",
+      "refused": "True",
+      "retrieval_s": "0.021907585999997536",
+      "generation_s": "1.0246945150000215",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "U1",
+      "difficulty": "Unanswerable",
+      "question": "What is the actual Wi-Fi password for JRU LIB3?",
+      "answerable": "False",
+      "expected_answer": "Not stated in the FAQ dataset; refuse or refer to library staff.",
+      "chatbot_answer": "I'm sorry, but I couldn't confirm that from the JRU Library FAQs I have. The library staff can help you verify it.",
+      "sources": "",
+      "refused": "True",
+      "retrieval_s": "0.0",
+      "generation_s": "0.0",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "U2",
+      "difficulty": "Unanswerable",
+      "question": "How many seats are empty in the Main Library right now?",
+      "answerable": "False",
+      "expected_answer": "Not stated in the FAQ dataset; refuse or refer to library staff.",
+      "chatbot_answer": "I'm sorry, but I couldn't confirm that from the JRU Library FAQs I have. The library staff can help you verify it.",
+      "sources": "",
+      "refused": "True",
+      "retrieval_s": "0.0",
+      "generation_s": "0.0",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    },
+    {
+      "question_id": "U3",
+      "difficulty": "Unanswerable",
+      "question": "Which librarian is physically on duty at this exact moment?",
+      "answerable": "False",
+      "expected_answer": "Not stated in the FAQ dataset; refuse or refer to library staff.",
+      "chatbot_answer": "I'm sorry, but I couldn't confirm that from the JRU Library FAQs I have. The library staff can help you verify it.",
+      "sources": "",
+      "refused": "True",
+      "retrieval_s": "0.0",
+      "generation_s": "0.0",
+      "error": "",
+      "answer_correct_0_or_1": "",
+      "source_supported_0_or_1": "",
+      "refusal_appropriate_0_or_1": "",
+      "reviewer": "",
+      "review_notes": ""
+    }
+  ]
+}
