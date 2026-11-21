@@ -14,7 +14,7 @@ function renderMessages(){
   $('messages').innerHTML=state.messages.map((m,index)=>`<article class="message ${m.role}"><div class="message-header"><span class="avatar">${m.role==='user'?'YOU':'LA'}</span>${m.role==='user'?'You':'Library-Assist'}</div><div class="message-body">${escape(m.content)}</div>${m.role==='assistant'?`<div class="message-meta">${(m.sources||[]).map(s=>`<button class="source-chip" data-message="${index}" data-source="${Number(s.n)||1}">[${Number(s.n)||1}] ${escape(s.ref)}</button>`).join('')}</div><div class="message-note">${escape(MODE[m.mode]||MODE.faq)}${m.elapsedMs!==undefined?' · '+(m.elapsedMs/1000).toFixed(2)+'s':''}${m.notice?' · '+escape(m.notice):''}${(m.sources||[]).some(s=>/pandemic|until further notice|2020|2021/i.test(s.text))?' · Includes older policy wording. Confirm current details with library staff.':''}</div>`:''}</article>`).join('');
   if(state.busy)$('messages').insertAdjacentHTML('beforeend','<article class="message pending"><div class="message-header"><span class="avatar">LA</span>Library-Assist</div><div class="message-body">Finding the relevant FAQs</div></article>');
   const latest=[...state.messages].reverse().find(m=>m.role==='assistant');renderSources(latest?.sources||[]);
-  requestAnimationFrame(()=>$('chat-scroll').scrollTop=$('chat-scroll').scrollHeight);
+  requestAnimationFrame(()=>$('chat-scroll').scrollTop=state.messages.length?$('chat-scroll').scrollHeight:0);
 }
 function renderSources(sources,openNumber){
   $('source-count').textContent=sources.length;
