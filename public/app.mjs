@@ -42,7 +42,7 @@ function renderFaqs(){
   if(!state.records.length)return;
   const q=$('faq-search').value.trim().toLowerCase();const sheet=$('sheet-filter').value;
   const hits=state.records.filter(r=>(!sheet||r.source_refs.some(ref=>ref.startsWith(sheet+'!')))&&(!q||[r.question,r.option,r.answer,r.category].some(s=>s.toLowerCase().includes(q))));
-  $('faq-count').textContent=`${hits.length} ${hits.length===1?'FAQ':'FAQs'}${q?' matching “'+q+'”':''} · '+state.records.length+' unique records in total';
+  $('faq-count').textContent=`${hits.length} ${hits.length===1?'FAQ':'FAQs'}${q?' matching “'+q+'”':''} · ${state.records.length} unique records in total`;
   $('faq-list').innerHTML=hits.length?hits.slice(0,state.faqLimit).map(r=>`<details class="faq-card"><summary>${escape(r.question)}${r.option?' · '+escape(r.option):''}</summary><span class="faq-ref">${escape(r.category||'Library FAQ')} · ${escape(r.source_refs.join(' · '))}</span><p>${escape(r.answer)}</p><button class="text-button" data-ask="${escape(r.id)}">Ask about this FAQ</button></details>`).join(''):'<div class="experiment-card"><h2>No matching FAQs</h2><p>Try a broader keyword or choose another worksheet.</p></div>';
   $('load-more').hidden=hits.length<=state.faqLimit;
 }
