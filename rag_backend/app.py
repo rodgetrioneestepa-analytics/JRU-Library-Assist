@@ -1,26 +1,46 @@
-import json
+import logging
 import os
-import re
 import threading
 from flask import Flask, jsonify, request
-from .core import ROOT, Config, SemanticIndex, REFUSAL, basic_social_reply, clean_history, unsupported_request, looks_like_refusal, load_workbook_records, safe_excerpt
+from .core import ROOT, SPEC, Config, SemanticIndex, resolve_source
+from .generation import ConversationalGroq
+from .service import ChatService
+
+
+class Runtime:
+    def __init__(self, engine=None, generator=None, source=None):
+        self.engine, self.generator, self.source = engine, generator, source
+        self.service = None
+        self.lock = threading.Lock()
+
+    def initialize(self):
+        with self.lock:
+            if self.service is not None: return self.service
+            if self.generator is None:
+                key = os.environ.get("GROQ_API_KEY", "").strip()
+                if not key: raise RuntimeError("GROQ_API_KEY is not configured.")
+                model = os.environ.get("GROQ_MODEL", SPEC["GROQ_MODEL"])
+                if model != SPEC["GROQ_MODEL"]: raise RuntimeError("GROQ_MODEL differs from the reference notebook.")
+                self.generator = ConversationalGroq(key, model)
+            if self.engine is None:
+                self.source = self.source or resolve_source()
+                config = Config(chunk_size=int(os.environ.get("RAG_CHUNK_SIZE", 800)),
+                    chunk_overlap=int(os.environ.get("RAG_CHUNK_OVERLAP", 100)), top_k=int(os.environ.get("RAG_TOP_K", 3)),
+                    min_similarity=float(os.environ.get("RAG_MIN_SIMILARITY", .35)), device=os.environ.get("RAG_DEVICE", "cpu"))
+                if (config.chunk_size, config.chunk_overlap, config.top_k, config.min_similarity) != (800, 100, 3, .35):
+                    raise RuntimeError("Runtime settings differ from the notebook's active B configuration.")
+                self.engine = SemanticIndex(self.source["records"], config, source_sha256=self.source["dataset_sha256"])
+            self.service = ChatService(self.engine, self.generator)
+            return self.service
 
 
 def create_app(engine=None, generator=None, source=None):
     from dotenv import load_dotenv
     load_dotenv(ROOT / ".env", override=False)
-    if source is None:
-        source = load_workbook_records(os.environ["RAG_WORKBOOK"]) if os.environ.get("RAG_WORKBOOK") else json.loads((ROOT / "server_data/faqs.json").read_text(encoding="utf-8"))
-    config = Config(chunk_size=int(os.environ.get("RAG_CHUNK_SIZE", 800)), chunk_overlap=int(os.environ.get("RAG_CHUNK_OVERLAP", 100)),
-        top_k=int(os.environ.get("RAG_TOP_K", 3)), device=os.environ.get("RAG_DEVICE", "cpu"), min_similarity=float(os.environ.get("RAG_MIN_SIMILARITY", .35)))
-    engine = engine or SemanticIndex(source["records"], config)
-    if generator is None and os.environ.get("GROQ_API_KEY"):
-        from .generation import ConversationalGroq
-        generator = ConversationalGroq(os.environ["GROQ_API_KEY"], os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b"))
     app = Flask(__name__, static_folder=str(ROOT / "public"), static_url_path="")
     app.config["MAX_CONTENT_LENGTH"] = 16000
-    lock = threading.Lock()
-    records = {r["record_id"]: r for r in source["records"]}
+    runtime = Runtime(engine, generator, source)
+    app.extensions["rag_runtime"] = runtime
 
     @app.before_request
     def authorize_api():
@@ -41,7 +61,14 @@ def create_app(engine=None, generator=None, source=None):
     def index(): return app.send_static_file("index.html")
 
     @app.get("/api/status")
-    def status(): return jsonify(ready=True, service="Library-Assist")
+    def status():
+        try:
+            runtime.initialize()
+            return jsonify(ready=True, service="Library-Assist", pipeline="minilm-chroma-groq",
+                           index_fingerprint=getattr(runtime.engine, "fingerprint", "injected-test-engine"))
+        except Exception as error:
+            app.logger.error("RAG initialization failed (%s)", type(error).__name__)
+            return jsonify(ready=False, service="Library-Assist", error="The library assistant is not ready. Please try again shortly."), 503
 
     @app.post("/api/chat")
     def chat():
@@ -50,28 +77,14 @@ def create_app(engine=None, generator=None, source=None):
             return jsonify(error="Please type a message first."), 400
         question = data["message"].strip()
         if len(question) > 1000: return jsonify(error="Keep questions under 1,000 characters."), 400
-        history = clean_history(data.get("history"))
-        social = basic_social_reply(question)
-        if social: return jsonify(answer=social, refused=False)
-        if unsupported_request(question): return jsonify(answer=REFUSAL, refused=True)
         try:
-            with lock:
-                query = generator.standalone_question(question, history) if generator else question
-                if unsupported_request(query): return jsonify(answer=REFUSAL, refused=True)
-                passages = engine.retrieve(query)
-                if not passages or passages[0]["similarity"] < config.min_similarity:
-                    return jsonify(answer=REFUSAL, refused=True)
-                if generator:
-                    answer = generator.answer(question, passages, history, query)
-                else:
-                    item = records.get(passages[0]["record_id"])
-                    answer = (f"{item['option']}: " if item and item["option"] else "") + (item["answer"] if item else passages[0]["text"])
-            citations = [int(m) for m in re.findall(r"\[(\d+)\]", answer)]
-            if any(n < 1 or n > len(passages) for n in citations):
-                raise ValueError("Invalid citation number")
-            return jsonify(answer=safe_excerpt(answer), refused=looks_like_refusal(answer))
-        except Exception:
-            app.logger.exception("Conversational RAG failed")
-            return jsonify(error="I couldn't complete that request. Please try again shortly."), 502
+            service = runtime.initialize()
+            return jsonify(service.chat(question, data.get("history")))
+        except ValueError:
+            app.logger.exception("RAG response validation failed")
+            return jsonify(error="I couldn't verify that response. Please try again."), 502
+        except Exception as error:
+            app.logger.error("RAG request failed (%s)", type(error).__name__)
+            return jsonify(error="The library assistant is temporarily unavailable. Please try again shortly."), 503
 
     return app

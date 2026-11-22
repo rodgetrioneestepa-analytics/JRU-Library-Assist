@@ -11,3 +11,4 @@ __pycache__/
 .chroma-cache/
 .rag-results/
 *.pyc
+server_data/private-overrides.json

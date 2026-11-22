@@ -7,3 +7,4 @@
 .git
 *.log
 __pycache__
+server_data/private-overrides.json

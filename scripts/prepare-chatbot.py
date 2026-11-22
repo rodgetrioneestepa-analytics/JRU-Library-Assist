@@ -10,7 +10,7 @@ notebook, workbook = map(Path, sys.argv[1:3])
 document = json.loads(notebook.read_text(encoding="utf-8"))
 trees = [ast.parse("".join(c["source"])) for c in document["cells"] if c["cell_type"] == "code" and not "".join(c["source"]).lstrip().startswith("%")]
 constants = {}
-wanted = {"CONFIGS", "ACTIVE_CONFIG", "MIN_SIMILARITY", "EMBEDDING_MODEL", "GROQ_MODEL", "MAX_HISTORY_MESSAGES", "REFUSAL"}
+wanted = {"CONFIGS", "ACTIVE_CONFIG", "MIN_SIMILARITY", "EMBEDDING_MODEL", "GROQ_MODEL", "MAX_HISTORY_MESSAGES", "REFUSAL", "TEST_PLAN"}
 for tree in trees:
     for node in ast.walk(tree):
         if isinstance(node, ast.Assign):
@@ -37,9 +37,8 @@ if not wanted.issubset(constants) or not {"ANSWER_PROMPT", "REWRITE_PROMPT"}.iss
 constants["provenance"] = {"notebook": notebook.name, "sha256": hashlib.sha256(notebook.read_bytes()).hexdigest()}
 (root / "rag_backend/notebook_spec.json").write_text(json.dumps(constants, ensure_ascii=False, indent=2), encoding="utf-8")
 sys.path.insert(0, str(root))
-from rag_backend.core import load_workbook_records
+from rag_backend.core import load_workbook_records, prepare_source
 source = load_workbook_records(workbook)
-(root / "server_data").mkdir(exist_ok=True)
-(root / "server_data/faqs.json").write_text(json.dumps(source, ensure_ascii=False, indent=2), encoding="utf-8")
+prepare_source(source, root / "server_data")
 print(f"Prepared {len(source['records'])} FAQ records from {len(source['worksheets'])} sheets using the corrected notebook's parsing rules.")
 print("Content is stored outside the website's public directory.")

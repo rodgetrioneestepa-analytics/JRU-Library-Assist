@@ -1,38 +1,43 @@
-# JRU Library-Assist
+﻿# JRU Library-Assist
 
-A conversational JRU library assistant with the transparent mascot and blue-and-gold theme. The website is chat-only: it does not display dataset filenames, inventories, source panels, or research dashboards.
+A JRU navy-and-gold library chat app using the corrected conversational notebook's Python pipeline. The existing mascot, chat interface, responsive sidebar, New Chat button, and export remain. Numbered citations open only the passages retrieved for that answer; the app has no dataset inventory or bulk download page.
 
-The current implementation follows `PewPewPew_Final_RAG_Chatbot_Conversational_Fixed.ipynb` and the supplied `CONSOLIDATED FAQs for VLA.xlsx`.
+## Runtime
 
-## Local Python RAG
+Production uses `Dockerfile.vercel` and Vercel's Container Runtime. Flask serves `public/` and the API together through Waitress. Every factual question uses normalized `sentence-transformers/all-MiniLM-L6-v2` embeddings, ChromaDB cosine retrieval, RecursiveCharacterTextSplitter 800/100, top 3, and minimum similarity 0.35. Groq `openai/gpt-oss-20b` generates at temperature 0 and 700 completion tokens. Follow-up rewriting uses 450 tokens and the last six messages. Prompts and the refusal are extracted from the corrected notebook.
 
-See [rag_backend/README.md](rag_backend/README.md). Run `python -m rag_backend` in the project environment and visit http://127.0.0.1:5000, or use start-rag.cmd.
+There is no keyword or stored-answer fallback. Missing configuration, invalid source integrity, or unavailable dependencies return an unavailable response. The optional Node server is a development proxy and requires `RAG_BACKEND_URL`; it cannot answer questions on its own.
 
-The Python backend uses MiniLM embeddings, persistent ChromaDB cosine retrieval, FAQ-aware recursive splitting (800 characters / 100 overlap / top 3), and optional conversational Groq generation. The corrected follow-up rewrite safely falls back to the original message for empty choices, blank text, invalid short rewrites, or provider errors. History is limited to six messages per request, never global across visitors, and supplies reference context rather than factual evidence.
+## Production configuration
 
-## Local Node / Vercel
+Set these as Vercel Production Secrets before deploying:
 
-Run `npm start` with Node.js 22 and open http://127.0.0.1:3000. This dependency-free server uses lexical FAQ retrieval unless RAG_BACKEND_URL connects it to the Python service. Add GROQ_API_KEY privately in .env or Vercel for follow-up rewriting and conversational generation.
+- `GROQ_API_KEY`: your Groq key.
+- `RAG_PRIVATE_RECORD_OVERRIDES`: contents of the ignored local `server_data/private-overrides.json` generated from the supplied workbook. Never commit this file or print its contents in build logs.
 
-Vercel serves public/ and api/. To use semantic retrieval online, host Dockerfile.rag on a Python/container service, set RAG_BACKEND_URL to its HTTPS origin, and set the same private RAG_BACKEND_TOKEN on both services. A deployed server cannot reach this computer's localhost. The browser receives only answers and basic availability status, without internal source metadata.
+The Git-published `server_data/faqs.json` contains all 293 deduplicated records from 542 rows across 14 worksheets, with sensitive payment text redacted. The private override restores the original record only for notebook-equivalent embeddings; evidence is redacted before Groq and browser responses. Source and override fingerprints are checked before indexing. A missing override fails readiness instead of silently changing the vectors.
 
-## Data preparation
+MiniLM weights are downloaded during the remote image build and baked into the deployment. The canonical source is the image's prepared records plus the Vercel secret, not temporary storage. Chroma is a reconstructible cache in `/tmp`; each cold instance rebuilds from the durable source if necessary. Collection identity includes source content, chunk settings, weights, and library versions. Rebuilding may increase cold-start latency. No source editing or user uploads are supported.
 
-The original workbook is not in public/. Parsed FAQ records live in server_data/faqs.json. To regenerate them and the notebook prompts without executing notebook cells:
+## Local use
+
+Use Python 3.12, install CPU Torch and `rag_backend/requirements.txt`, set `GROQ_API_KEY` privately in `.env`, and run `python -m rag_backend`. Visit http://127.0.0.1:5000. The ignored private override file is used locally, or set `RAG_WORKBOOK` to the original workbook. See [backend instructions](rag_backend/README.md).
+
+Regenerate prepared records and reviewed notebook constants without running notebook setup cells:
 
 ```sh
 python scripts/prepare-chatbot.py /path/to/corrected.ipynb /path/to/CONSOLIDATED_FAQs.xlsx
 ```
 
-The prior PDF exports and research JSON files are removed from the public website assets. This does not erase earlier Git commit history.
-
-## Checks
+## Verification
 
 ```sh
 npm test
 python -m unittest discover -s tests -p test_conversation.py -v
+python scripts/evaluate-parity.py --notebook /path/to/corrected.ipynb --workbook /path/to/CONSOLIDATED_FAQs.xlsx
+python scripts/evaluate-parity.py --url https://jru-library-assist.vercel.app --output .rag-results/deployed-parity.json
 ```
 
-These cover workbook layout parsing, deduplication, empty rewrite handling, bounded visitor history, prompts, validation, API response shape, and the absence of dataset views in the website. Model integration checks are reported separately from injected-engine unit tests.
+The local evaluator uses reviewed functions from the actual notebook and independently built Chroma collections. It checks record/chunk equality, all 12 retrieval rankings/scores, and exact Groq payloads using deterministic completion stubs. It does not claim live generation was tested. Remote mode calls real production Groq and compares rankings, valid passage citations, refusal rules, and conversational requests. Reports are ignored locally; publish only reviewed, redacted summaries.
 
-Conversations are browser-local. Groq-enabled mode sends the current question, limited history, and current retrieved evidence to Groq. No API key is placed in browser JavaScript.
+Conversations are browser-local and supplied per request, never shared server history. New Chat clears the active history. Groq receives the question, limited history, and current redacted evidence. API keys never enter browser code. Older Git history can contain earlier public exports; removing current website files does not rewrite that history.

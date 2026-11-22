@@ -1,10 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "buildCommand": "",
-  "installCommand": "",
-  "outputDirectory": "public",
-  "functions": { "api/*.mjs": { "maxDuration": 120 } },
+  "framework": "container",
+  "fluid": true,
   "headers": [{
     "source": "/(.*)",
     "headers": [

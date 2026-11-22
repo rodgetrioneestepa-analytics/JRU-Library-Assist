@@ -3,8 +3,10 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace as Obj
 import unittest
-from rag_backend.core import ROOT, SPEC, Config, load_workbook_records, clean_history
+from unittest.mock import patch
+from rag_backend.core import ROOT, SPEC, REFUSAL, Config, load_workbook_records, clean_history, prepare_source, resolve_source
 from rag_backend.generation import ConversationalGroq
+from rag_backend.service import ChatService
 
 
 def completion(value):
@@ -64,20 +66,74 @@ class ConversationTests(unittest.TestCase):
         source = json.loads((ROOT / 'server_data/faqs.json').read_text(encoding='utf-8'))
         item = source['records'][0]
         class Engine:
-            def retrieve(self, query): return [{'record_id': item['record_id'], 'source_ref': item['source_ref'], 'text': item['answer'], 'similarity': .9}]
+            config = Config()
+            def retrieve(self, query): return [{**item, 'rank': 1, 'chunk_id': item['record_id']+'_0', 'text': item['answer'], 'similarity': .9}]
         class Generator:
             def standalone_question(self, message, history): self.history = history; return message
             def answer(self, *args): return 'A supported answer. [1]'
         gen = Generator(); client = create_app(engine=Engine(), generator=gen, source=source).test_client()
-        self.assertEqual(client.get('/api/status').json, {'ready': True, 'service': 'Library-Assist'})
+        self.assertTrue(client.get('/api/status').json['ready'])
+        self.assertEqual(client.get('/api/status').json['pipeline'], 'minilm-chroma-groq')
         history = [{'role': 'user', 'content': str(i)} for i in range(12)]
         response = client.post('/api/chat', json={'message': 'What are the library hours?', 'history': history})
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(gen.history), 6)
-        self.assertEqual(set(response.json), {'answer', 'refused'})
+        self.assertEqual(response.json['answer'], 'A supported answer. [1]')
+        self.assertEqual(response.json['sources'][0]['ref'], item['source_ref'])
+        self.assertEqual(response.json['retrieval'][0]['rank'], 1)
         client.post('/api/chat', json={'message': 'Another visitor question'})
         self.assertEqual(gen.history, [])
         self.assertEqual(client.post('/api/chat', json={'message': ''}).status_code, 400)
+
+    def test_missing_groq_does_not_fall_back_to_stored_faq_answers(self):
+        from rag_backend.app import Runtime
+        with patch.dict('os.environ', {'GROQ_API_KEY': ''}):
+            with self.assertRaisesRegex(RuntimeError, 'GROQ_API_KEY'): Runtime().initialize()
+
+    def test_unsupported_and_low_similarity_never_call_generation(self):
+        class Engine:
+            config = Config()
+            calls = 0
+            def retrieve(self, query):
+                self.calls += 1
+                return [{'rank': 1, 'chunk_id': 'a_0', 'record_id': 'a', 'source_ref': 'OPAC!3', 'similarity': .3499}]
+        class Generator:
+            def standalone_question(self, q, h): return q
+            def answer(self, *args): raise AssertionError('Generation must not run')
+        engine = Engine(); service = ChatService(engine, Generator())
+        for question in ['What is the actual Wi-Fi password for JRU LIB3?', 'How many seats are empty right now?', 'Which librarian is on duty now?']:
+            result = service.chat(question)
+            self.assertEqual(result['answer'], REFUSAL)
+            self.assertEqual(result['retrieval'], [])
+        self.assertEqual(engine.calls, 0)
+        self.assertEqual(service.chat('What is OPAC?')['answer'], REFUSAL)
+        self.assertEqual(engine.calls, 1)
+
+    def test_citations_must_refer_to_current_passages(self):
+        item = {'rank': 1, 'chunk_id': 'a_0', 'record_id': 'a', 'source_ref': 'OPAC!3', 'similarity': .9, 'question': 'OPAC?', 'option': '', 'text': 'Online Public Access Catalog'}
+        engine = Obj(config=Config(), retrieve=lambda q: [item])
+        for answer in ['The catalog. [4]', 'The catalog.']:
+            generator = Obj(standalone_question=lambda q,h:q, answer=lambda *args:answer)
+            with self.assertRaises(ValueError): ChatService(engine, generator).chat('What is OPAC?')
+
+    def test_payment_text_is_redacted_before_groq(self):
+        calls = []
+        def create(**kwargs): calls.append(kwargs); return completion('Please confirm payment details with staff. [1]')
+        generator_with(create).answer('How do I pay?', [{'source_ref':'Fines!5','text':'Account number: 123456789012'}], [], 'How do I pay?')
+        self.assertNotIn('123456789012', calls[0]['messages'][1]['content'])
+        self.assertIn('[REDACTED', calls[0]['messages'][1]['content'])
+
+    def test_prepared_source_rejects_missing_or_changed_private_override(self):
+        from rag_backend import core
+        source = {'worksheets':core.EXPECTED_SHEETS, 'records':[{'record_id':'a','answer':'Account number: 123456789012'}]}
+        with TemporaryDirectory() as tmp:
+            directory = Path(tmp)/'server_data'
+            prepare_source(source, directory)
+            self.assertNotIn('123456789012', (directory/'faqs.json').read_text(encoding='utf8'))
+            with patch.object(core, 'ROOT', Path(tmp)), patch.dict('os.environ', {'RAG_WORKBOOK':'', 'RAG_PRIVATE_RECORD_OVERRIDES':''}):
+                self.assertEqual(resolve_source()['records'], source['records'])
+                (directory/'private-overrides.json').unlink()
+                with self.assertRaisesRegex(RuntimeError, 'Private source configuration'): resolve_source()
 
 
 if __name__ == '__main__': unittest.main()
