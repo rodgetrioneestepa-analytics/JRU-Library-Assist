@@ -4,7 +4,7 @@ The applied implementation follows `PewPewPew_Final_RAG_Chatbot_Conversational_F
 
 ## Checks completed
 
-- Eight JavaScript tests passed: internal source inventory, empty follow-up completions, valid/error rewrites, bounded history, minimal status responses, chat/refusal behavior, input validation, and chat-only website content.
+- Nine JavaScript tests passed: internal source inventory, empty follow-up completions, valid/error rewrites, bounded history, minimal status responses, chat/refusal behavior, input validation, and chat-only website content.
 - Six Python tests passed: notebook settings/prompts, empty rewrite responses, rewrite errors, evidence/history separation, both workbook layouts with deduplication, and per-request API memory.
 - The actual MiniLM model and persistent ChromaDB index initialized successfully on CPU.
 - Real semantic API requests returned the OPAC definition and Main Library hours.
