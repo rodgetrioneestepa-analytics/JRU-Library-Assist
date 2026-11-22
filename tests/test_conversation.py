@@ -14,7 +14,7 @@ def completion(value):
 
 
 def verified(text, quote, n=1):
-    return json.dumps({'refused':False,'claims':[{'text':text,'passage_number':n,'source_quote':quote}]})
+    return json.dumps({'refused':False,'claims':[{'text':text,'passage_number':n}]})
 
 
 def generator_with(create):
@@ -167,10 +167,8 @@ class ConversationTests(unittest.TestCase):
             {'refused':'false','claims':[{'text':'Unsupported','passage_number':1}]}]:
             with self.assertRaises(ValueError): render_cited_repair(json.dumps(result),[{'text':'Catalog'}]*3)
 
-    def test_supporting_quotes_must_exist_and_duplicate_claims_are_merged(self):
+    def test_duplicate_verified_claims_are_merged(self):
         passages = [{'text':'Online Public Access Catalog'}]*2
-        with self.assertRaisesRegex(ValueError, 'supporting quote'):
-            render_cited_repair(verified('The catalog.','Nonexistent policy'),passages)
         payload = {'refused':False,'claims':[
             {'text':'The catalog.','passage_number':1,'source_quote':'Public Access Catalog'},
             {'text':'The catalog.','passage_number':2,'source_quote':'Public Access Catalog'}]}

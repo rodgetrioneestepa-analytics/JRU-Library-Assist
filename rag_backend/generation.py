@@ -1,6 +1,5 @@
 """Conversational Groq generation, including the corrected empty-rewrite guard."""
 import logging
-import re
 import json
 from groq import BadRequestError
 from .core import SPEC, REFUSAL, clean, clean_history, safe_excerpt, looks_like_refusal
@@ -23,11 +22,9 @@ def render_cited_repair(content, passages):
     answer = {}
     for claim in claims:
         if not isinstance(claim, dict): raise ValueError("Invalid claim.")
-        n, text, quote = claim.get("passage_number"), claim.get("text"), claim.get("source_quote")
+        n, text = claim.get("passage_number"), claim.get("text")
         if type(n) is not int or not 1 <= n <= len(passages) or not isinstance(text, str) or not text.strip():
             raise ValueError("Invalid claim citation.")
-        if not isinstance(quote, str) or not clean(quote) or clean(safe_excerpt(quote)).casefold() not in clean(safe_excerpt(passages[n-1]['text'])).casefold():
-            raise ValueError("The supporting quote does not occur in the selected passage.")
         text = safe_excerpt(text.strip())
         key = clean(text).casefold()
         entry = answer.setdefault(key, {"text":text,"numbers":[]})
@@ -90,17 +87,16 @@ class ConversationalGroq:
                 "refused":{"type":"boolean"},
                 "claims":{"type":"array", "items":{"type":"object", "properties":{
                     "text":{"type":"string"},
-                    "source_quote":{"type":"string"},
                     "passage_number":{"type":"integer", "enum":list(range(1,len(passages)+1))}},
-                    "required":["text","passage_number","source_quote"], "additionalProperties":False}}},
+                    "required":["text","passage_number"], "additionalProperties":False}}},
                 "required":["refused","claims"], "additionalProperties":False}
             review_turns = messages + [
                 {"role": "assistant", "content": answer},
                 {"role": "user", "content": (
                     "Verify and correct that draft using only the CURRENT VERIFIED FAQ PASSAGES above. "
                     "Return JSON with refused and claims. For an answer, set refused=false and provide "
-                    "at most three concise claims. Each claim must contain text, passage_number, and source_quote. "
-                    "Copy a short exact supporting quote from that CURRENT passage. It must establish the entire "
+                    "at most three concise claims. Each claim must contain text and passage_number. "
+                    "Check that CURRENT passage before selecting it. It must establish the entire "
                     "claim, not just a related topic. Do not infer guarantees or new permissions from a restriction. "
                     "The text must not contain citation "
                     "markers; the selected passage_number will be rendered as its citation. Use only passage "

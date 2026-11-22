@@ -74,7 +74,7 @@ class Capture:
     def create(self, **kwargs):
         self.calls.append(kwargs)
         if 'response_format' in kwargs:
-            content = json.dumps({'refused':False,'claims':[{'text':'A supported response.', 'passage_number':1, 'source_quote':safe_excerpt(self.passages[0]['text'][:120])}]})
+            content = json.dumps({'refused':False,'claims':[{'text':'A supported response.', 'passage_number':1}]})
             return Obj(choices=[Obj(message=Obj(content=content))])
         # Shared visible completion tests prompt equivalence; not an LLM evaluation.
         return Obj(choices=[Obj(message=Obj(content='A supported response. [1]'))])
