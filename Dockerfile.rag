@@ -4,6 +4,7 @@ WORKDIR /app
 COPY rag_backend/requirements.txt /app/rag_backend/requirements.txt
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && pip install --no-cache-dir -r rag_backend/requirements.txt waitress
 COPY rag_backend /app/rag_backend
+COPY server_data /app/server_data
 COPY public /app/public
 EXPOSE 5000
 CMD ["waitress-serve", "--listen=0.0.0.0:5000", "--call", "rag_backend.app:create_app"]

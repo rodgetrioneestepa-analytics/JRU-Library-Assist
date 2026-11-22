@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const root=fileURLToPath(new URL('.',import.meta.url));
 if(existsSync(path.join(root,'.env'))) process.loadEnvFile(path.join(root,'.env'));
 const {chat,status}=await import('./lib/chat.mjs');
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png'};
 const send=(res,code,body)=>{res.writeHead(code,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
 const server=http.createServer(async(req,res)=> {
   res.setHeader('X-Content-Type-Options','nosniff');

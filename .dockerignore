@@ -2,6 +2,7 @@
 .env.*
 .venv
 .model-cache
+.chroma-cache
 .rag-results
 .git
 *.log

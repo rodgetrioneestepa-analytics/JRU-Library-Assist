@@ -1,0 +1,4666 @@
+{
+  "dataset_sha256": "87c3407927e546fa50682b6c92052d34ee5f33221f189d18bd274b6646cb1adb",
+  "worksheets": [
+    "FAQs",
+    "From Bert",
+    "Sequential Questions",
+    "Basic Information",
+    "Renewals",
+    "Fines",
+    "Mobile Resources",
+    "Learning comons",
+    "How to Borrowreturn",
+    "OPAC",
+    "Comp Workstation",
+    "E-resources",
+    "Otherservices",
+    "Policy and other libraryrules"
+  ],
+  "raw_records": 542,
+  "records": [
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LIBRARY HOURS",
+      "question": "What is the Library Hours?",
+      "option": "",
+      "answer": "The Library Hours are as follows: Elementary School Monday to Friday - 7:00am to 6:00pm Junior High School Monday to Friday - 7:00AM to 6:00PM Main Library Monday-Friday 7:00AM to 9:00PM Saturday 7:00AM to 6:00PM Graduate School/ Law School Monday to Friday - 10:00 am to 9:00 pm. Saturday - 7:30am to 9:00pm ALL LIBRARIES ARE CLOSED on Sunday and Holiday When classes are suspended up to the College level, the Main Library remains open from 8:00AM-5:00PM . During Pandemic period, the library opens from 8:00a.m- 5:00 p.m until further notice that regeular operations resumes .",
+      "record_id": "817567ba237fbbc2",
+      "id": "817567ba237fbbc2",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LIBRARY LOCATION",
+      "question": "Where are the libraries located?",
+      "option": "",
+      "answer": "Elementary School 2nd Floor Bldg.K Room 209 Junior High School 1st Floor Bldg.M Main Library 1st and 2nd Floor Bldg.H Graduate School/ Law School Library 2nd floor of the Tower Bldg., Room T-21 and 22 Information Commons- 5th floor of Centennial Building",
+      "record_id": "a81a931ae79207e4",
+      "id": "a81a931ae79207e4",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "FINES",
+      "question": "How much is the fines for overdue books?",
+      "option": "",
+      "answer": "A fine of Two pesos (P2.00) per day for Circulation books and Two pesos (P2.00) per hour for reserve books including Saturday, Sunday and holiday. (Pandemic period-In consideration to the current situation, the library issued Guidelines in availing Library services Dated June 20, 2020, that all library fines will be waived until further notice.)",
+      "record_id": "5c7d5b4868899b91",
+      "id": "5c7d5b4868899b91",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "BORROWING/ RETURNING",
+      "question": "How can I borrow, renew and return library materials?",
+      "option": "",
+      "answer": "Print books can be checked out at the library circulation counter using your JRU I.D. You can renew remotely by using the Web Opac via library.jru.edu using your I.D. number for password and username or in person. Return the books personally at the JRU library circulation counter. (Pandemic period)Returning of books can be done via courier service, for details, please watch video entitled \"lending process\" https://library.jru.edu/cgi-bin/koha/pages.pl?p=video",
+      "record_id": "f60d0cd69f842122",
+      "id": "f60d0cd69f842122",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "How do we renew books online?",
+      "option": "",
+      "answer": "Users may go to library.jru.edu and log in using their JRU Gmail username and password. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional 1-3 days on their book/s. Or you may send an email to libraryrenewals@jru.edu and supply your name, student number, the title of the book/s and the barcode/s instead. Users may go to library.jru.edu, click \"list\" and \"click log into create your ownlist\", you will be asked to enter your user name and password,The default username and password will be y our student number. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional 1-3 days on their book/s. Or you may send an email to libraryrenewals@jru.edu and supply your name, student number, the title of the book/s and the barcode/s insteadYou can change your password, if you wish to do so by clicking the change password.",
+      "record_id": "a234fd54f7ee03b0",
+      "id": "a234fd54f7ee03b0",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LOST BOOKS",
+      "question": "What are we going to do if we lost the book?",
+      "option": "",
+      "answer": "Report the loss book immediately to the librarians to stop accumulation of fines and you will be advised to replace the book with the same title, author and same copyright. However, you can also replace the book with the same subject, any author but with the latest copyright. You also need to pay the processing fee of P100.00.",
+      "record_id": "7102d002309b6b59",
+      "id": "7102d002309b6b59",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "HOW TO LOCATE A BOOK",
+      "question": "How can we find the books on the shelves",
+      "option": "",
+      "answer": "The books are arranged on the shelves using the Dewey Decimal Classifcation System. Here is the 10 division of the Dewey Decimal Classification System as your guide : 000 Generalities 100 Philosophy & psychology 200 Religion 300 Social sciences 400 Language 500 Natural sciences & mathematics 600 Technology (Applied sciences) 700 The arts 800 Literature & rhetoric 900 Geography & history",
+      "record_id": "034e5eaac621af04",
+      "id": "034e5eaac621af04",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "MOBILE RESOURCES",
+      "question": "What is the liability of the borrower in case the laptop has been damage?",
+      "option": "",
+      "answer": "The borrower is the one responsible for the repair/replacement of the laptop.",
+      "record_id": "2478f84428b82fdb",
+      "id": "2478f84428b82fdb",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "How can I access the Online/Electronic Resources of the library?",
+      "option": "",
+      "answer": "JRU Electronic resources are accessible through: A.) JRU WEBSITE (jru.edu) and go to the Library, click Online Resources link and logon using your JRU e-mail address B.) Go directly to LIBRARY PAGE (library.jru.edu), in the library homepage, click the On-Line Resources, and log in your JRU email account",
+      "record_id": "25bd386a399e7251",
+      "id": "25bd386a399e7251",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Can ES pupils use the computers at the elementary school library",
+      "option": "",
+      "answer": "Yes, if you are Grade 4, 5 & 6 you can use the compters for research, class room activity & educational purposes only, and if you are Grades 1, 2 & 3 you can use it provided that your adviser or subject teacher advised you to use it for your class room activities.",
+      "record_id": "db02465cbf1e629a",
+      "id": "db02465cbf1e629a",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8",
+        "Comp Workstation!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LPAM",
+      "question": "What is LPAM or Library Patron Access Monitoring and why do we need to tap our ID?",
+      "option": "",
+      "answer": "LPAM is a system the library use in monitoring the number of students who use its available resources and services at a particular time. The data gathered is used for library's monthly report.",
+      "record_id": "e9111136fb8cc1e2",
+      "id": "e9111136fb8cc1e2",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "OPAC",
+      "question": "What is OPAC?",
+      "option": "",
+      "answer": "OPAC means Online Public Access Catalog. A search engine used to identify related collection and references relative to a particular subject. Users can also access online/electronic, digital resources and facilitates self renewals of not overdue books",
+      "record_id": "6a725d9168c24aae",
+      "id": "6a725d9168c24aae",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8",
+        "OPAC!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Can teachers bring out newspapers, magazines and journals?",
+      "option": "",
+      "answer": "Yes. You use it as an instructional materials and it must be return at the end of the day.",
+      "record_id": "27f699a20c3c7199",
+      "id": "27f699a20c3c7199",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "NON-PRINT",
+      "question": "Who are allowed to borrow CD and DVD?",
+      "option": "",
+      "answer": "Students can borrow CD and DVD for room use only while teachers can borrow for classroom use and should be returned at the end of the day.",
+      "record_id": "aaf80cc0240469af",
+      "id": "aaf80cc0240469af",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "ARCHIVES",
+      "question": "What is Archives?",
+      "option": "",
+      "answer": "Archives is a place where historical records such as original documents and materials of organizations are kept, maintained and preserved.",
+      "record_id": "44320c27229537a0",
+      "id": "44320c27229537a0",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "INSTRUCTIONAL MATERIALS",
+      "question": "What are the available instructional materials in the library?",
+      "option": "",
+      "answer": "The library has instructional material such as maps, globes, CDs and DVDs, manipulatives, flash cards, and educational toys. All of these are can be borrowed by teachers or faculty for their classroom instruction or activities. However, they must return it at the end of the day.",
+      "record_id": "44361eb3af5c17e3",
+      "id": "44361eb3af5c17e3",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LEARNING COMMONS",
+      "question": "What are Learning Common Rooms?",
+      "option": "",
+      "answer": "Learning Commons is a place/section of the library where collaborative activity/works of the students are conducted.",
+      "record_id": "c92189bd1c39069e",
+      "id": "c92189bd1c39069e",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "FLASHDRIVE/VGA/ HDMI",
+      "question": "Is there a VGA or HDMI we can borrow at the library?",
+      "option": "",
+      "answer": "The University promotes BYOD (Bring Your Own Device)but for certain cases, there are limited numbers of VGA and HDMI available n IT Office and Main Library",
+      "record_id": "c374fe7cbbf91d58",
+      "id": "c374fe7cbbf91d58",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8",
+        "Basic Information!53"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "PRINTING/ PHOTOCOPY",
+      "question": "Are there printing and photocopying services available in the library?",
+      "option": "",
+      "answer": "Service Bureau is located at the ground floor of Bldg H and it caters several services such as photocopying, scanning and printing. Open from Monday-Friday 8:00AM-6:00PM",
+      "record_id": "e54cb456c2ae8f7e",
+      "id": "e54cb456c2ae8f7e",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "ACQUISITION",
+      "question": "How do you inform the pupils and teachers that you have new acquisition books?",
+      "option": "",
+      "answer": "There is a separate area for the newly acquired books. Labels are attached on the books and the list are posted on our bulletin board inside the library. Newly acquired books are also available in the students and employees dashboard via JRU SWIT. It is also displayed in JRU WEB-OPac and at times they are also sent via e-mail.",
+      "record_id": "f13870fde6183736",
+      "id": "f13870fde6183736",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "LIBRARY PROMOTIONAL ACTIVITIES",
+      "question": "Why do you conduct library promotional activities?",
+      "option": "",
+      "answer": "Library promotional activities are conducted to encourage the pupils to visit and borrow books from the library, and instill the love of reading books.",
+      "record_id": "dcb64a0e2bee2b9f",
+      "id": "dcb64a0e2bee2b9f",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "INTER-LIBRARY LOAN/ OUTSIDE RESEARCHERS",
+      "question": "How do I request articles or books we don't have in our library?",
+      "option": "",
+      "answer": "If the materials you need is not available at the JRU collection, the library can request needed materials via interlibrary loan or the library issues students may go and visit",
+      "record_id": "15e5638df279dc0a",
+      "id": "15e5638df279dc0a",
+      "source_refs": [
+        "FAQs!8",
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 8,
+      "source_ref": "FAQs!8",
+      "category": "MISCELLANEOUS",
+      "question": "How can librarians help the students and teachers in students' research work?",
+      "option": "",
+      "answer": "The teacher should coordinate first to the librarian on the topic they assign to the students so the librarian will gather all possible reference materials the students need.",
+      "record_id": "946fb9d2411e07b5",
+      "id": "946fb9d2411e07b5",
+      "source_refs": [
+        "FAQs!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "FINES",
+      "question": "How do I pay fines?",
+      "option": "",
+      "answer": "Ask for a Library Payment Form from the library and pay at the cashier. After paying present the official receipt to the Librarian at the circulation counter.",
+      "record_id": "c4371fc1073a8076",
+      "id": "c4371fc1073a8076",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "BORROWING/ RETURNING",
+      "question": "How many books can I borrow and for how long?",
+      "option": "",
+      "answer": "Elementary, Junior High School, Senior High School, College& Law School can borrow 3 Circulation books for 3 days and 1 reserve book for 2 hours while Graduate School Students may borrow 4 Circulation Books for 1 week and 1 reserve book for 2 hours",
+      "record_id": "e4cca12d963d7924",
+      "id": "e4cca12d963d7924",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "Why can't I renew the book I borrowed online?",
+      "option": "",
+      "answer": "If the book is already overdue, then the option to renew it online is disabled. This also happens if a student has unsettled library fines.",
+      "record_id": "35426e39fb7720b6",
+      "id": "35426e39fb7720b6",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9",
+        "Renewals!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "LOST BOOKS",
+      "question": "Can I replaced the book I lost with second hand book?",
+      "option": "",
+      "answer": "No, the book to be replaced must be brand new book/s to compensate for the extinguished fines.",
+      "record_id": "1b85dab8419c3e7a",
+      "id": "1b85dab8419c3e7a",
+      "source_refs": [
+        "FAQs!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "HOW TO LOCATE A BOOK",
+      "question": "How can we easily locate the books we want to borrow?",
+      "option": "",
+      "answer": "The library has signages indicating the area of the library. There are also shelf guide that is posted on each shelf. In Elementary School colour coding is used for lexile books, primary, intermediate fiction and teacher’s reference.",
+      "record_id": "76e7fb09a9f8822b",
+      "id": "76e7fb09a9f8822b",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "MOBILE RESOURCES",
+      "question": "Who are allowed to borrow laptop?",
+      "option": "",
+      "answer": "bonafide students, teaching and non-teaching personnel on a first come, first served basis.",
+      "record_id": "75f4d400a84781aa",
+      "id": "75f4d400a84781aa",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "What are the Online/Electronic resources can we find in the Library",
+      "option": "",
+      "answer": "JRU E-Resources are materials in digital format accessible electronically. Examples of Electronic Resources (eresources) are e-journals, e-magazines, e-books, e-dissertations and the like. Electronic resources available in the library are the following: Proquest, IG Library, Gale Virtual Reference Library, EBSCO, World Book Online and E-SCRA for Law School",
+      "record_id": "472549f239a42af2",
+      "id": "472549f239a42af2",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Does the library provide computer facilities for MS Office and other application?",
+      "option": "",
+      "answer": "Laptop and computer workstations available at the library were installed of MS office and other applications that are needed by the library clients.",
+      "record_id": "983afc94b15d57ce",
+      "id": "983afc94b15d57ce",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Can library users borrow magazines and journals in the library?",
+      "option": "",
+      "answer": "Periodicals such as journals, magazines and newspapers are in-library use only",
+      "record_id": "ebcf7e8c54cf961a",
+      "id": "ebcf7e8c54cf961a",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "ARCHIVES",
+      "question": "Who can access Archives Collection?",
+      "option": "",
+      "answer": "Archives section is a restricted area in the library. However, upon the approval of the University Librarian, researchers can access collections in the Archives for room use only",
+      "record_id": "928d6cb11c152664",
+      "id": "928d6cb11c152664",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "LEARNING COMMONS",
+      "question": "How many LC are there in the Library",
+      "option": "",
+      "answer": "Main library has three (3) Learning Commons and more will be available in the Centennial building",
+      "record_id": "68e7429433d16925",
+      "id": "68e7429433d16925",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "FLASHDRIVE/VGA/ HDMI",
+      "question": "I need to save a file on a portable drive. Do you lend flashdrives in the library?",
+      "option": "",
+      "answer": "The library does not store nor lend flashdrives.",
+      "record_id": "711564dd74489507",
+      "id": "711564dd74489507",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9",
+        "Basic Information!54"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "PRINTING/ PHOTOCOPY",
+      "question": "Can a student photocopy an unpublished material such as thesis?",
+      "option": "",
+      "answer": "Unpublished material such as thesis are for in-library use only.",
+      "record_id": "8e9ac654947bc507",
+      "id": "8e9ac654947bc507",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "ACQUISITION",
+      "question": "Can we suggest or request the books we want to read or acquire?",
+      "option": "",
+      "answer": "Yes, provided that the book is in line of the subject offerings and relative to students learning",
+      "record_id": "76c9482489558aaf",
+      "id": "76c9482489558aaf",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "LIBRARY PROMOTIONAL ACTIVITIES",
+      "question": "What is your way in disseminating information with regards to your promotional activities?",
+      "option": "",
+      "answer": "We inform the pupils by posting announcement in our bulletin board located at the entrance of the library. We request the coordination of their adviser or subject teacher to disseminate the information to their pupils. We inform the students through the following: 1. Library FB page 2. KOHA WEB-OPAC 3.Posting of Infographics announcement in our bulletin board located at the entrance and 4.Coordination with the teacher in charge to disseminate the program/activities to their students.",
+      "record_id": "13d7351ed6dd2e95",
+      "id": "13d7351ed6dd2e95",
+      "source_refs": [
+        "FAQs!9"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "INTER-LIBRARY LOAN/ OUTSIDE RESEARCHERS",
+      "question": "How can we avail the interlibrary loan?",
+      "option": "",
+      "answer": "Visit the office of the University librarian and ask for a request letter for Interlibrary Loan provided that you have exhausted all Library resources and checked the schedule for outside researchers of the library you want to visit",
+      "record_id": "465ea22e98b2c3d4",
+      "id": "465ea22e98b2c3d4",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 9,
+      "source_ref": "FAQs!9",
+      "category": "MISCELLANEOUS",
+      "question": "Aside from elementary pupils, can other students/faculty from other division use the ES library?",
+      "option": "",
+      "answer": "Yes, as long as no elementary pupils or teachers are using the ES library, and not during their library periods, vacants, recess, and library activity.",
+      "record_id": "2182f6eb2b0293f4",
+      "id": "2182f6eb2b0293f4",
+      "source_refs": [
+        "FAQs!9",
+        "From Bert!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "FINES",
+      "question": "Do I need to pay the library fines if I submit the medical certificate during my absence?",
+      "option": "",
+      "answer": "Yes , you should write a writen request to the office of the University librarian requesting to waive your fines and attached is the medical certificate. If the request is approve, then you don’t need to pay the ocurred fines.",
+      "record_id": "b6ce37b32fa180c2",
+      "id": "b6ce37b32fa180c2",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10",
+        "Fines!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "BORROWING/ RETURNING",
+      "question": "Can my mother/father/lola/lolo/guardian accompany me when you're borrowing books during dismissal?",
+      "option": "",
+      "answer": "The library discourage such act, and according to the elementary school policy, parents and guardians are not allowed inside the school premises during the school hours, and during dismissal time parents and guardians were advised to stay at the fetchers' waiting area. However, If your child is from Kinder level we advise the parents to accompany them when they are going to the library to borrow.",
+      "record_id": "4c07a04a7fb69da8",
+      "id": "4c07a04a7fb69da8",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "Is there a limit in renewing books?",
+      "option": "",
+      "answer": "You can renew it as long as you want provided that there is no demand for that book.",
+      "record_id": "1dd61b8dd28bfcaf",
+      "id": "1dd61b8dd28bfcaf",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10",
+        "Renewals!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "HOW TO LOCATE A BOOK",
+      "question": "Where can I find the exact location of the books/materials I need?",
+      "option": "",
+      "answer": "You can search OPAC and the book location is indicated there",
+      "record_id": "b821f043d358055b",
+      "id": "b821f043d358055b",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "MOBILE RESOURCES",
+      "question": "What are the Mobile resources in the Library?",
+      "option": "",
+      "answer": "Mobile resources devices that the library provides to support and enhance research activities are Laptops, netbooks, kindle",
+      "record_id": "6c15490b78b4e2b7",
+      "id": "6c15490b78b4e2b7",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "Can we acces the Electronic resouces anywhere 24/7?",
+      "option": "",
+      "answer": "Subscribed JRU Electronic Resourcess are available anytime, anywhere. These are available in the single sign-on page of the library. Users need to login at library@jru.edu and select the database they prefer to use",
+      "record_id": "f49af79d17dcf7ab",
+      "id": "f49af79d17dcf7ab",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "COMPUTER WORKSTATION",
+      "question": "What is a Library computer workstation?",
+      "option": "",
+      "answer": "A Library computer workstation Is a place /section in the library where patrons/customers can make use of computers for obtaining a wider array of information which is beyond what the library books can provide.",
+      "record_id": "ddc67052f4c9f9b8",
+      "id": "ddc67052f4c9f9b8",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10",
+        "Comp Workstation!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "What are Periodical Collection?",
+      "option": "",
+      "answer": "Periodicals are commonly used materials for research such as journals, magazines, newspapers, vertical files, pamphlets, , and newsletters.",
+      "record_id": "b892a141cff42047",
+      "id": "b892a141cff42047",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "ARCHIVES",
+      "question": "What Archives materials are available in JRU Library?",
+      "option": "",
+      "answer": "These are materials that have historical significance to JRU. These include photos, yearbooks, trophies, and miscellaneous paraphernalia.",
+      "record_id": "c3f74a1d5cb3bd2b",
+      "id": "c3f74a1d5cb3bd2b",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "LEARNING COMMONS",
+      "question": "How many reservations per day are we allowed for Learning Commons usage?",
+      "option": "",
+      "answer": "Only One (1) reservation per day is allowed, especially during exams week, so that everyone will have a chance to use the Learning Commons.",
+      "record_id": "8468bc00078a3ff3",
+      "id": "8468bc00078a3ff3",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "FLASHDRIVE/VGA/ HDMI",
+      "question": "I need an HDMI cable or an HDMI converter for my laptop. Can I borrow one from the library?",
+      "option": "",
+      "answer": "The library does not have these items to lend, unfortunately.",
+      "record_id": "196340609c08ca65",
+      "id": "196340609c08ca65",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10",
+        "Basic Information!55"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "PRINTING/ PHOTOCOPY",
+      "question": "Can I photocopy any periodical collection?",
+      "option": "",
+      "answer": "Yes, but with limitations. The right to fair use only allows 10% of print materials to be photocopied.",
+      "record_id": "9596b6236d91a20d",
+      "id": "9596b6236d91a20d",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "ACQUISITION",
+      "question": "How do I know if the books I want to borrow is already acquired by the library?",
+      "option": "",
+      "answer": "They may check the book on our jru web opac (library.jru.edu) to know if the book is already available in the library.",
+      "record_id": "2438c8a1c1358cb7",
+      "id": "2438c8a1c1358cb7",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "LIBRARY PROMOTIONAL ACTIVITIES",
+      "question": "What are the benefits we can get if we join the library activities?",
+      "option": "",
+      "answer": "At a young age, pupils will be able to adopt the concept of collaboration and team work with other pupils",
+      "record_id": "b495ac94f985d340",
+      "id": "b495ac94f985d340",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "INTER-LIBRARY LOAN/ OUTSIDE RESEARCHERS",
+      "question": "Is there a payment for interlibrary loan?",
+      "option": "",
+      "answer": "Payment for interlibrary loan depends on the library where you wish to do research.",
+      "record_id": "7f37303743ab973b",
+      "id": "7f37303743ab973b",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 10,
+      "source_ref": "FAQs!10",
+      "category": "MISCELLANEOUS",
+      "question": "How do you maximize the space in the library?",
+      "option": "",
+      "answer": "We maximize the use of space in the library by assigning to them the library hours for their respective grade and section.",
+      "record_id": "29911b220fd93448",
+      "id": "29911b220fd93448",
+      "source_refs": [
+        "FAQs!10",
+        "From Bert!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "FINES",
+      "question": "Does a pupil need to pay fines if there is a class suspension?",
+      "option": "",
+      "answer": "According to the JRU library policy the fines incurred during class suspension will be waived. However, they need to return the books on the first day the class resume, failed to return it the fines will be computed as usual.",
+      "record_id": "6e485ec1e3da40a0",
+      "id": "6e485ec1e3da40a0",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11",
+        "Fines!7"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "BORROWING/ RETURNING",
+      "question": "Is the Kinder pupils can borrow books from the library?",
+      "option": "",
+      "answer": "Yes, Kinder pupils can borrow books at the ES library.",
+      "record_id": "13099cf4577ff1cc",
+      "id": "13099cf4577ff1cc",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "How can I reset my JRU mail password?(I cant renew online because I forgot my password)",
+      "option": "",
+      "answer": "For assistance, please go to ITO help desk located in H211 or email at support@jru.edu",
+      "record_id": "ff8b196ddcf511d4",
+      "id": "ff8b196ddcf511d4",
+      "source_refs": [
+        "FAQs!11"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "MOBILE RESOURCES",
+      "question": "Can I borrow the laptop and use it in my class?",
+      "option": "",
+      "answer": "Students may borrow laptops for Two (2) hours in-library use only while Faculty may borrow and use the laptops for Eight (8) hours.",
+      "record_id": "01e2fd92d3ea825c",
+      "id": "01e2fd92d3ea825c",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "How can a Law student access the e-SCRA?",
+      "option": "",
+      "answer": "There are computer workstations dedicated for the use of E-SCRA in the Law School Library",
+      "record_id": "9893c2adf842d466",
+      "id": "9893c2adf842d466",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Where is the library computer workstation located?",
+      "option": "",
+      "answer": "Each branch library has their own Computer Workstations (WS)",
+      "record_id": "4e9f362e25ed886c",
+      "id": "4e9f362e25ed886c",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11",
+        "Comp Workstation!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Why use Periodicals?",
+      "option": "",
+      "answer": "Periodical articles are often best sources of information in research writing beacause they are primary source of current and relevant information.",
+      "record_id": "bbcb6c0d2620776f",
+      "id": "bbcb6c0d2620776f",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "ARCHIVES",
+      "question": "Where is the Archives located?",
+      "option": "",
+      "answer": "The Archives section is located at the First floor of the Main Library.",
+      "record_id": "bde8632ca61387a3",
+      "id": "bde8632ca61387a3",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "LEARNING COMMONS",
+      "question": "How long can we reserve the Learning Commons (LC)?",
+      "option": "",
+      "answer": "Use of the Learning Commons is limited to two (2) hours only, though an extra hour may be added if no other group has made a reservation to use the LC.",
+      "record_id": "ba4e27840668ccde",
+      "id": "ba4e27840668ccde",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11",
+        "Learning comons!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "PRINTING/ PHOTOCOPY",
+      "question": "Is printing allowed in the computer workstation?",
+      "option": "",
+      "answer": "Outputs in the WS are printable. Documents just have to be sent at the Service Bureau and they have to claim it there with corresponding fee.",
+      "record_id": "bd87c33b576797ac",
+      "id": "bd87c33b576797ac",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "LIBRARY PROMOTIONAL ACTIVITIES",
+      "question": "Why is there a need for library instruction and orientation?",
+      "option": "",
+      "answer": "The library conducts library instruction and orientation to ensure that library users can make use of library resources and services, adequately and to their own satisfaction",
+      "record_id": "7fd6ca5fa097bde3",
+      "id": "7fd6ca5fa097bde3",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 11,
+      "source_ref": "FAQs!11",
+      "category": "MISCELLANEOUS",
+      "question": "Do pupils can use the toys in the library?",
+      "option": "",
+      "answer": "Yes, but there is a specific day and time.",
+      "record_id": "602fb210cc2504ec",
+      "id": "602fb210cc2504ec",
+      "source_refs": [
+        "FAQs!11",
+        "From Bert!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "FINES",
+      "question": "Where can we verify our outstanding library fines if we already pay the tuition in cash?",
+      "option": "",
+      "answer": "You may verify your outstanding library fines at the Student Account office. They also send notice thru their class adviser before the final exam to inform the pupils of their outstanding library fines.",
+      "record_id": "5a0d1ae015cb0f93",
+      "id": "5a0d1ae015cb0f93",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12",
+        "Fines!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "BORROWING/ RETURNING",
+      "question": "How many books can faculty/ employees can borrow?",
+      "option": "",
+      "answer": "They can borrow a maximun of 4 circulation books for a month.",
+      "record_id": "b4c1822500e5e0bb",
+      "id": "b4c1822500e5e0bb",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I want to renew an overdue book, but I have left it at home. What should I do?",
+      "option": "",
+      "answer": "Overdue books need to be presented at the Circulation counter before they can be renewed.",
+      "record_id": "b330a1d3d1e0fa98",
+      "id": "b330a1d3d1e0fa98",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "MOBILE RESOURCES",
+      "question": "Can faculty borrow laptop for overnight use?",
+      "option": "",
+      "answer": "Faculty who wishes to bring hme laptops, may write a request letter to the University Librarian indicating the loan period and reason of borrowing",
+      "record_id": "9379051330debc3f",
+      "id": "9379051330debc3f",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "Can I access the periodical collection online?",
+      "option": "",
+      "answer": "Yes. The library subscribes to \"Proquest\" which is a multi-disciplinary database and is accessible in JRU Library website (library.jru.edu) under Online Resources link.",
+      "record_id": "8430675404ab1a59",
+      "id": "8430675404ab1a59",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "COMPUTER WORKSTATION",
+      "question": "What time does the computer workstation becomes available for use?",
+      "option": "",
+      "answer": "Workstations are available once the library opens",
+      "record_id": "1ebe083ee6b6502d",
+      "id": "1ebe083ee6b6502d",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12",
+        "Comp Workstation!7"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Where are periodicals collection located in the library?",
+      "option": "",
+      "answer": "Main Library 1st floor near the Archives Collection. Graduate School/Law School Upon Library entrance Junior High School Beside Newly Acquired Books Elementary School In front of the Circulation counter",
+      "record_id": "7518e864dc16a305",
+      "id": "7518e864dc16a305",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "LEARNING COMMONS",
+      "question": "Why are the LC good for two hours only?",
+      "option": "",
+      "answer": "This is to give other users an equal chance to use the Learning Commons. If the LC is not in demand, users may extend their stay for another hour in addition to the standard two hours.",
+      "record_id": "d57e6bd79e001b14",
+      "id": "d57e6bd79e001b14",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12",
+        "Learning comons!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 12,
+      "source_ref": "FAQs!12",
+      "category": "MISCELLANEOUS",
+      "question": "What is the difference between Circulation and Reserve books?",
+      "option": "",
+      "answer": "Circulation books are references that can be borrowed for longer time such as three (3) days or one (1) week while reserve books are in demand books that can be borrowed for two (2) hours only like textbooks.",
+      "record_id": "49e98e10706d8b73",
+      "id": "49e98e10706d8b73",
+      "source_refs": [
+        "FAQs!12",
+        "From Bert!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "FINES",
+      "question": "How do you remind the pupils on their overdue books?",
+      "option": "",
+      "answer": "The system automatically sends email notification to JRU students with overdue books. Also, librarians call the attention of the pupils who have overdue books. We also send notice to the parent every PTC to inform them of the overdue books of their children",
+      "record_id": "674e74f6007f581a",
+      "id": "674e74f6007f581a",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13",
+        "Fines!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "BORROWING/ RETURNING",
+      "question": "Are you allowing the primary grade levels to borrow any books they wish to borrow?",
+      "option": "",
+      "answer": "No. If the books they wish to borrow is not suitable for them, however, we strongly recommend or suggest books from the primary level section.",
+      "record_id": "959ab2359423abc8",
+      "id": "959ab2359423abc8",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I sent an email to have my books renewed, but I have not received a reply. Why is this?",
+      "option": "",
+      "answer": "Make sure that you have sent your email to the correct address: libraryrenewals@jru.edu within the cut-off period of 5:00 P.M. Such service is not available during holidays and Sundays. But you can renew the books online via KOHA",
+      "record_id": "baf5d1983bb3510b",
+      "id": "baf5d1983bb3510b",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13",
+        "Renewals!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "MOBILE RESOURCES",
+      "question": "Can students from other divisions use the Mobile resources in the Main Library?",
+      "option": "",
+      "answer": "Students from other division may use Mobile Resources (Laptops) available in the Main Library provided that the laptops in their respective library are already unavailable.",
+      "record_id": "77c849e3345d0c71",
+      "id": "77c849e3345d0c71",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "What is EBSCO?",
+      "option": "",
+      "answer": "EBSCO is a database available in the library's single sign-on which adopts the model of Demand Driven Acqusition (DDA) wherein students and faculty may seach for a specific e-book title for research needs. Once approved and purchased, a notification of its availabilty will be sent to the user who made the request",
+      "record_id": "057358ebcd345e56",
+      "id": "057358ebcd345e56",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "COMPUTER WORKSTATION",
+      "question": "How many computers does JRU library computer workstation have?",
+      "option": "",
+      "answer": "Main Library has a total of 47 computer workstations and 12 laptops situated at the Ground Floor Laptop Kiosks. 7 Workstations in the Law School Library and 2 in the Graduate School. There are also 5 Laptops Junior High School has 10 Computer Workstations Elementary School has 8 workstations",
+      "record_id": "1ecaa020bc532eb1",
+      "id": "1ecaa020bc532eb1",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "What is a magazine?",
+      "option": "",
+      "answer": "Magazine is a publication that contains articles and photographs issued periodically that are available in print and in digital format.",
+      "record_id": "4a5aa8a5ecaeb1c9",
+      "id": "4a5aa8a5ecaeb1c9",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "LEARNING COMMONS",
+      "question": "What are the dos and donts of using LC?",
+      "option": "",
+      "answer": "The standard dos and don'ts include observe silence, no eating and littering, Ten users maximum allowed, and at least Four users should be inside the LC at all times.",
+      "record_id": "f4758e7138f13521",
+      "id": "f4758e7138f13521",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13",
+        "Learning comons!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 13,
+      "source_ref": "FAQs!13",
+      "category": "MISCELLANEOUS",
+      "question": "Is food and drink allowed inside the library?",
+      "option": "",
+      "answer": "Food and Drinks are strictly prohibited inside the library",
+      "record_id": "ae4c5a5763b43712",
+      "id": "ae4c5a5763b43712",
+      "source_refs": [
+        "FAQs!13",
+        "From Bert!13",
+        "Basic Information!27",
+        "Policy and other libraryrules!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "BORROWING/ RETURNING",
+      "question": "Will you allow the pupils to borrow lexile book even they have 3 circulation books on loan?",
+      "option": "",
+      "answer": "Yes they can still borrow a lexile books, provided that it is for their “pick-a-book” activity in Reading subject.",
+      "record_id": "e8995b921bddc03c",
+      "id": "e8995b921bddc03c",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I have sent an email to libraryrenewals@jru.edu. How long will it take until my books are renewed?",
+      "option": "",
+      "answer": "Email requests are regularly opened by our library staff and they reply immediately. Expect to receive replies within the day.",
+      "record_id": "ac3d5678458df1aa",
+      "id": "ac3d5678458df1aa",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14",
+        "Renewals!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "MOBILE RESOURCES",
+      "question": "The pointer on the laptop I borrowed is not responding, is there a problem with the touchpad?",
+      "option": "",
+      "answer": "Try pressing the F6 button, then try using the touchpad again. If it is still unresponsive, kindly present the laptop at the circulation counter.",
+      "record_id": "ceaff2cdff4b6b27",
+      "id": "ceaff2cdff4b6b27",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14",
+        "Mobile Resources!28"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "I found an ebook online , I really need this book can I ask for the library to purchase it?",
+      "option": "",
+      "answer": "Yes, just click the request this book form and send it. Once approved you will receive a notification of its availability to your e-mail.",
+      "record_id": "bb1cc474e57892ae",
+      "id": "bb1cc474e57892ae",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Who can have the access to JRU 's library computer workstation?",
+      "option": "",
+      "answer": "Computer Workstations are available for use to all bonafide students, teaching and non-teaching personnel on a first come, first served basis.",
+      "record_id": "7b718cadb20d56ab",
+      "id": "7b718cadb20d56ab",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14",
+        "Comp Workstation!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "What is a journal?",
+      "option": "",
+      "answer": "Journals are published articles and scholarly publications that deals with a particular subject. It focuses on a specific field of study written by researchers and other experts in different fields.",
+      "record_id": "dc2498819c6f0b8b",
+      "id": "dc2498819c6f0b8b",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "LEARNING COMMONS",
+      "question": "Do you accommodate \"walk-in\"?",
+      "option": "",
+      "answer": "Yes, we do. As long as an LC room is available, anyone is free to make use of it.",
+      "record_id": "6f4b974eb404581a",
+      "id": "6f4b974eb404581a",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14",
+        "Learning comons!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 14,
+      "source_ref": "FAQs!14",
+      "category": "MISCELLANEOUS",
+      "question": "Why are College students only allowed to stay at the Law/Graduate School Library until 3PM?",
+      "option": "",
+      "answer": "This is to give way to the Law/Graduate School students who normally make use of the library in the afternoon. College students may proceed to the Main Library after 3PM.",
+      "record_id": "662da4112341969f",
+      "id": "662da4112341969f",
+      "source_refs": [
+        "FAQs!14",
+        "From Bert!14",
+        "Policy and other libraryrules!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "BORROWING/ RETURNING",
+      "question": "How many days can ES pupils borrow a lexile book, and if failed to return on due date, do they still need to pay fines if they exceed the maximum days ?",
+      "option": "",
+      "answer": "A lexile books can be borrow by the ES pupils for a maximun of 2 weeks, although, if they fail to return it on its due date the fines incurr will be waived.",
+      "record_id": "b36d61ed8a2400c5",
+      "id": "b36d61ed8a2400c5",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "My renewal request via email was denied. What are the usual reasons?",
+      "option": "",
+      "answer": "(1) Not using his/her JRU Gmail to write a request, (2) not supplying the complete details of the student or the book/s, (3) sending the email past the 5PM cutoff period, on a holiday, or on a Sunday, (4) the book is already overdue.",
+      "record_id": "f0b48f3f21763374",
+      "id": "f0b48f3f21763374",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15",
+        "Renewals!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "MOBILE RESOURCES",
+      "question": "The laptop I borrowed is not charging even if I plug it to an outlet, what is wrong?",
+      "option": "",
+      "answer": "Not all outlets are enabled in the library. You may consider plugging in to a different outlet.",
+      "record_id": "8b09c9c944ab72bf",
+      "id": "8b09c9c944ab72bf",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "Can I use other GMAIL account in signing in E-resouces?",
+      "option": "",
+      "answer": "NO. JRU E-Resources are being subscribed and paid by the University for JRU students and JRU e-mail serves as the authentication I.D.",
+      "record_id": "dc804aaf51fe49c4",
+      "id": "dc804aaf51fe49c4",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15",
+        "E-resources!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Can an outside reseachers be allowed to enter and utilize JRU library computer workstation?",
+      "option": "",
+      "answer": "Outside researchers cannot access the Computer WS because these are username and password protected.",
+      "record_id": "606882fff2132682",
+      "id": "606882fff2132682",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "How long can I borrow periodicals collection such as magazine, journals and newspaper?",
+      "option": "",
+      "answer": "Users may read or browse journals and magazine for as long as needed inside the library. However, giving considerations for the next reader must be observed.",
+      "record_id": "146a81691db41c1d",
+      "id": "146a81691db41c1d",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "LEARNING COMMONS",
+      "question": "Can Other divisions (ES,JHS,Law and Graduate students)use the Learning Commons?",
+      "option": "",
+      "answer": "Yes. Provided that the 3 rooms are not heavily demanded by College and SHS students. Please make prior arrangement to the Librarian-i-charge to accommodate such request.",
+      "record_id": "56fd1dab294e9da9",
+      "id": "56fd1dab294e9da9",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 15,
+      "source_ref": "FAQs!15",
+      "category": "MISCELLANEOUS",
+      "question": "Are Elementary and Junior High School students allowed at the Main Library?",
+      "option": "",
+      "answer": "The Main Library caters to College and Senior High School students mostly, and Elementary and JHS students are encouraged to use their respective libraries instead.",
+      "record_id": "39aba35f886e64fb",
+      "id": "39aba35f886e64fb",
+      "source_refs": [
+        "FAQs!15",
+        "From Bert!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "BORROWING/ RETURNING",
+      "question": "Will you allow the parent of the grade school pupils to go to the library and borrow a circulation books for their children?",
+      "option": "",
+      "answer": "Yes, grade school parents can borrow a circulation books using their childrens’ ID, however, they need to asked permission from the principal office allowing them to enter the school campus and provided their intension to borrow circulation books for their children.",
+      "record_id": "5947845198e62c57",
+      "id": "5947845198e62c57",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I want to renew my book, but I have left it at home. Is this okay?",
+      "option": "",
+      "answer": "Books are not usually renewed if the user does not present it at the circulation counter first. This is to check that the book is still with the borrower and has not been lost.",
+      "record_id": "d3dcfd82aa7da8be",
+      "id": "d3dcfd82aa7da8be",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16",
+        "Renewals!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "MOBILE RESOURCES",
+      "question": "What browser should I use in the laptops?",
+      "option": "",
+      "answer": "Please use Mozilla Firefox, as this works best based on the laptop's configuration.",
+      "record_id": "67f4c3f90cf5338d",
+      "id": "67f4c3f90cf5338d",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "Why should I use JRU E-Resoures instead of Google or Wikipedia?",
+      "option": "",
+      "answer": "JRU E-REOURCES are reliable, scholarly, authoritative and are peer-reviewed.",
+      "record_id": "d751ab0b1803e7c2",
+      "id": "d751ab0b1803e7c2",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Can I still use the library computer workstation if I forget my username or password?",
+      "option": "",
+      "answer": "In the event that the user forgets his/her password, He / She can ask the IT office to refresh or ask for password reset provided he can present proof of regitration/enrollment.",
+      "record_id": "ef33e89444bda55b",
+      "id": "ef33e89444bda55b",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "How can I borrow journals / magazines?",
+      "option": "",
+      "answer": "The library observes open-shelf system to our Periodical collection.",
+      "record_id": "88711cd0f2cbfdb0",
+      "id": "88711cd0f2cbfdb0",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 16,
+      "source_ref": "FAQs!16",
+      "category": "MISCELLANEOUS",
+      "question": "Are Elementary and Junior High School students allowed at the Main Library during University Week?",
+      "option": "",
+      "answer": "Yes, they are. Exhibits from all departments are usually put up in the Main Library during University Week, and all students are free to look at them.",
+      "record_id": "4c5880e8a838264e",
+      "id": "4c5880e8a838264e",
+      "source_refs": [
+        "FAQs!16",
+        "From Bert!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "BORROWING/ RETURNING",
+      "question": "What can I do if the book I need is already checked out?",
+      "option": "",
+      "answer": "You can request a hold throgh your JHS library staff. Any book checked out can be subject to recall by the librarian depending on its need.",
+      "record_id": "f2eea57ff888362c",
+      "id": "f2eea57ff888362c",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I have overdue books and I want to renew them through email. Is this possible?",
+      "option": "",
+      "answer": "Overdue books need to be presented at the Circulation counter before they can be renewed. Email requests are denied for overdue materials.",
+      "record_id": "16dfa2b57f7d4fbe",
+      "id": "16dfa2b57f7d4fbe",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17",
+        "Renewals!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "MOBILE RESOURCES",
+      "question": "Is there a way for me to borrow laptops for more than two (2) hours?",
+      "option": "",
+      "answer": "You may become a member of the Book Buddies to increase the default number of hours from two (2) to three (3).",
+      "record_id": "f15872c43a750616",
+      "id": "f15872c43a750616",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "What is Proquest?",
+      "option": "",
+      "answer": "Proquest 5000 is an information database that contains the world’s largest digital newspaper and periodical archive on scholarly journals, trade publications and magazines",
+      "record_id": "9c72b1cf4b1a4540",
+      "id": "9c72b1cf4b1a4540",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "COMPUTER WORKSTATION",
+      "question": "What is the maximum duration for each computer use?",
+      "option": "",
+      "answer": "No standard time limit in the use of Computer Workstations but strictly these are for research use only.",
+      "record_id": "69b6f0b61255613a",
+      "id": "69b6f0b61255613a",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17",
+        "Comp Workstation!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "What are the newspapers available in the library?",
+      "option": "",
+      "answer": "The Library have daily subscriptions of newspapers namely: The Philippine Star, The Manila Times, Malaya, People's Journal, Philippine Daily Inquirer, Business World,Business Mirror, The Daily Tribune, Manila Bulletin and Manila Standard.",
+      "record_id": "58f0074b997cb3a7",
+      "id": "58f0074b997cb3a7",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 17,
+      "source_ref": "FAQs!17",
+      "category": "MISCELLANEOUS",
+      "question": "Are students allowed to stay in the library if classes are suspended?",
+      "option": "",
+      "answer": "Students will be advised to go home for safety purposes, and the library shall only remain open for faculty and staff.",
+      "record_id": "7b763d4546190946",
+      "id": "7b763d4546190946",
+      "source_refs": [
+        "FAQs!17",
+        "From Bert!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "BORROWING/ RETURNING",
+      "question": "I borrowed a book from the Law/Graduate School Library. Can I return it to the Main Library or other libraries?",
+      "option": "",
+      "answer": "Yes, but it is better to return the book to the proper branch of library where you have borrowed it for easy retrieval of the next borrower.",
+      "record_id": "4ed575673c666c19",
+      "id": "4ed575673c666c19",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "Is the email renewal service available 24/7?",
+      "option": "",
+      "answer": "E-mail renewal service is available Monday to Saturday, 8AM to 5PM.",
+      "record_id": "ed602d3defeb6ef3",
+      "id": "ed602d3defeb6ef3",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18",
+        "Renewals!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "MOBILE RESOURCES",
+      "question": "Are the files I create stored in the laptops? Will it still be there if the laptop is turned off?",
+      "option": "",
+      "answer": "Yes, files remain saved on the laptop. We suggest that you delete any sensitive files so that other users do not have access to it.",
+      "record_id": "8cb3e702f8da9407",
+      "id": "8cb3e702f8da9407",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "ONLINE/ ELECTRONICRESOURCES",
+      "question": "How can I save the proquest article?",
+      "option": "",
+      "answer": "Proquest gives you an option to download it in PDF format or you can send it through your e-mail. The option is available in the right side of the article.",
+      "record_id": "f76ab33bf143409e",
+      "id": "f76ab33bf143409e",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "COMPUTER WORKSTATION",
+      "question": "What are the restrictions in using the computer workstation?",
+      "option": "",
+      "answer": "Users are not allowed to: a. install software into a libraty computer through an external drive; b. Install a software via internet connection; c. open malicious and pornographic site; d. damage or steal computer hardware; e. Interferes with computer systems operations and security; f. change wallpaper or any settings in the computer workstations; g. sit more than one person to a computer; h. Food and drinks while inside the Computer WS area",
+      "record_id": "b0efeb3efc2b1a31",
+      "id": "b0efeb3efc2b1a31",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "How many newspapers am I allowed to borrow at a time?",
+      "option": "",
+      "answer": "Users can borrow One (1)newspaper at a time.",
+      "record_id": "4fb40b6cfdfae772",
+      "id": "4fb40b6cfdfae772",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 18,
+      "source_ref": "FAQs!18",
+      "category": "MISCELLANEOUS",
+      "question": "I have long breaks in between periods, is it okay if I stayed in the library while waiting? How long can I stay?",
+      "option": "",
+      "answer": "As long as you need. You are free to use the library facilities while waiting.",
+      "record_id": "c6022b9b8a7de5b8",
+      "id": "c6022b9b8a7de5b8",
+      "source_refs": [
+        "FAQs!18",
+        "From Bert!18",
+        "Basic Information!28"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "BORROWING/ RETURNING",
+      "question": "I want to return a book I have checked out. Can I just return it to the shelf where I have taken it?",
+      "option": "",
+      "answer": "Please do not do this. Books for return need to be taken to the circulation counter in order to be checked in properly. Books simply put back on the shelf are still checked out to the borrower and may generate overdue fines.",
+      "record_id": "072af7899ab68924",
+      "id": "072af7899ab68924",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "I have problems with my JRU Gmail account. May I use another email account to send a request for book renewal?",
+      "option": "",
+      "answer": "Only requests sent through JRU Gmail accounts are accepted. You may visit the IT Help Desk on Building H, Room 211 to have you JRU Gmail account reset.",
+      "record_id": "b44835b7efc816e7",
+      "id": "b44835b7efc816e7",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19",
+        "Renewals!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "MOBILE RESOURCES",
+      "question": "The laptop at the kiosk is low on battery charge, how do I recharge it?",
+      "option": "",
+      "answer": "Either the charger is loose, or the power switch is probably turned off at the kiosk area. Kindly approach the staff to have it turned on.",
+      "record_id": "e6ad66cf81855a7e",
+      "id": "e6ad66cf81855a7e",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "COMPUTER WORKSTATION",
+      "question": "What happens to those who violates the restrictions?",
+      "option": "",
+      "answer": "Students who violate the rules in the use of Computer WS will be sent to Student Development Office for disciplinary actions.",
+      "record_id": "d69780542663026a",
+      "id": "d69780542663026a",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19",
+        "Comp Workstation!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "What should I do if I want to borrow a newspaper?",
+      "option": "",
+      "answer": "Users should present their school IDs when borrowing newspaper",
+      "record_id": "a05fc580aab06de9",
+      "id": "a05fc580aab06de9",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 19,
+      "source_ref": "FAQs!19",
+      "category": "MISCELLANEOUS",
+      "question": "Is it okay if I take a nap inside the library? I won't bother anyone.",
+      "option": "",
+      "answer": "Unfortunately, the library does not encourage people sleeping within the premises.",
+      "record_id": "9b0ab5ca3962e123",
+      "id": "9b0ab5ca3962e123",
+      "source_refs": [
+        "FAQs!19",
+        "From Bert!19",
+        "Basic Information!29",
+        "Policy and other libraryrules!7"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "BORROWING/ RETURNING",
+      "question": "Is there a way for me to borrow books for more than three (3) days?",
+      "option": "",
+      "answer": "You may become a member of the Book Buddies to increase the default number of days from Three (3) to Five (5).",
+      "record_id": "cd5c0199d033859e",
+      "id": "cd5c0199d033859e",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "Why is the email renewal service unavailable during holidays and Sundays?",
+      "option": "",
+      "answer": "Email renewal is done by a designated library staff during regular work days, thus on holidays and Sundays, no one will be in the library to handle renewals.",
+      "record_id": "24576872847c5364",
+      "id": "24576872847c5364",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20",
+        "Renewals!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "MOBILE RESOURCES",
+      "question": "How much is the fines for unreturned laptops",
+      "option": "",
+      "answer": "Users will be charged Fifteen pesos (P15) per hour when they fail to return the laptops on time. Borrowers are often advised to be mindful of the hours and are given printouts with the due time indicated.",
+      "record_id": "0da3fe77bbd8ce3b",
+      "id": "0da3fe77bbd8ce3b",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "COMPUTER WORKSTATION",
+      "question": "If I need an additional software application to process my research but not available in the JRU computers, what do I need to do?",
+      "option": "",
+      "answer": "If specific applications are needed but not available in the WS, you can approach the Circulation staff and coordinate with ITO Helpdesk with regards to your request.",
+      "record_id": "e84ccb5370ea764d",
+      "id": "e84ccb5370ea764d",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20",
+        "Comp Workstation!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Do you have tagalog newspaper?",
+      "option": "",
+      "answer": "Balita newspaper is being subscribed and available in the Elementary School Lbrary",
+      "record_id": "76428db8874a1215",
+      "id": "76428db8874a1215",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 20,
+      "source_ref": "FAQs!20",
+      "category": "MISCELLANEOUS",
+      "question": "What areas are off-limits to students inside the library?",
+      "option": "",
+      "answer": "The faculty area on the 1st floor, and inside the circulation counters. Users are also discouraged from sitting on the floor and staying in the shelf areas.",
+      "record_id": "ba08c6dc67c652bb",
+      "id": "ba08c6dc67c652bb",
+      "source_refs": [
+        "FAQs!20",
+        "From Bert!20",
+        "Policy and other libraryrules!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 21,
+      "source_ref": "FAQs!21",
+      "category": "BORROWING/ RETURNING",
+      "question": "What books am I not allowed to borrow?",
+      "option": "",
+      "answer": "These include Reference books like dictionaries and guidebooks, Periodical collection and materials from the Archives section.",
+      "record_id": "7b4cbd628c1fdec3",
+      "id": "7b4cbd628c1fdec3",
+      "source_refs": [
+        "FAQs!21",
+        "From Bert!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 21,
+      "source_ref": "FAQs!21",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "Is it okay if I send an email renewal request everyday?",
+      "option": "",
+      "answer": "If you get a reply that your books have been renewed, try to let three days pass before sending a new email. A daily request is quite unecessary.",
+      "record_id": "d4a580d4b9754dfe",
+      "id": "d4a580d4b9754dfe",
+      "source_refs": [
+        "FAQs!21",
+        "From Bert!21",
+        "Renewals!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 21,
+      "source_ref": "FAQs!21",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Do I have to pay to use the computer work stations on the 2nd floor of the Main Library?",
+      "option": "",
+      "answer": "Use of Computer Workstations is free but on a first come, first serve basis.",
+      "record_id": "f7451ee798ee12fa",
+      "id": "f7451ee798ee12fa",
+      "source_refs": [
+        "FAQs!21",
+        "From Bert!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 21,
+      "source_ref": "FAQs!21",
+      "category": "PERIODICALS (NEWSPAPERS, MAGAZINES, JOURNALS, VERTICAL FILES)",
+      "question": "Can I buy your old newspapers for my art projects?",
+      "option": "",
+      "answer": "The Library keeps back issues of newspapers at a certain period for possible future research purposes.",
+      "record_id": "e0cf93524391aa34",
+      "id": "e0cf93524391aa34",
+      "source_refs": [
+        "FAQs!21",
+        "From Bert!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 21,
+      "source_ref": "FAQs!21",
+      "category": "MISCELLANEOUS",
+      "question": "Are students allowed in the sofa areas in the library?",
+      "option": "",
+      "answer": "Yes, but please follow the proper seating capacity. Do not crowd in these areas, and avoid reclining on the sofa as though on a bed.",
+      "record_id": "b582e2c519c4e553",
+      "id": "b582e2c519c4e553",
+      "source_refs": [
+        "FAQs!21",
+        "From Bert!21",
+        "Policy and other libraryrules!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 22,
+      "source_ref": "FAQs!22",
+      "category": "BORROWING/ RETURNING",
+      "question": "Do I have to return overdue books at the same time, or can I return some first and then the rest later?",
+      "option": "",
+      "answer": "You are encourage to return all overdue books to stop accumulation of fines",
+      "record_id": "2ad5e008bde2323c",
+      "id": "2ad5e008bde2323c",
+      "source_refs": [
+        "FAQs!22",
+        "From Bert!22"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 22,
+      "source_ref": "FAQs!22",
+      "category": "COMPUTER WORKSTATION",
+      "question": "Can I use flashdrives in the USB ports of the computer work stations?",
+      "option": "",
+      "answer": "USB ports of the Computer Workstations are disabled. However, users outputs can be send to their respective e-mails",
+      "record_id": "8cea76bf0887b840",
+      "id": "8cea76bf0887b840",
+      "source_refs": [
+        "FAQs!22",
+        "From Bert!22",
+        "Comp Workstation!25"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 22,
+      "source_ref": "FAQs!22",
+      "category": "MISCELLANEOUS",
+      "question": "I left my ID at home. Will I be allowed to stay inside the library?",
+      "option": "",
+      "answer": "For security purposes, the library enforces the \"no ID, no entry\" policy. Students who do not have their IDs and need to use the library may get a temporary ID permit from the Student Development Office (SDO).",
+      "record_id": "39824f1e80c40fe1",
+      "id": "39824f1e80c40fe1",
+      "source_refs": [
+        "FAQs!22",
+        "From Bert!22",
+        "Basic Information!30",
+        "Policy and other libraryrules!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 23,
+      "source_ref": "FAQs!23",
+      "category": "BORROWING/ RETURNING",
+      "question": "Is there a limit to how many books I can borrow each semester?",
+      "option": "",
+      "answer": "There is no limitation in borrowing books per semester, instead we encourage users to maximize usage of all library collection. Infact, Top Library Borrowers are awarded at the end of every Sem/SY",
+      "record_id": "84958f22ce5f00f4",
+      "id": "84958f22ce5f00f4",
+      "source_refs": [
+        "FAQs!23",
+        "From Bert!23"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 23,
+      "source_ref": "FAQs!23",
+      "category": "MISCELLANEOUS",
+      "question": "My ID lace/casing is damaged, so I can't wear my ID properly. Will I be allowed in the library?",
+      "option": "",
+      "answer": "You may be denied entry, as the student handbook states that the ID must be worn inside the campus at all times.",
+      "record_id": "a39fb73f7fa3f607",
+      "id": "a39fb73f7fa3f607",
+      "source_refs": [
+        "FAQs!23",
+        "From Bert!23",
+        "Policy and other libraryrules!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 24,
+      "source_ref": "FAQs!24",
+      "category": "BORROWING/ RETURNING",
+      "question": "My library account has expired, and I can't borrow books anymore. What should I do?",
+      "option": "",
+      "answer": "At the end of every semester, students' library account expires and will be renewed at the startbof every sem. For those names that were not uploaded (late enrolees) current Registration Form needs to be presented",
+      "record_id": "caa344c363179b68",
+      "id": "caa344c363179b68",
+      "source_refs": [
+        "FAQs!24",
+        "From Bert!24"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 24,
+      "source_ref": "FAQs!24",
+      "category": "MISCELLANEOUS",
+      "question": "Why is it that only four chairs per table are allowed in the Main Library?",
+      "option": "",
+      "answer": "This is done to minimize group noise in the library, as more students per table tend to result (intentionally or not) in conversations that gradually turn loud.",
+      "record_id": "c2d98a6d4db7dfb8",
+      "id": "c2d98a6d4db7dfb8",
+      "source_refs": [
+        "FAQs!24",
+        "From Bert!24",
+        "Basic Information!31",
+        "Policy and other libraryrules!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 25,
+      "source_ref": "FAQs!25",
+      "category": "BORROWING/ RETURNING",
+      "question": "Is Interbranch Library borrowing allowed?",
+      "option": "",
+      "answer": "Yes students are allowed to borrow materials at the branch libraries provided that they already consulted the OPAC and know the exact title of the material/s they wish to borrow before going to the said library. This should first be communicated to the librarians-in charge to facilitate the borrowing process",
+      "record_id": "d63f9d334aec5671",
+      "id": "d63f9d334aec5671",
+      "source_refs": [
+        "FAQs!25",
+        "From Bert!25"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 25,
+      "source_ref": "FAQs!25",
+      "category": "MISCELLANEOUS",
+      "question": "Since there are only four chairs per table, may we take chairs from other tables if there are five or more of us in a group?",
+      "option": "",
+      "answer": "This is highly discouraged, and students will be asked to return the chairs they have moved to their proper places. In instances of five or more pupils in a group, the use of the Learning Commons on the 2nd floor is advised.",
+      "record_id": "d10172cbe49dcb67",
+      "id": "d10172cbe49dcb67",
+      "source_refs": [
+        "FAQs!25",
+        "From Bert!25",
+        "Basic Information!32",
+        "Policy and other libraryrules!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 26,
+      "source_ref": "FAQs!26",
+      "category": "MISCELLANEOUS",
+      "question": "If we are not permitted to take chairs from other tables, can we just stand up and stay with our friends? We don't want to use the Learning Commons.",
+      "option": "",
+      "answer": "This is not allowed, unfortunately. Everyone must be seated. You may sit at the adjacent tables if you need to be around your friends.",
+      "record_id": "d9d64bfef439875d",
+      "id": "d9d64bfef439875d",
+      "source_refs": [
+        "FAQs!26",
+        "From Bert!26",
+        "Basic Information!33",
+        "Policy and other libraryrules!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 27,
+      "source_ref": "FAQs!27",
+      "category": "MISCELLANEOUS",
+      "question": "Can two students sit in one chair if they fit? We want to be seated together, and four chairs are not enough for our group.",
+      "option": "",
+      "answer": "This is not permitted. Only one student per chair is allowed. Users are advised to use the Learning Commons on the 2nd floor of the Main Library if they come in groups of five to ten people.",
+      "record_id": "cddc5f253d9aa96c",
+      "id": "cddc5f253d9aa96c",
+      "source_refs": [
+        "FAQs!27",
+        "From Bert!27",
+        "Basic Information!34",
+        "Policy and other libraryrules!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 28,
+      "source_ref": "FAQs!28",
+      "category": "MISCELLANEOUS",
+      "question": "May two or more users sit together by a carrel?",
+      "option": "",
+      "answer": "Carrels are for single use only, and are better suited for students who prefer to study by themselves or in private.",
+      "record_id": "cc4e9797885875ad",
+      "id": "cc4e9797885875ad",
+      "source_refs": [
+        "FAQs!28",
+        "From Bert!28",
+        "Basic Information!35",
+        "Policy and other libraryrules!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 29,
+      "source_ref": "FAQs!29",
+      "category": "MISCELLANEOUS",
+      "question": "How many people can occupy the sofas and ottomans?",
+      "option": "",
+      "answer": "In order to maintain the durability of these furnitures, only 3-4 people are allowed on a sofa, and each ottoman is for a single person only.",
+      "record_id": "a71ac115174561c9",
+      "id": "a71ac115174561c9",
+      "source_refs": [
+        "FAQs!29",
+        "From Bert!29",
+        "Basic Information!36",
+        "Policy and other libraryrules!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 30,
+      "source_ref": "FAQs!30",
+      "category": "MISCELLANEOUS",
+      "question": "What should I do if there are no more chairs available to sit on?",
+      "option": "",
+      "answer": "You may proceed to another section of the library where seats are still available, or consider returning at a less busy time. Please do not sit on the floor.",
+      "record_id": "91c15d4239b71dbb",
+      "id": "91c15d4239b71dbb",
+      "source_refs": [
+        "FAQs!30",
+        "From Bert!30",
+        "Basic Information!37",
+        "Policy and other libraryrules!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 31,
+      "source_ref": "FAQs!31",
+      "category": "MISCELLANEOUS",
+      "question": "There are no more seats available on both floors of the Main Library. What should I do?",
+      "option": "",
+      "answer": "In cases like these, you may consider returning at a less busy time, or proceed to the other libraries for the meantime.",
+      "record_id": "b94a1e0f6f928683",
+      "id": "b94a1e0f6f928683",
+      "source_refs": [
+        "FAQs!31",
+        "From Bert!31",
+        "Basic Information!38",
+        "Policy and other libraryrules!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 32,
+      "source_ref": "FAQs!32",
+      "category": "MISCELLANEOUS",
+      "question": "Are we allowed to play mobile games inside the library?",
+      "option": "",
+      "answer": "Mobile games are discouraged, especially if they generate sounds that are distracting to other people. Since the library is a place for study, students are advised to play games in other venues.",
+      "record_id": "4f79e316d375b956",
+      "id": "4f79e316d375b956",
+      "source_refs": [
+        "FAQs!32",
+        "From Bert!32",
+        "Basic Information!39",
+        "Policy and other libraryrules!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 33,
+      "source_ref": "FAQs!33",
+      "category": "MISCELLANEOUS",
+      "question": "Is it okay if I answer a phone call and video conference inside the library?",
+      "option": "",
+      "answer": "In order to avoid distracting other users, users will be instructed to entertain all calls outside the library.",
+      "record_id": "04e00d7473dc008c",
+      "id": "04e00d7473dc008c",
+      "source_refs": [
+        "FAQs!33",
+        "From Bert!33",
+        "Basic Information!40",
+        "Policy and other libraryrules!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 34,
+      "source_ref": "FAQs!34",
+      "category": "MISCELLANEOUS",
+      "question": "May I use the landlines in the library to make an outside call?",
+      "option": "",
+      "answer": "This is not permitted. If the call is important, and you don't have a mobile phone, you may try calling from the Information Desk at the lobby or the Student Development Office instead.",
+      "record_id": "6c036c6e44be97e3",
+      "id": "6c036c6e44be97e3",
+      "source_refs": [
+        "FAQs!34",
+        "From Bert!34",
+        "Basic Information!41",
+        "Policy and other libraryrules!22"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 35,
+      "source_ref": "FAQs!35",
+      "category": "MISCELLANEOUS",
+      "question": "Can I listen to music or watch videos on my phone inside the library?",
+      "option": "",
+      "answer": "This may be permitted as long as the student uses earphones or headsets. Silence must be observed above all while in the library.",
+      "record_id": "22121a2b5598b1bc",
+      "id": "22121a2b5598b1bc",
+      "source_refs": [
+        "FAQs!35",
+        "From Bert!35",
+        "Basic Information!42",
+        "Policy and other libraryrules!23"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 36,
+      "source_ref": "FAQs!36",
+      "category": "MISCELLANEOUS",
+      "question": "My phone can't connect to the wifi. What should I do?",
+      "option": "",
+      "answer": "The Main Library has four wifi networks to connect to: JRU LIB1 and JRU LIB2 for the 1st floor, and JRU LIB3 and JRU LIB4 for the 2nd floor. Select the appropriate network for the appropriate floor to get the best speeds. Log in to the network using the username and password given to you by the IT department.",
+      "record_id": "847c30f2c8c6b1b6",
+      "id": "847c30f2c8c6b1b6",
+      "source_refs": [
+        "FAQs!36",
+        "From Bert!36",
+        "Basic Information!43",
+        "Otherservices!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 37,
+      "source_ref": "FAQs!37",
+      "category": "MISCELLANEOUS",
+      "question": "Can I update, install and download applications on my phone using the school wifi, or is access blocked?",
+      "option": "",
+      "answer": "Yes but not all can be opened when connected to the school's wifi networks.",
+      "record_id": "55f101a3ebfe3cdc",
+      "id": "55f101a3ebfe3cdc",
+      "source_refs": [
+        "FAQs!37",
+        "From Bert!37",
+        "Basic Information!44",
+        "Otherservices!7"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 38,
+      "source_ref": "FAQs!38",
+      "category": "MISCELLANEOUS",
+      "question": "What browser on my phone can I use to log in to the school wifi networks?",
+      "option": "",
+      "answer": "Any browser will do. Usually, the default one will open automatically open if it detects a campus network.",
+      "record_id": "44516779e8291569",
+      "id": "44516779e8291569",
+      "source_refs": [
+        "FAQs!38",
+        "From Bert!38",
+        "Basic Information!45",
+        "Otherservices!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 39,
+      "source_ref": "FAQs!39",
+      "category": "MISCELLANEOUS",
+      "question": "Can I charge my phone in the library?",
+      "option": "",
+      "answer": "You may, but keep your phone within sight and be aware of its location at all times.",
+      "record_id": "c77b0aabcab15fa5",
+      "id": "c77b0aabcab15fa5",
+      "source_refs": [
+        "FAQs!39",
+        "From Bert!39",
+        "Basic Information!46",
+        "Otherservices!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 40,
+      "source_ref": "FAQs!40",
+      "category": "MISCELLANEOUS",
+      "question": "Can I plug my phone to the kiosk laptops to transfer or save a file?",
+      "option": "",
+      "answer": "You may, but be aware of the risks. The library will not be responsible for any damage to your phone if you do this.",
+      "record_id": "f98c8e3d4c70ee1b",
+      "id": "f98c8e3d4c70ee1b",
+      "source_refs": [
+        "FAQs!40",
+        "From Bert!40",
+        "Basic Information!47",
+        "Otherservices!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 41,
+      "source_ref": "FAQs!41",
+      "category": "MISCELLANEOUS",
+      "question": "Do you have whiteboard markers? We need to use the whiteboard inside the Learning Commons.",
+      "option": "",
+      "answer": "Yes, we do. The student should leave his/her ID at the circulation counter in exchange for a whiteboard marker.",
+      "record_id": "4e2753f89f969113",
+      "id": "4e2753f89f969113",
+      "source_refs": [
+        "FAQs!41",
+        "From Bert!41",
+        "Basic Information!48",
+        "Otherservices!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 42,
+      "source_ref": "FAQs!42",
+      "category": "MISCELLANEOUS",
+      "question": "Do you lend speakers in the library? We need it for an activity.",
+      "option": "",
+      "answer": "Unfortunately, no. The library does not store speakers for lending.",
+      "record_id": "d95319f8bc371187",
+      "id": "d95319f8bc371187",
+      "source_refs": [
+        "FAQs!42",
+        "From Bert!42",
+        "Basic Information!49",
+        "Otherservices!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 43,
+      "source_ref": "FAQs!43",
+      "category": "MISCELLANEOUS",
+      "question": "Do you lend phone chargers in the library?",
+      "option": "",
+      "answer": "The library does not lend this item.",
+      "record_id": "3849fb44f1356ee8",
+      "id": "3849fb44f1356ee8",
+      "source_refs": [
+        "FAQs!43",
+        "From Bert!43",
+        "Basic Information!50",
+        "Otherservices!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 44,
+      "source_ref": "FAQs!44",
+      "category": "MISCELLANEOUS",
+      "question": "I have my own laptop and I need a charger for it. Can the library lend me one?",
+      "option": "",
+      "answer": "The library does not have a universal charger that is compatible with all laptop brands and does not lend chargers separately.",
+      "record_id": "604c6a4c9f79fc7a",
+      "id": "604c6a4c9f79fc7a",
+      "source_refs": [
+        "FAQs!44",
+        "From Bert!44",
+        "Basic Information!51",
+        "Otherservices!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "FAQs",
+      "source_row": 45,
+      "source_ref": "FAQs!45",
+      "category": "MISCELLANEOUS",
+      "question": "May I borrow scissors, glue, tape, ruler, pencil, ballpen, puncher, eraser, calculator from the library?",
+      "option": "",
+      "answer": "Possibly, though students are encouraged not to rely on the library when it comes to school items.",
+      "record_id": "f879d510531bc4e9",
+      "id": "f879d510531bc4e9",
+      "source_refs": [
+        "FAQs!45",
+        "From Bert!45",
+        "Basic Information!52"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "LIBRARY HOURS",
+      "question": "What is the Library Hours?",
+      "option": "",
+      "answer": "The Library Hours are as follows: Elementary School Monday to Friday - 7:00am to 6:00pm Junior High School Monday to Friday - 7:00AM to 6:00PM Main Library Monday-Friday 7:00AM to 9:00PM Saturday 7:00AM to 6:00PM Graduate School/ Law School Monday to Friday - 10:00 am to 9:00 pm. Saturday - 7:30am to 9:00pm ALL LIBRARIES ARE CLOSED on Sunday and Holiday When classes are suspended up to the College level, the Main Library remains open from 8:00AM-5:00PM",
+      "record_id": "e921689b21b87d0f",
+      "id": "e921689b21b87d0f",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "LIBRARY LOCATION",
+      "question": "Where are the libraries located?",
+      "option": "",
+      "answer": "Elementary School 2nd Floor Bldg.K Room 209 Junior High School 1st Floor Bldg.M Main Library 1st and 2nd Floor Bldg.H Graduate School/ Law School Library 2nd floor of the Tower Bldg., Room T-21 and 22",
+      "record_id": "705724a9014b5667",
+      "id": "705724a9014b5667",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "FINES",
+      "question": "How much is the fines for overdue books?",
+      "option": "",
+      "answer": "A fine of Two pesos (P2.00) per day for Circulation books and Two pesos (P2.00) per hour for reserve books including Saturday, Sunday and holiday.",
+      "record_id": "9ad16d8ef40dbcc0",
+      "id": "9ad16d8ef40dbcc0",
+      "source_refs": [
+        "From Bert!8",
+        "Fines!3"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "BORROWING/ RETURNING",
+      "question": "How can I borrow, renew and return library materials?",
+      "option": "",
+      "answer": "Print books can be checked out at the library circulation counter using your JRU I.D. You can renew remotely by using the Web Opac via library.jru.edu using your I.D. number for password and username or in person. Return the books personally at the JRU library circulation counter.",
+      "record_id": "8df2927552292092",
+      "id": "8df2927552292092",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "How do we renew books online?",
+      "option": "",
+      "answer": "Users may go to library.jru.edu and log in using their JRU Gmail username and password. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional 1-3 days on their book/s. Or you may send an email to libraryrenewals@jru.edu and supply your name, student number, the title of the book/s and the barcode/s instead.",
+      "record_id": "e1455ff4041d2d63",
+      "id": "e1455ff4041d2d63",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "ACQUISITION",
+      "question": "How do you inform the pupils and teachers that you have new acquisition books?",
+      "option": "",
+      "answer": "There is a separate area for the newly acquired books. Labels are attached on the books and the list are posted on our bulletin board inside the library.",
+      "record_id": "51b69b6d937f858c",
+      "id": "51b69b6d937f858c",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 8,
+      "source_ref": "From Bert!8",
+      "category": "MISCELLANEOUS",
+      "question": "How can librarians help the pupils and teachers in pupils' research work?",
+      "option": "",
+      "answer": "The teacher should coordinate first to the librarian on the topic they assign to the pupils so the librarian will gather all possible reference materials the pupils need.",
+      "record_id": "354cdbcd6a00d09d",
+      "id": "354cdbcd6a00d09d",
+      "source_refs": [
+        "From Bert!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 9,
+      "source_ref": "From Bert!9",
+      "category": "LIBRARY PROMOTIONAL ACTIVITIES",
+      "question": "What is your way in disseminating information with regards to your promotional activities?",
+      "option": "",
+      "answer": "We inform the pupils by posting announcement in our bulletin board located at the entrance of the library. We request the coordination of their adviser or subject teacher to disseminate the information to their pupils.",
+      "record_id": "670dc3188a19ad9c",
+      "id": "670dc3188a19ad9c",
+      "source_refs": [
+        "From Bert!9"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "From Bert",
+      "source_row": 11,
+      "source_ref": "From Bert!11",
+      "category": "BOOK RENEWAL (ONLINE, EMAIL)",
+      "question": "How can I reset my JRU mail password?(I cant renew online because I forgot my password)",
+      "option": "",
+      "answer": "For assistance, please go to ITO help desk located in H211",
+      "record_id": "865a11376a82ba7a",
+      "id": "865a11376a82ba7a",
+      "source_refs": [
+        "From Bert!11",
+        "Renewals!7"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 2,
+      "source_ref": "Sequential Questions!2",
+      "category": "BORROWING",
+      "question": "How to borrow books",
+      "option": "student",
+      "answer": "Student may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book, you may go directly in the bookshelves and get it or ask the assistance from the librarian. Present your JRU ID in the circulation counter to checkout under your name.",
+      "record_id": "7d30254f64d5491b",
+      "id": "7d30254f64d5491b",
+      "source_refs": [
+        "Sequential Questions!2"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 3,
+      "source_ref": "Sequential Questions!3",
+      "category": "BORROWING",
+      "question": "How to borrow books",
+      "option": "faculty",
+      "answer": "Faculty may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book, you may go directly in the bookshelves and get it or ask the assistance from the librarian. Present your JRU ID in the circulation counter to checkout under your name.",
+      "record_id": "04ef851e0ddcb857",
+      "id": "04ef851e0ddcb857",
+      "source_refs": [
+        "Sequential Questions!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 4,
+      "source_ref": "Sequential Questions!4",
+      "category": "BORROWING",
+      "question": "How to borrow books",
+      "option": "alumni",
+      "answer": "Alumni may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book, you may ask the library staff to assist you. You may use the book inside the library only.",
+      "record_id": "8c2fdee4224df0aa",
+      "id": "8c2fdee4224df0aa",
+      "source_refs": [
+        "Sequential Questions!4"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 5,
+      "source_ref": "Sequential Questions!5",
+      "category": "BORROWING",
+      "question": "How to borrow books",
+      "option": "outside researchers",
+      "answer": "Outside researchers may ask for assistance of the library staff in selecting the books you want to borrow. You may use the book inside the library only.",
+      "record_id": "8c5c43336021da4e",
+      "id": "8c5c43336021da4e",
+      "source_refs": [
+        "Sequential Questions!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 6,
+      "source_ref": "Sequential Questions!6",
+      "category": "BORROWING",
+      "question": "What time does the library open?",
+      "option": "Elementary School Library",
+      "answer": "Elementary School Library is open from 7:00am to 6:00pm Monday to Friday.",
+      "record_id": "77fdff0c9a8ab7aa",
+      "id": "77fdff0c9a8ab7aa",
+      "source_refs": [
+        "Sequential Questions!6"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 7,
+      "source_ref": "Sequential Questions!7",
+      "category": "BORROWING",
+      "question": "What time does the library open?",
+      "option": "High School Library",
+      "answer": "High School Library is open from 7:00am to 6:00pm Monday to Friday.",
+      "record_id": "2c193228d039b362",
+      "id": "2c193228d039b362",
+      "source_refs": [
+        "Sequential Questions!7"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 8,
+      "source_ref": "Sequential Questions!8",
+      "category": "BORROWING",
+      "question": "What time does the library open?",
+      "option": "Main Library",
+      "answer": "Main Library is open from 7:00am to 9:00pm Monday to Friday and 7:00am to 6:00pm during Saturdays",
+      "record_id": "5a85b5ac6cecc281",
+      "id": "5a85b5ac6cecc281",
+      "source_refs": [
+        "Sequential Questions!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 9,
+      "source_ref": "Sequential Questions!9",
+      "category": "BORROWING",
+      "question": "What time does the library open?",
+      "option": "Tower Library",
+      "answer": "Graduate and Law School Library is open from 10:00am to 9:00pm Monday to Friday and 7:30am to 9:00pm during Saturdays",
+      "record_id": "048e0a316cf69908",
+      "id": "048e0a316cf69908",
+      "source_refs": [
+        "Sequential Questions!9"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 10,
+      "source_ref": "Sequential Questions!10",
+      "category": "BORROWING",
+      "question": "For how long can we borrow a book?",
+      "option": "student",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "69b46c9fe81dc1ad",
+      "id": "69b46c9fe81dc1ad",
+      "source_refs": [
+        "Sequential Questions!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 11,
+      "source_ref": "Sequential Questions!11",
+      "category": "BORROWING",
+      "question": "For how long can we borrow a book?",
+      "option": "faculty",
+      "answer": "1 month (circulation) , 2 hours (reserved/textbook",
+      "record_id": "7ea25e885adc18d2",
+      "id": "7ea25e885adc18d2",
+      "source_refs": [
+        "Sequential Questions!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 12,
+      "source_ref": "Sequential Questions!12",
+      "category": "BORROWING",
+      "question": "For how long can we borrow a book?",
+      "option": "officers",
+      "answer": "6 months (circulation) , 2 hours (reserved/textbook",
+      "record_id": "1a2465068f54a61e",
+      "id": "1a2465068f54a61e",
+      "source_refs": [
+        "Sequential Questions!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 13,
+      "source_ref": "Sequential Questions!13",
+      "category": "BORROWING",
+      "question": "For how long can we borrow a book?",
+      "option": "alumni",
+      "answer": "Alumni may use the book inside the library only.",
+      "record_id": "7c525d3475049dc6",
+      "id": "7c525d3475049dc6",
+      "source_refs": [
+        "Sequential Questions!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 14,
+      "source_ref": "Sequential Questions!14",
+      "category": "BORROWING",
+      "question": "For how long can we borrow a book?",
+      "option": "outside researchers",
+      "answer": "Outside researchers may use the book inside the library only.",
+      "record_id": "a0c8b99b2485dd7e",
+      "id": "a0c8b99b2485dd7e",
+      "source_refs": [
+        "Sequential Questions!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 15,
+      "source_ref": "Sequential Questions!15",
+      "category": "BORROWING",
+      "question": "How much is the overdue fines per book?",
+      "option": "Reserved book/Textbook",
+      "answer": "2.00 per hour",
+      "record_id": "afbbae3ee7db02e1",
+      "id": "afbbae3ee7db02e1",
+      "source_refs": [
+        "Sequential Questions!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 16,
+      "source_ref": "Sequential Questions!16",
+      "category": "BORROWING",
+      "question": "How much is the overdue fines per book?",
+      "option": "Filipiniana/ Circulation",
+      "answer": "2.00 per day",
+      "record_id": "1e629bc0ff810145",
+      "id": "1e629bc0ff810145",
+      "source_refs": [
+        "Sequential Questions!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 17,
+      "source_ref": "Sequential Questions!17",
+      "category": "BORROWING",
+      "question": "How much is the overdue fines per book?",
+      "option": "Fiction",
+      "answer": "2.00 per day",
+      "record_id": "fd05b6c4fb65153a",
+      "id": "fd05b6c4fb65153a",
+      "source_refs": [
+        "Sequential Questions!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 18,
+      "source_ref": "Sequential Questions!18",
+      "category": "BORROWING",
+      "question": "How can I renew the books I borrowed?",
+      "option": "Face to Face Renewal",
+      "answer": "Borrowers may go to the library anytime and return the book in the library",
+      "record_id": "f2820f1207dc7acc",
+      "id": "f2820f1207dc7acc",
+      "source_refs": [
+        "Sequential Questions!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 19,
+      "source_ref": "Sequential Questions!19",
+      "category": "BORROWING",
+      "question": "How can I renew the books I borrowed?",
+      "option": "Online Renewal",
+      "answer": "Borrowers may go to library.jru.edu and log in using their JRU Gmail username and password. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional 1-3 days on their book/s.",
+      "record_id": "dae10014621676aa",
+      "id": "dae10014621676aa",
+      "source_refs": [
+        "Sequential Questions!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Sequential Questions",
+      "source_row": 20,
+      "source_ref": "Sequential Questions!20",
+      "category": "BORROWING",
+      "question": "How can I renew the books I borrowed?",
+      "option": "Email Renewal",
+      "answer": "Borrwers may send an email to libraryrenewals@jru.edu and supply your name, student number, the title of the book/s and the barcode/s instead. Users may go to library.jru.edu, click \"list\" and \"click log into create your ownlist\", you will be asked to enter your user name and password,The default username and password will be y our student number. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional 1-3 days on their book/s. Or you may send an email to libraryrenewals@jru.edu and supply your name, student number, the title of the book/s and the barcode/s insteadYou can change your password, if you wish to do so by clicking the change password.",
+      "record_id": "68269c1b44e381c8",
+      "id": "68269c1b44e381c8",
+      "source_refs": [
+        "Sequential Questions!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 2,
+      "source_ref": "Basic Information!2",
+      "category": "Library Hours",
+      "question": "What time does the library open?",
+      "option": "Elementary School Library",
+      "answer": "Regular library hours for Elementary School Library is 7:00am to 6:00pm Monday to Friday but during the full online classes, the ESD Library is closed. All library users may use the Main Library 2nd Floor in borrowing and returning of books. However, online transaction is highly recommended.",
+      "record_id": "d4c5380af4be562c",
+      "id": "d4c5380af4be562c",
+      "source_refs": [
+        "Basic Information!2"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 3,
+      "source_ref": "Basic Information!3",
+      "category": "Library Hours",
+      "question": "What time does the library open?",
+      "option": "High School Library",
+      "answer": "Regular library hours for the Junior High School Library is 7:00am to 6:00pm Monday to Friday but during the full online classes, the JHS Library is closed. All library users may use the Main Library 2nd Floor in borrowing and returning of books. However, online transaction is highly recommended.",
+      "record_id": "cb01ba48324de9b4",
+      "id": "cb01ba48324de9b4",
+      "source_refs": [
+        "Basic Information!3"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 4,
+      "source_ref": "Basic Information!4",
+      "category": "Library Hours",
+      "question": "What time does the library open?",
+      "option": "Main Library",
+      "answer": "Regular library hours of the Main Library is from 7:00am to 9:00pm Monday to Friday and 7:00am to 6:00pm during Saturdays. During full online classes, the 2nd Floor is being used for all the library transactions.",
+      "record_id": "205751f87cd3d4bf",
+      "id": "205751f87cd3d4bf",
+      "source_refs": [
+        "Basic Information!4"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 5,
+      "source_ref": "Basic Information!5",
+      "category": "Library Hours",
+      "question": "What time does the library open?",
+      "option": "Tower Library",
+      "answer": "Regular library hours of the Graduate and Law School Library is from 10:00am to 9:00pm Monday to Friday and 7:30am to 9:00pm during Saturdays. During the full online classes, the Tower Library is closed. All library users may use the Main Library 2nd Floor in borrowing and returning of books. However, online transaction is highly recommended.",
+      "record_id": "c92825b6960b0dd7",
+      "id": "c92825b6960b0dd7",
+      "source_refs": [
+        "Basic Information!5"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 6,
+      "source_ref": "Basic Information!6",
+      "category": "Library location",
+      "question": "Where are the libraries located?",
+      "option": "Elementary School Library",
+      "answer": "Elementary School 2nd Floor Bldg K",
+      "record_id": "0479f7a92e744bb1",
+      "id": "0479f7a92e744bb1",
+      "source_refs": [
+        "Basic Information!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 7,
+      "source_ref": "Basic Information!7",
+      "category": "Library location",
+      "question": "Where are the libraries located?",
+      "option": "High School Library",
+      "answer": "Junior High School 1st Floor Bldg. M",
+      "record_id": "2057060ae57ea45e",
+      "id": "2057060ae57ea45e",
+      "source_refs": [
+        "Basic Information!7"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 8,
+      "source_ref": "Basic Information!8",
+      "category": "Library location",
+      "question": "Where are the libraries located?",
+      "option": "Main Library",
+      "answer": "Main Library 1st and 2nd Floor Bldg.H",
+      "record_id": "4cf02e6244e5f312",
+      "id": "4cf02e6244e5f312",
+      "source_refs": [
+        "Basic Information!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 9,
+      "source_ref": "Basic Information!9",
+      "category": "Library location",
+      "question": "Where are the libraries located?",
+      "option": "Tower Library",
+      "answer": "Graduate School/ Law School Library 2nd floor of the Tower Bldg., Room T-21 and 22",
+      "record_id": "025459748bcbc9ee",
+      "id": "025459748bcbc9ee",
+      "source_refs": [
+        "Basic Information!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 10,
+      "source_ref": "Basic Information!10",
+      "category": "Library Branches",
+      "question": "How many library branches does JRU have?",
+      "option": "",
+      "answer": "The JRU Library have 4 library branches: aside from the Main Library, we have Elemnetary School Library, Junior High School Library, and Tower Library which cater the Graduate and Law School students",
+      "record_id": "b59db61dee952971",
+      "id": "b59db61dee952971",
+      "source_refs": [
+        "Basic Information!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 11,
+      "source_ref": "Basic Information!11",
+      "category": "Library Branches",
+      "question": "How can I contact JRU Libraries?",
+      "option": "Email",
+      "answer": "JRU Library may be contacted thru support@jru.edu",
+      "record_id": "96472127bc610245",
+      "id": "96472127bc610245",
+      "source_refs": [
+        "Basic Information!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 12,
+      "source_ref": "Basic Information!12",
+      "category": "Library Branches",
+      "question": "How can I contact JRU Libraries?",
+      "option": "Landline",
+      "answer": "JRU Library landline number is +632-85318031 local 15",
+      "record_id": "0c8c72ec8ebfa3fd",
+      "id": "0c8c72ec8ebfa3fd",
+      "source_refs": [
+        "Basic Information!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 13,
+      "source_ref": "Basic Information!13",
+      "category": "Library Branches",
+      "question": "How can I contact JRU Libraries?",
+      "option": "SMS/Viber",
+      "answer": "JRU Library's mobile number is 09561549981",
+      "record_id": "10039393db2763e6",
+      "id": "10039393db2763e6",
+      "source_refs": [
+        "Basic Information!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 14,
+      "source_ref": "Basic Information!14",
+      "category": "Library Branches",
+      "question": "How can I contact JRU Libraries?",
+      "option": "Chat",
+      "answer": "JRU Facebook Fan Page: Jose Rizal University Library or you may click this link: https://www.facebook.com/JOSE-RIZAL-UNIVERSITY-LIBRARY-373746324401/",
+      "record_id": "b457a78d00db3dd2",
+      "id": "b457a78d00db3dd2",
+      "source_refs": [
+        "Basic Information!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 15,
+      "source_ref": "Basic Information!15",
+      "category": "Librarians",
+      "question": "Who are JRU Librarians?",
+      "option": "University Librarian",
+      "answer": "Mrs. Rosela D. Del Mundo is the university librarian of JRU",
+      "record_id": "e3b1d4d2e56323d6",
+      "id": "e3b1d4d2e56323d6",
+      "source_refs": [
+        "Basic Information!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 16,
+      "source_ref": "Basic Information!16",
+      "category": "Librarians",
+      "question": "Who are JRU Librarians?",
+      "option": "Basic Education Librarian",
+      "answer": "Mr. Charliemagne Padernal is the head of the Basic Education Libraries",
+      "record_id": "ff624c42288ecaee",
+      "id": "ff624c42288ecaee",
+      "source_refs": [
+        "Basic Information!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 17,
+      "source_ref": "Basic Information!17",
+      "category": "Librarians",
+      "question": "Who are JRU Librarians?",
+      "option": "Higher Education Librarian",
+      "answer": "Mrs. Rechy Llamas is the head of the Higher Education Libraries",
+      "record_id": "c74b2a27d3e6e06f",
+      "id": "c74b2a27d3e6e06f",
+      "source_refs": [
+        "Basic Information!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 18,
+      "source_ref": "Basic Information!18",
+      "category": "Librarians",
+      "question": "Who are JRU Librarians?",
+      "option": "Technical Services Librarian",
+      "answer": "Mrs. Rosario Camarines is the head of the Technical Services",
+      "record_id": "ea6d3fe1c82323b6",
+      "id": "ea6d3fe1c82323b6",
+      "source_refs": [
+        "Basic Information!18"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 19,
+      "source_ref": "Basic Information!19",
+      "category": "Services",
+      "question": "How can librarians help the pupils and teachers in pupils' research work?",
+      "option": "Instructional Materials or reading materials",
+      "answer": "The teacher can coordinate to the librarian on the topic they will assign to their pupils so the librarian will gather all possible reference materials that the pupils need.",
+      "record_id": "c286e40385c18f3b",
+      "id": "c286e40385c18f3b",
+      "source_refs": [
+        "Basic Information!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 20,
+      "source_ref": "Basic Information!20",
+      "category": "Services",
+      "question": "How can librarians help the pupils and teachers in pupils' research work?",
+      "option": "Research Instructions",
+      "answer": "The teacher may ask the library to prepare a reading list that the students can use in their researchers",
+      "record_id": "1f11254fd29b2a9a",
+      "id": "1f11254fd29b2a9a",
+      "source_refs": [
+        "Basic Information!20"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 21,
+      "source_ref": "Basic Information!21",
+      "category": "Services",
+      "question": "How can librarians help the pupils and teachers in pupils' research work?",
+      "option": "Assignments",
+      "answer": "The students can borrow reading materials that they need in their assignments",
+      "record_id": "8df87fe7721fcb59",
+      "id": "8df87fe7721fcb59",
+      "source_refs": [
+        "Basic Information!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 22,
+      "source_ref": "Basic Information!22",
+      "category": "Services",
+      "question": "How can librarians help the pupils and teachers in pupils' research work?",
+      "option": "Group Work or Projects",
+      "answer": "For the SHS and Higher Education students, the library have 3 Learning Common Rooms that they can use as their area for group work or projects",
+      "record_id": "21a0924f1721f038",
+      "id": "21a0924f1721f038",
+      "source_refs": [
+        "Basic Information!22"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 23,
+      "source_ref": "Basic Information!23",
+      "category": "Services",
+      "question": "Aside from your home libraries, can other students/faculty from other division use the other library branches?",
+      "option": "Elementary School Library",
+      "answer": "Yes, as long as no elementary pupils or teachers are using the ES library, and not during their library periods, vacants, recess, and library activity.",
+      "record_id": "b94c2253d9866232",
+      "id": "b94c2253d9866232",
+      "source_refs": [
+        "Basic Information!23"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 24,
+      "source_ref": "Basic Information!24",
+      "category": "Services",
+      "question": "Aside from your home libraries, can other students/faculty from other division use the other library branches?",
+      "option": "High School Library",
+      "answer": "Yes, as long as no JHS students or teachers are using the JHS library, and not during their library periods, vacants, recess, and library activity.",
+      "record_id": "02e8335f053f0dcd",
+      "id": "02e8335f053f0dcd",
+      "source_refs": [
+        "Basic Information!24"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 25,
+      "source_ref": "Basic Information!25",
+      "category": "Services",
+      "question": "Aside from your home libraries, can other students/faculty from other division use the other library branches?",
+      "option": "Main Library",
+      "answer": "Yes, aside from the College and SHS students, the Graduate and Law School Students are allowed to use the Main Library anytime",
+      "record_id": "1b2a5d5483b98ebc",
+      "id": "1b2a5d5483b98ebc",
+      "source_refs": [
+        "Basic Information!25"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 26,
+      "source_ref": "Basic Information!26",
+      "category": "Services",
+      "question": "Aside from your home libraries, can other students/faculty from other division use the other library branches?",
+      "option": "Tower Library",
+      "answer": "Yes, aside from the Graduate and Law School Students, the College students are allowed to use the Tower Library from 10:00 AM to 2:00PM from Monday to Friday",
+      "record_id": "230d7637a93dd7d4",
+      "id": "230d7637a93dd7d4",
+      "source_refs": [
+        "Basic Information!26"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 56,
+      "source_ref": "Basic Information!56",
+      "category": "Library Attendance",
+      "question": "What is LPAM?",
+      "option": "What is LPAM",
+      "answer": "LPAM is a system the library use in monitoring the number of students who use its available resources and services at a particular time. The data gathered is used for library's monthly report.",
+      "record_id": "4a6d5c75c088665a",
+      "id": "4a6d5c75c088665a",
+      "source_refs": [
+        "Basic Information!56"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 57,
+      "source_ref": "Basic Information!57",
+      "category": "Library Attendance",
+      "question": "What is LPAM?",
+      "option": "How to use LPAM?",
+      "answer": "LPAM can be used by tapping your ID in the LPAM machine so that your library visit can be recorded",
+      "record_id": "c77fabd21685080d",
+      "id": "c77fabd21685080d",
+      "source_refs": [
+        "Basic Information!57"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 58,
+      "source_ref": "Basic Information!58",
+      "category": "Library Attendance",
+      "question": "What is LPAM?",
+      "option": "My ID cannot be read by the LPAM, what shall I do?",
+      "answer": "Please report to the librarian in the counter so they may validate your ID. This is also helpful in checking your library account.",
+      "record_id": "a31f7405051a8703",
+      "id": "a31f7405051a8703",
+      "source_refs": [
+        "Basic Information!58"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 59,
+      "source_ref": "Basic Information!59",
+      "category": "Book Searching",
+      "question": "What is OPAC?",
+      "option": "What are the information that I can find in OPAC",
+      "answer": "OPAC means Online Public Access Catalog. A search engine used to identify related collection and references relative to a particular subject. Users can also access online/electronic, digital resources and facilitates self renewals of not overdue books",
+      "record_id": "2a7f59d785a89956",
+      "id": "2a7f59d785a89956",
+      "source_refs": [
+        "Basic Information!59"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 60,
+      "source_ref": "Basic Information!60",
+      "category": "Book Searching",
+      "question": "What is OPAC?",
+      "option": "Where to access OPAC?",
+      "answer": "OPAC of the JRU Library may be access through this link: library.jru.edu",
+      "record_id": "354c7804649a579f",
+      "id": "354c7804649a579f",
+      "source_refs": [
+        "Basic Information!60"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Basic Information",
+      "source_row": 61,
+      "source_ref": "Basic Information!61",
+      "category": "Book Searching",
+      "question": "What is OPAC?",
+      "option": "Who can access it?",
+      "answer": "All students, employees, and outside researchers can access it as long as there is an internet connection. Though there are some limitations on the access of the online resources for it can only be access by the bonafide students and employees of JRU",
+      "record_id": "8b98a0c8fa5b9871",
+      "id": "8b98a0c8fa5b9871",
+      "source_refs": [
+        "Basic Information!61"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Renewals",
+      "source_row": 2,
+      "source_ref": "Renewals!2",
+      "category": "Book Renewal",
+      "question": "How do we renew books online?",
+      "option": "Online Renewals",
+      "answer": "Users may go to library.jru.edu and log in using their JRU Gmail username and password. A list of their currently borrowed books will be displayed; by clicking on the boxes beside each book and then the \"renew\" button, users are given an additional allowable days on their book/s(depending on your division;-ES-JHS-Sh-Col-LS and GS)",
+      "record_id": "08e0207172c23d86",
+      "id": "08e0207172c23d86",
+      "source_refs": [
+        "Renewals!2"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Renewals",
+      "source_row": 3,
+      "source_ref": "Renewals!3",
+      "category": "Book Renewal",
+      "question": "How do we renew books online?",
+      "option": "Email Renewals",
+      "answer": "Library borrowers may send an email to libraryrenewals@jru.edu and indicate your name, student number, the title of the book/s and the barcode/s. The librarian will reply to your email once the book has been renewed.",
+      "record_id": "2cb882e25132f765",
+      "id": "2cb882e25132f765",
+      "source_refs": [
+        "Renewals!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Renewals",
+      "source_row": 4,
+      "source_ref": "Renewals!4",
+      "category": "Book Renewal",
+      "question": "How do we renew books online?",
+      "option": "Face to Face Renewals",
+      "answer": "Present the book you wanted to renew at the circulation counter and the librarian will give you borrowing slip as your reference",
+      "record_id": "67f284c17c7ca15f",
+      "id": "67f284c17c7ca15f",
+      "source_refs": [
+        "Renewals!4"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Renewals",
+      "source_row": 8,
+      "source_ref": "Renewals!8",
+      "category": "Book Renewal",
+      "question": "I want to renew an overdue book, but I left it at home. What should I do?",
+      "option": "",
+      "answer": "Overdue books need to be presented at the Circulation counter before they can be renewed.",
+      "record_id": "8e3e63d4539612a1",
+      "id": "8e3e63d4539612a1",
+      "source_refs": [
+        "Renewals!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Fines",
+      "source_row": 2,
+      "source_ref": "Fines!2",
+      "category": "Overdue Fines during pandemic",
+      "question": "Do you charge overdue fines during full online classes?",
+      "option": "",
+      "answer": "The library fines were not charged starting the full online classes until further notice",
+      "record_id": "ca0e3b866d140b99",
+      "id": "ca0e3b866d140b99",
+      "source_refs": [
+        "Fines!2"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Fines",
+      "source_row": 4,
+      "source_ref": "Fines!4",
+      "category": "Payment of Overdue Fines",
+      "question": "How do I pay fines?",
+      "option": "Over the Counter Payment",
+      "answer": "Ask for a Library Payment Form from the library and pay at the cashier. After paying present the official receipt to the Librarian at the circulation counter.",
+      "record_id": "594387f106322eb7",
+      "id": "594387f106322eb7",
+      "source_refs": [
+        "Fines!4"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Fines",
+      "source_row": 5,
+      "source_ref": "Fines!5",
+      "category": "Payment of Overdue Fines",
+      "question": "How do I pay fines?",
+      "option": "Online Payment",
+      "answer": "For online payment, they may settle their overdue fines thru the JRU BDO Account with the following details: Account Name: Jose Rizal University (Kalentong Branch) Account Number: [REDACTED — CONFIRM WITH LIBRARY]. After payment, they will be requested to write their student/employee number and indicate \"overdue fines\" in the actual deposit slip. Scan the deposit slip and send it to library@jru.edu for recording of payment. For bank transfer, they may send the transaction details in library@jru.edu",
+      "record_id": "d0209009183957e3",
+      "id": "d0209009183957e3",
+      "source_refs": [
+        "Fines!5"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 3,
+      "source_ref": "Mobile Resources!3",
+      "category": "borrowing Laptop",
+      "question": "How to borrow laptop?",
+      "option": "student",
+      "answer": "Present your I.D.in the circulation counter and fill up the Mobile Resources Agreement form. The Librarian will then process your requested laptop. Student can use it inside the library for 2 hours. Check your due date to avoid penalty.",
+      "record_id": "b8623b5ba0f5be41",
+      "id": "b8623b5ba0f5be41",
+      "source_refs": [
+        "Mobile Resources!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 6,
+      "source_ref": "Mobile Resources!6",
+      "category": "borrowing Laptop",
+      "question": "How to borrow laptop?",
+      "option": "Employee",
+      "answer": "At the start of every semester ,Faculty will be asked to Present their teaching load before borrowing. After whic you can just present your I.D.in the circulation counter and fill up the Mobile Resources Agreement form. Faculty can use it inside his/her classroom provided that they will return it before the library closes. The Librarian will then process your requested laptop.Check your due date to avoid penalty.",
+      "record_id": "81700c905a39780b",
+      "id": "81700c905a39780b",
+      "source_refs": [
+        "Mobile Resources!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 8,
+      "source_ref": "Mobile Resources!8",
+      "category": "Fines for laptop",
+      "question": "How much is the fine for laptop if I failed to return it on time",
+      "option": "student",
+      "answer": "15.00 pesos for every hour of delay. Penalty will stop computing once laptop is returned.",
+      "record_id": "fb4a3a6de1d37ea3",
+      "id": "fb4a3a6de1d37ea3",
+      "source_refs": [
+        "Mobile Resources!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 10,
+      "source_ref": "Mobile Resources!10",
+      "category": "Fines for laptop",
+      "question": "How much is the fine for laptop if I failed to return it on time",
+      "option": "Employee",
+      "answer": "15.00 pesos for every hour of delay. Penalty will stop computing once laptop is returned.",
+      "record_id": "abb703c563d83e8c",
+      "id": "abb703c563d83e8c",
+      "source_refs": [
+        "Mobile Resources!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 13,
+      "source_ref": "Mobile Resources!13",
+      "category": "borrowing laptop",
+      "question": "How long can we borrow laptop?",
+      "option": "student",
+      "answer": "Students can borrow laptop for 2 hours that can be used inside the library only",
+      "record_id": "762aa72e117e585d",
+      "id": "762aa72e117e585d",
+      "source_refs": [
+        "Mobile Resources!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 16,
+      "source_ref": "Mobile Resources!16",
+      "category": "borrowing laptop",
+      "question": "How long can we borrow laptop?",
+      "option": "Employee",
+      "answer": "Faculty may borrow laptop for 8 hours within library hours only and for classrom use only.",
+      "record_id": "dd079407ad1ea9dc",
+      "id": "dd079407ad1ea9dc",
+      "source_refs": [
+        "Mobile Resources!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 19,
+      "source_ref": "Mobile Resources!19",
+      "category": "lost laptop",
+      "question": "I lost the laptop, what will I do?",
+      "option": "Employee/Students",
+      "answer": "In case of lost laptop, the borrower wil be responsible in replacing it as stipulated in the Mobile Resources agreement that the borrower filled out and signed.",
+      "record_id": "4d360ed97c1dfa67",
+      "id": "4d360ed97c1dfa67",
+      "source_refs": [
+        "Mobile Resources!19"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 22,
+      "source_ref": "Mobile Resources!22",
+      "category": "Damaged laptop",
+      "question": "I accidentally broke down the laptop. What will I do?",
+      "option": "",
+      "answer": "In case of damaged laptop while using, the borrower wil be responsible for the cost of repair as stipulated in the Mobile Resources agreement that the borrower filled out and signed.",
+      "record_id": "321d8fcfcaf48b47",
+      "id": "321d8fcfcaf48b47",
+      "source_refs": [
+        "Mobile Resources!22"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 24,
+      "source_ref": "Mobile Resources!24",
+      "category": "borrow laptop",
+      "question": "Can I borrow the laptop and use it in my class?",
+      "option": "student",
+      "answer": "Students are allowed to use the laptop inside the library only.",
+      "record_id": "336c0e3f6ad4d609",
+      "id": "336c0e3f6ad4d609",
+      "source_refs": [
+        "Mobile Resources!24"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 26,
+      "source_ref": "Mobile Resources!26",
+      "category": "Laptop not charging",
+      "question": "The laptop I borrowed is not charging even if I plug it to an outlet, what is wrong?",
+      "option": "",
+      "answer": "You may report it to the librarian in the circulation counter so they can check the charger or the outlet being used inside the library",
+      "record_id": "7fb6b99dc8bd9be4",
+      "id": "7fb6b99dc8bd9be4",
+      "source_refs": [
+        "Mobile Resources!26"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Mobile Resources",
+      "source_row": 30,
+      "source_ref": "Mobile Resources!30",
+      "category": "Files in the laptop",
+      "question": "Are the files I create stored in the laptop? Will it still be there if the laptop is turned off?",
+      "option": "",
+      "answer": "Yes, files remain saved on the laptop for sometime only. I.T. personnel regularly updates and deletes all files to maintain the functionality and stability of the laptop.",
+      "record_id": "6724f9be00d18af2",
+      "id": "6724f9be00d18af2",
+      "source_refs": [
+        "Mobile Resources!30"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Learning comons",
+      "source_row": 3,
+      "source_ref": "Learning comons!3",
+      "category": "Learning commons",
+      "question": "What are Learning Commons Rooms?",
+      "option": "",
+      "answer": "Learning Commons is a place/sections of thelibrary where collaborative activity/works of the students are conducted.",
+      "record_id": "4bd4036c3e7e9e87",
+      "id": "4bd4036c3e7e9e87",
+      "source_refs": [
+        "Learning comons!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Learning comons",
+      "source_row": 5,
+      "source_ref": "Learning comons!5",
+      "category": "Learning commons",
+      "question": "How many LC are there in the Library",
+      "option": "",
+      "answer": "We have 3 Learning Commons in the Main Library and Now with the completion of the Centennial Building, 4 more new collapsible Learning Commons awaits the students.",
+      "record_id": "00ff88a1f5f1d1d1",
+      "id": "00ff88a1f5f1d1d1",
+      "source_refs": [
+        "Learning comons!5"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Learning comons",
+      "source_row": 7,
+      "source_ref": "Learning comons!7",
+      "category": "Learning commons",
+      "question": "How many reservations per day are we allowed for Learning Commons usage?",
+      "option": "",
+      "answer": "Only one reservation per day is allowed, especially during exams week, so that everyone has a chance to use the Learning Commons.",
+      "record_id": "3350f18fc96727ec",
+      "id": "3350f18fc96727ec",
+      "source_refs": [
+        "Learning comons!7"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Learning comons",
+      "source_row": 16,
+      "source_ref": "Learning comons!16",
+      "category": "Learning commons",
+      "question": "Can we bring food or drinks in the Learning Commons?",
+      "option": "",
+      "answer": "No, The \"NO eating \"policy of the Library applies in all areas of the Library.",
+      "record_id": "c8cbcbffb4f8541c",
+      "id": "c8cbcbffb4f8541c",
+      "source_refs": [
+        "Learning comons!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Learning comons",
+      "source_row": 20,
+      "source_ref": "Learning comons!20",
+      "category": "Learning commons",
+      "question": "Can Other divisions (ES,JHS,Law and Graduate students)use the Learning Commons?",
+      "option": "",
+      "answer": "Yes. Provided that the 3 rooms are not heavily demanded by College and SHS students. Please make prior arrangement to the Librarian-i-chargeto accommodate such request.",
+      "record_id": "871deb5cde4ca773",
+      "id": "871deb5cde4ca773",
+      "source_refs": [
+        "Learning comons!20"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 4,
+      "source_ref": "How to Borrowreturn!4",
+      "category": "borrow",
+      "question": "How can I borrow books?",
+      "option": "student",
+      "answer": "Student may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book you wanted to borrow, you may go directly in the bookshelves and get it or ask the assistance from the librarian. Present your JRU ID in the circulation counter to checkout under your name.",
+      "record_id": "0067c1c31da21864",
+      "id": "0067c1c31da21864",
+      "source_refs": [
+        "How to Borrowreturn!4"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 5,
+      "source_ref": "How to Borrowreturn!5",
+      "category": "borrow",
+      "question": "How can I borrow books?",
+      "option": "faculty",
+      "answer": "Faculty may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book, you may go directly in the bookshelves and get it or ask the assistance from the librarian. Present your JRU ID in the circulation counter to checkout under your name.",
+      "record_id": "36fb39e21eae3079",
+      "id": "36fb39e21eae3079",
+      "source_refs": [
+        "How to Borrowreturn!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 6,
+      "source_ref": "How to Borrowreturn!6",
+      "category": "borrow",
+      "question": "How can I borrow books?",
+      "option": "alumni",
+      "answer": "Alumni may check available books in our library OPAC or thru this link: library.jru.edu. Once you have identified the book, you may ask the library staff to assist you. You may use the book inside the library only.",
+      "record_id": "149f20cd25a8342e",
+      "id": "149f20cd25a8342e",
+      "source_refs": [
+        "How to Borrowreturn!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 8,
+      "source_ref": "How to Borrowreturn!8",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "ES",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "32908ca809c23cad",
+      "id": "32908ca809c23cad",
+      "source_refs": [
+        "How to Borrowreturn!8"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 9,
+      "source_ref": "How to Borrowreturn!9",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "JHS",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "ffea2dd802a4a7f5",
+      "id": "ffea2dd802a4a7f5",
+      "source_refs": [
+        "How to Borrowreturn!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 10,
+      "source_ref": "How to Borrowreturn!10",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "SHS",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "a3b9198ddf5346e0",
+      "id": "a3b9198ddf5346e0",
+      "source_refs": [
+        "How to Borrowreturn!10"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 11,
+      "source_ref": "How to Borrowreturn!11",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "College",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "54343be843adbcb5",
+      "id": "54343be843adbcb5",
+      "source_refs": [
+        "How to Borrowreturn!11"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 12,
+      "source_ref": "How to Borrowreturn!12",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "LLB",
+      "answer": "3 days (circulation) , 2 hours (reserved/textbook 3 days (fiction books)",
+      "record_id": "3357331fb22d0354",
+      "id": "3357331fb22d0354",
+      "source_refs": [
+        "How to Borrowreturn!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 13,
+      "source_ref": "How to Borrowreturn!13",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "GS",
+      "answer": "7 days (circulation) , 2 hours (reserved/textbook 7 days (fiction books)",
+      "record_id": "6f89b3d9806c35e1",
+      "id": "6f89b3d9806c35e1",
+      "source_refs": [
+        "How to Borrowreturn!13"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 14,
+      "source_ref": "How to Borrowreturn!14",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "faculty",
+      "answer": "1 month (circulation) , 8hours within library hours (reserved/textbook",
+      "record_id": "f09b27c701c64d10",
+      "id": "f09b27c701c64d10",
+      "source_refs": [
+        "How to Borrowreturn!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 15,
+      "source_ref": "How to Borrowreturn!15",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "officers",
+      "answer": "6 months (circulation) , 2 hours (reserved/textbook",
+      "record_id": "4cd24c2d40d21758",
+      "id": "4cd24c2d40d21758",
+      "source_refs": [
+        "How to Borrowreturn!15"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 16,
+      "source_ref": "How to Borrowreturn!16",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "alumni",
+      "answer": "Alumni may use the book inside the library only.",
+      "record_id": "1adc440fb49e444a",
+      "id": "1adc440fb49e444a",
+      "source_refs": [
+        "How to Borrowreturn!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 17,
+      "source_ref": "How to Borrowreturn!17",
+      "category": "borrow",
+      "question": "For how long can I borrow a book/s?",
+      "option": "outside researchers",
+      "answer": "Outside researchers may use the book inside the library only.",
+      "record_id": "d540bcac89d7fd1b",
+      "id": "d540bcac89d7fd1b",
+      "source_refs": [
+        "How to Borrowreturn!17"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 21,
+      "source_ref": "How to Borrowreturn!21",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "ES",
+      "answer": "3 circulation books and 1 reserve/textbook",
+      "record_id": "477d0d8489bb364e",
+      "id": "477d0d8489bb364e",
+      "source_refs": [
+        "How to Borrowreturn!21"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 22,
+      "source_ref": "How to Borrowreturn!22",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "JHS",
+      "answer": "3 circulation books and 1 reserve/textbook",
+      "record_id": "7e2aca3f91764e45",
+      "id": "7e2aca3f91764e45",
+      "source_refs": [
+        "How to Borrowreturn!22"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 23,
+      "source_ref": "How to Borrowreturn!23",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "SHS",
+      "answer": "3 circulation books and 1 reserve/textbook",
+      "record_id": "7e7d3f7b15236fd2",
+      "id": "7e7d3f7b15236fd2",
+      "source_refs": [
+        "How to Borrowreturn!23"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 24,
+      "source_ref": "How to Borrowreturn!24",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "College",
+      "answer": "3 circulation books and 1 reserve/textbook",
+      "record_id": "3d210655569afe32",
+      "id": "3d210655569afe32",
+      "source_refs": [
+        "How to Borrowreturn!24"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 25,
+      "source_ref": "How to Borrowreturn!25",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "LLB",
+      "answer": "3 circulation books and 1 reserve/textbook",
+      "record_id": "2e2891323b318b07",
+      "id": "2e2891323b318b07",
+      "source_refs": [
+        "How to Borrowreturn!25"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 26,
+      "source_ref": "How to Borrowreturn!26",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "GS",
+      "answer": "4 circulation books",
+      "record_id": "ffc9f18a78a704bd",
+      "id": "ffc9f18a78a704bd",
+      "source_refs": [
+        "How to Borrowreturn!26"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 27,
+      "source_ref": "How to Borrowreturn!27",
+      "category": "borrow",
+      "question": "How many books can I borrow?",
+      "option": "faculty",
+      "answer": "4 circulation books and 1reserve/textbooks",
+      "record_id": "cb9d59208b99cda0",
+      "id": "cb9d59208b99cda0",
+      "source_refs": [
+        "How to Borrowreturn!27"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 30,
+      "source_ref": "How to Borrowreturn!30",
+      "category": "return",
+      "question": "How to return books?",
+      "option": "Personal",
+      "answer": "Print books can be return personally at the circulation counter by presenting the books you borrowed.",
+      "record_id": "13475fd56e5ea236",
+      "id": "13475fd56e5ea236",
+      "source_refs": [
+        "How to Borrowreturn!30"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "How to Borrowreturn",
+      "source_row": 35,
+      "source_ref": "How to Borrowreturn!35",
+      "category": "return",
+      "question": "How to return books?",
+      "option": "Thru courier service",
+      "answer": "Returning of books can be done via courier service, You can request a courier service of your choice to return the book. An email will be sent to your JRU e-mail to confirm your return. Please watch video on \"lending process\" https://library.jru.edu/cgi-bin/koha/pages.pl?p=video",
+      "record_id": "bf03dd07a295e8b5",
+      "id": "bf03dd07a295e8b5",
+      "source_refs": [
+        "How to Borrowreturn!35"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 5,
+      "source_ref": "OPAC!5",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "How can I access the JRU OPAC?",
+      "option": "",
+      "answer": "To go to JRU OPAC, Just type library.jru.edu in the web browser or go to www.jru.edu and click the library.",
+      "record_id": "cb1f88d50c01f742",
+      "id": "cb1f88d50c01f742",
+      "source_refs": [
+        "OPAC!5"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 7,
+      "source_ref": "OPAC!7",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "In the JRU OPAC, you can find the following Features:",
+      "record_id": "5ac175b1f62b1d9d",
+      "id": "5ac175b1f62b1d9d",
+      "source_refs": [
+        "OPAC!7"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 8,
+      "source_ref": "OPAC!8",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "1. Virtual Library Assistant name LIbby to assist in your library query. She is available 24/7.",
+      "record_id": "e7c479d13f78fc28",
+      "id": "e7c479d13f78fc28",
+      "source_refs": [
+        "OPAC!8"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 9,
+      "source_ref": "OPAC!9",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "2. You can also renew books by yourself by loging in to your account using your jru email .",
+      "record_id": "e5b41b58e3182218",
+      "id": "e5b41b58e3182218",
+      "source_refs": [
+        "OPAC!9"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 10,
+      "source_ref": "OPAC!10",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "3. The Liblife koto blog, where we post library happenings.",
+      "record_id": "d6e8866f7298706a",
+      "id": "d6e8866f7298706a",
+      "source_refs": [
+        "OPAC!10"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 11,
+      "source_ref": "OPAC!11",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "4. Library Resources",
+      "record_id": "736c76f2ec84df38",
+      "id": "736c76f2ec84df38",
+      "source_refs": [
+        "OPAC!11"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 12,
+      "source_ref": "OPAC!12",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "5. Services",
+      "record_id": "60e245a8491716b4",
+      "id": "60e245a8491716b4",
+      "source_refs": [
+        "OPAC!12"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 13,
+      "source_ref": "OPAC!13",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "6 Library Facilities",
+      "record_id": "5bc8a84ffcb013a8",
+      "id": "5bc8a84ffcb013a8",
+      "source_refs": [
+        "OPAC!13"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 14,
+      "source_ref": "OPAC!14",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "What are the special features of JRU OPAC",
+      "option": "",
+      "answer": "7. Newly Acquired books",
+      "record_id": "2bf104edc67d06bb",
+      "id": "2bf104edc67d06bb",
+      "source_refs": [
+        "OPAC!14"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "OPAC",
+      "source_row": 16,
+      "source_ref": "OPAC!16",
+      "category": "OPAC or Online Public Access Catalog",
+      "question": "How to search in the OPAC?",
+      "option": "",
+      "answer": "In the search bar/ box, just type your query and click go. You may filter your query by clicking the keyword, title or author. You may also delimit it using the type of libray and or materials. You may want to watch our video on how to locate resources using OPAC. Here is the link; https://library.jru.edu/cgi-bin/koha/pages.pl?p=video",
+      "record_id": "594d63ccbbec97b0",
+      "id": "594d63ccbbec97b0",
+      "source_refs": [
+        "OPAC!16"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Comp Workstation",
+      "source_row": 13,
+      "source_ref": "Comp Workstation!13",
+      "category": "Comp Workstation",
+      "question": "Can an outside reseachers be allowed to enter and utilize JRU library computer workstation?",
+      "option": "",
+      "answer": "Outside researchers cannot access the Computer WS because these are username and password protected. However, special arrangement can be made if there is formal written request prior to visit.",
+      "record_id": "20995086e747f643",
+      "id": "20995086e747f643",
+      "source_refs": [
+        "Comp Workstation!13"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Comp Workstation",
+      "source_row": 17,
+      "source_ref": "Comp Workstation!17",
+      "category": "Comp Workstation",
+      "question": "What are the restrictions in using the computer workstation?",
+      "option": "",
+      "answer": "Users are not allowed to: a. install software into a library computer through an external drive; b. Install a software via internet connection; c. open malicious and pornographic site; d. damage or steal computer hardware; e. Interferes with computer systems operations and security; f. change wallpaper or any settings in the computer workstations; g. sit more than one person to a computer; h. Food and drinks while inside the Computer WS area",
+      "record_id": "3376162fc6740edc",
+      "id": "3376162fc6740edc",
+      "source_refs": [
+        "Comp Workstation!17"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Comp Workstation",
+      "source_row": 23,
+      "source_ref": "Comp Workstation!23",
+      "category": "Comp Workstation",
+      "question": "Do I have to pay for the use of the computer work stations?",
+      "option": "",
+      "answer": "The use of the Computer Workstations is free of charge on a first come, first serve basis.",
+      "record_id": "f14059851e29ed19",
+      "id": "f14059851e29ed19",
+      "source_refs": [
+        "Comp Workstation!23"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "E-resources",
+      "source_row": 3,
+      "source_ref": "E-resources!3",
+      "category": "E-resources",
+      "question": "What are JRU e-resources?",
+      "option": "",
+      "answer": "Electronic Resources are materials in digital format accessible electronically. Examples of e-resources are e- journals, e-magazines, e dissertations, e books and the like. It supplements the printed books on selected subjects and are accessible to multiple student at any given time (24x7).",
+      "record_id": "45b7b469d46edf5e",
+      "id": "45b7b469d46edf5e",
+      "source_refs": [
+        "E-resources!3"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "E-resources",
+      "source_row": 6,
+      "source_ref": "E-resources!6",
+      "category": "E-resources",
+      "question": "What are the e-resources available for JRU?",
+      "option": "",
+      "answer": "JRU Electronic Resources comprises of the ff: Proquest 5000, EBSCO, World Book Online, , GVRL, IG Library and eSCRA. These databases contain relevant information on different subject areas in full text, image collections, and other multimedia products and numerical, graphical or time based.",
+      "record_id": "5d74d1f804181dc2",
+      "id": "5d74d1f804181dc2",
+      "source_refs": [
+        "E-resources!6"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "E-resources",
+      "source_row": 9,
+      "source_ref": "E-resources!9",
+      "category": "E-resources",
+      "question": "How can I access JRU e-resources?",
+      "option": "",
+      "answer": "JRU Electronic resources are accessible through: A.) JRU WEBSITE (jru.edu) and go to the Library, click Online Resources link and logon using your JRU e-mail address B.) Go directly to LIBRARY PAGE (library.jru.edu), in the library homepage, click the On-Line Resources, and log in your JRU email account",
+      "record_id": "d55633fc1a3e0844",
+      "id": "d55633fc1a3e0844",
+      "source_refs": [
+        "E-resources!9"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "E-resources",
+      "source_row": 12,
+      "source_ref": "E-resources!12",
+      "category": "E-resources",
+      "question": "How long can i use JRU- e-resources",
+      "option": "",
+      "answer": "Sincee e-resources are available 24/7 you can enjoy unlimited use of our e-resources.",
+      "record_id": "92601e89e33dd4e0",
+      "id": "92601e89e33dd4e0",
+      "source_refs": [
+        "E-resources!12"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "E-resources",
+      "source_row": 14,
+      "source_ref": "E-resources!14",
+      "category": "E-resources",
+      "question": "I cannot log-in using my JRU e-mail, what should I do?",
+      "option": "",
+      "answer": "For assistance, please go to ITO help desk located in H211 or e-mail support@jru.edu or call 531-8031 loc 56",
+      "record_id": "5e9ffcc75b65b868",
+      "id": "5e9ffcc75b65b868",
+      "source_refs": [
+        "E-resources!14"
+      ],
+      "review_flag": false
+    },
+    {
+      "source_sheet": "Otherservices",
+      "source_row": 15,
+      "source_ref": "Otherservices!15",
+      "category": "Otherservices",
+      "question": "Is there a VGA or HDMI we can borrow at the library?",
+      "option": "",
+      "answer": "The University promotes BYOD (Bring Your Own Device)but for certain cases, there are limited numbers of VGA and HDMI available n IT Office and Main Library for classroom use and on a firsr come first serve basis",
+      "record_id": "89ff2857330f5281",
+      "id": "89ff2857330f5281",
+      "source_refs": [
+        "Otherservices!15"
+      ],
+      "review_flag": true
+    },
+    {
+      "source_sheet": "Otherservices",
+      "source_row": 16,
+      "source_ref": "Otherservices!16",
+      "category": "Otherservices",
+      "question": "I need an HDMI cable or an HDMI converter for my laptop. Can I borrow one from the library?",
+      "option": "",
+      "answer": "We have limited HDMI use for learning commons",
+      "record_id": "98f5d878e2c168b7",
+      "id": "98f5d878e2c168b7",
+      "source_refs": [
+        "Otherservices!16"
+      ],
+      "review_flag": true
+    }
+  ]
+}

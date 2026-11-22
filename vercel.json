@@ -4,7 +4,7 @@
   "buildCommand": "",
   "installCommand": "",
   "outputDirectory": "public",
-  "functions": { "api/*.mjs": { "maxDuration": 60 } },
+  "functions": { "api/*.mjs": { "maxDuration": 120 } },
   "headers": [{
     "source": "/(.*)",
     "headers": [

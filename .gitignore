@@ -8,5 +8,6 @@ node_modules/
 __pycache__/
 .venv/
 .model-cache/
+.chroma-cache/
 .rag-results/
 *.pyc

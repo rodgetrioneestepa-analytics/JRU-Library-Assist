@@ -1,29 +1,38 @@
 # JRU Library-Assist
 
-A JRU-inspired blue and gold web app using the supplied mascot and the new PewPewPew RAG Experiment Notebook. The active source is the notebook’s verified four-page Basic Information FAQ PDF.
+A conversational JRU library assistant with the transparent mascot and blue-and-gold theme. The website is chat-only: it does not display dataset filenames, inventories, source panels, or research dashboards.
 
-## Local website
+The current implementation follows `PewPewPew_Final_RAG_Chatbot_Conversational_Fixed.ipynb` and the supplied `CONSOLIDATED FAQs for VLA.xlsx`.
 
-Run `npm start` with Node.js 22, then open http://127.0.0.1:3000. No Node dependencies are required. This mode uses explicitly labelled BM25 retrieval over the same 17 PDF chunks. Set GROQ_API_KEY privately in .env for schema- and quote-validated generation.
+## Local Python RAG
 
-## Python semantic RAG
+See [rag_backend/README.md](rag_backend/README.md). Run `python -m rag_backend` in the project environment and visit http://127.0.0.1:5000, or use start-rag.cmd.
 
-See [rag_backend/README.md](rag_backend/README.md) for setup. Run `python -m rag_backend` in the project environment, then open http://127.0.0.1:5000. This serves the website and API with MiniLM + FAISS retrieval. Groq and FLAN-T5 generation are optional. Windows shortcut: start-rag.cmd.
+The Python backend uses MiniLM embeddings, persistent ChromaDB cosine retrieval, FAQ-aware recursive splitting (800 characters / 100 overlap / top 3), and optional conversational Groq generation. The corrected follow-up rewrite safely falls back to the original message for empty choices, blank text, invalid short rewrites, or provider errors. History is limited to six messages per request, never global across visitors, and supplies reference context rather than factual evidence.
 
-Windows Application Control blocked FAISS’s native DLL on this computer. PDF extraction, its fingerprint, all twelve chunk counts, evidence validation, and the API contract were tested. A real semantic-model run remains unverified here; no security policy was changed.
+## Local Node / Vercel
 
-## GitHub and Vercel
+Run `npm start` with Node.js 22 and open http://127.0.0.1:3000. This dependency-free server uses lexical FAQ retrieval unless RAG_BACKEND_URL connects it to the Python service. Add GROQ_API_KEY privately in .env or Vercel for follow-up rewriting and conversational generation.
 
-[Repository](https://github.com/rodgetrioneestepa-analytics/JRU-Library-Assist) · [Website](https://jru-library-assist.vercel.app)
+Vercel serves public/ and api/. To use semantic retrieval online, host Dockerfile.rag on a Python/container service, set RAG_BACKEND_URL to its HTTPS origin, and set the same private RAG_BACKEND_TOKEN on both services. A deployed server cannot reach this computer's localhost. The browser receives only answers and basic availability status, without internal source metadata.
 
-Vercel serves public/ and the Node endpoints in api/. The heavy Python backend is separate. To connect it, deploy Dockerfile.rag on a Python/container host and configure RAG_BACKEND_URL (HTTPS) and the same private RAG_BACKEND_TOKEN on both services. A deployed service cannot reach this computer’s localhost. See the backend README.
+## Data preparation
 
-## Verification
+The original workbook is not in public/. Parsed FAQ records live in server_data/faqs.json. To regenerate them and the notebook prompts without executing notebook cells:
 
-Run `npm test` and `python -m unittest discover -s tests -p test_rag.py -v`. Python API tests use an injected engine, without a model download.
+```sh
+python scripts/prepare-chatbot.py /path/to/corrected.ipynb /path/to/CONSOLIDATED_FAQs.xlsx
+```
 
-## Provenance
+The prior PDF exports and research JSON files are removed from the public website assets. This does not erase earlier Git commit history.
 
-The PDF fingerprint matches the new notebook. Its nine evaluation questions, twelve configurations, prompt and schema were imported as literal data without executing notebook cells. Chart values come from the notebook’s saved output and are labelled provisional, not rerun. Earlier workbook data remains archived in public/data/faqs.json and experiments.json.
+## Checks
 
-Conversations are browser-local. Groq mode sends questions and retrieved passages to Groq. This is an academic prototype, not an official JRU service; source policies are not verified current.
+```sh
+npm test
+python -m unittest discover -s tests -p test_conversation.py -v
+```
+
+These cover workbook layout parsing, deduplication, empty rewrite handling, bounded visitor history, prompts, validation, API response shape, and the absence of dataset views in the website. Model integration checks are reported separately from injected-engine unit tests.
+
+Conversations are browser-local. Groq-enabled mode sends the current question, limited history, and current retrieved evidence to Groq. No API key is placed in browser JavaScript.
