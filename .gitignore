@@ -6,3 +6,7 @@ node_modules/
 *.log
 .DS_Store
 __pycache__/
+.venv/
+.model-cache/
+.rag-results/
+*.pyc

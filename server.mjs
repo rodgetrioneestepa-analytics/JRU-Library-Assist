@@ -13,7 +13,7 @@ const server=http.createServer(async(req,res)=> {
   res.setHeader('X-Content-Type-Options','nosniff');
   res.setHeader('X-Frame-Options','DENY');
   const url=new URL(req.url,'http://localhost');
-  if(url.pathname==='/api/status') return req.method==='GET'?send(res,200,status()):send(res,405,{error:'Use GET.'});
+  if(url.pathname==='/api/status') {if(req.method!=='GET')return send(res,405,{error:'Use GET.'});const result=await status();return send(res,result.ready?200:503,result);}
   if(url.pathname==='/api/chat') {
     if(req.method!=='POST') return send(res,405,{error:'Use POST.'});
     try {

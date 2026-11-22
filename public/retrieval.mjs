@@ -1,5 +1,6 @@
 // Lightweight BM25 retrieval. Original experimental MiniLM/Chroma metrics do not apply.
 const STOP = new Set('a an the is are was were be been it its i me my we you your can could would should do does did how what when where which who why to of in at on for from and or with have has please tell about library libraries jru'.split(' '));
+for(const word of ['according','faq','faqs','document','supplied','stand','stands','mean','means'])STOP.add(word);
 const ALIASES = { hours:['hour','open','opening','closing','schedule'], borrow:['borrowing','borrowed','loan','loans','checkout'], renew:['renewal','renewals','renewing'], fines:['fine','penalty','penalties','overdue'], resources:['resource','eresources','database','databases'], location:['located','locate'], return:['returning','returns'], opac:['catalog','catalogue'], wifi:['wi-fi','wireless'], books:['book'], students:['student'] };
 function stem(t) { return t.length > 4 ? t.replace(/(?:ing|es|s)$/,'') : t; }
 export function tokenize(text) {
@@ -49,6 +50,6 @@ export function retrieveAnswer(question, search, history=[]) {
   const general=candidates.find(s=>!s.option && s.score>=candidates[0]?.score*0.85);
   const hits=(general?[general,...candidates.filter(s=>s.id!==general.id)]:candidates).slice(0,3);
   if(!hits.length || hits[0].score<2 || hits[0].coverage<0.5 || (hits[0].titleCoverage===0 && hits[0].coverage<1)) return {answer:REFUSAL,sources:[],mode:'faq',refused:true};
-  const sources=hits.filter(s=>s.score>=hits[0].score*0.48).map((s,i)=>({n:i+1,id:s.id,ref:s.source_ref,refs:s.source_refs,question:s.question+(s.option?' · '+s.option:''),option:s.option,category:s.category,text:s.answer,score:Number(s.score.toFixed(2))}));
+  const sources=hits.filter(s=>s.score>=hits[0].score*0.48).map((s,i)=>({n:i+1,id:s.id,ref:s.source_ref,refs:s.source_refs,question:s.question+(s.option?' · '+s.option:''),option:s.option,category:s.category,text:s.answer,page:s.page,chunk_id:s.chunk_id,score:Number(s.score.toFixed(2))}));
   return {answer:(sources[0].option?sources[0].option+': ':'')+sources[0].text+' [1]',sources,mode:'faq',refused:false,retrievalQuery:query};
 }

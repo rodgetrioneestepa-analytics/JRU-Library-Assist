@@ -1,6 +1,7 @@
 import { status } from '../lib/chat.mjs';
-export default function handler(req,res) {
+export default async function handler(req,res) {
   res.setHeader('Cache-Control','no-store');
   if(req.method!=='GET') {res.setHeader('Allow','GET');return res.status(405).json({error:'Use GET.'});}
-  return res.status(200).json(status());
+  const result=await status();
+  return res.status(result.ready?200:503).json(result);
 }

@@ -1,0 +1,8 @@
+.env
+.env.*
+.venv
+.model-cache
+.rag-results
+.git
+*.log
+__pycache__
