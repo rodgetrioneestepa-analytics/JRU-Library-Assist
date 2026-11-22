@@ -26,7 +26,7 @@ Canonical source consists of the sanitized prepared file plus a private environm
 
 ## Local results
 
-14 Python checks and 6 Node checks passed. The independent comparator ran reviewed functions from the supplied notebook, not a reimplementation of its retrieval oracle. Records and chunks were equal. It built two independent Chroma collections using a shared actual encoder; all ranks/IDs/scores matched within 1e-6. Exact Groq request payloads were compared with deterministic completion stubs; these are not live LLM quality tests.
+16 Python checks and 6 Node checks passed. The independent comparator ran reviewed functions from the supplied notebook, not a reimplementation of its retrieval oracle. Records and chunks were equal. It built two independent Chroma collections using a shared actual encoder; all ranks/IDs/scores matched within 1e-6. Initial Groq request payloads were compared with deterministic completion stubs; these are not live LLM quality tests.
 
 | Case | Notebook evaluation question | Rank/score/prompt parity | Gold source coverage |
 |---|---|---|---|
@@ -51,15 +51,20 @@ Follow-up, topic-switch, and new-session rewrite prompt comparisons also passed.
 
 ## Production verification
 
-Both production secrets are configured without retrieving or displaying their values. After the private JSON was corrected, deployment dpl_5pWyaBuFjFEARgDVwaC72fifdqvZ initialized successfully: HTTP 200, pipeline minilm-chroma-groq, and the exact local reference index fingerprint. Successful live answers confirm Groq accepts the API key. Initial live evaluation had eight passing cases and four HTTP 502 responses (E2, A2, D1, D2): the model omitted citation markers, so validation rejected those outputs. A structured citation retry is being verified. All returned retrieval rankings matched the reference; failed HTTP responses did not expose retrieval metadata.
+Both production secrets are configured without displaying their values. The deployed MiniLM/Chroma index fingerprint matched the independent local reference and Groq accepted the key. The 12 live ranking/citation/refusal checks passed after structured citation repair, but a follow-up request hit the provider rate limit and manual review found unsupported renewal extrapolation in a numbered answer. Final verification is pending the stronger grounding guard described below; a successful numbered citation is not alone proof of semantic support.
 
-The first preview inherited the previous static project preset and finished without building a model. The project framework was explicitly changed to Container, build overrides cleared, and large-function support enabled. The successful image builds installed CPU Torch 2.15.0, sentence-transformers 5.7.0, transformers 4.57.6, Chroma 1.5.9 and splitter 1.1.3, matching the local comparison. The browser confirmed the preview interface renders and fails closed without Preview secrets. Flask checks returned 404 for raw/prepared/private source URLs. Desktop 1280px and mobile 390px browser checks passed: a real OPAC answer, clickable worksheet source, loaded mascot, no horizontal overflow, mobile navigation, and New Chat clearing all message articles. Full live generation results are being rechecked after the structured citation retry.
+## Website evidence guard beyond the notebook
 
-## Remaining differences
+The notebook's initial generation request is preserved. Every non-refusal draft gets one additional structured evidence check with the same current passages, Groq model, temperature 0, and 700-token limit. Each claim must identify a current passage and copy an exact supporting quote. The server checks quote occurrence and passage bounds, merges identical claims, and renders only model-selected references. The verifier must refuse an entire multi-part question when any requested part lacks evidence. Invalid output fails closed. This adds latency and quota usage and is an explicit generation-path difference from the notebook. Groq rate limits now return HTTP 429 and Retry-After, never a keyword or stored-answer substitution.
 
-The first generation payload matches the notebook. The website additionally retries once when the model omits citations or cites an unavailable passage, using the same current evidence, provider/model, temperature and token budget. The retry uses strict structured output with a text claim and an explicit valid passage number; rendering uses that model-selected reference. A malformed retry still fails closed. The app never guesses citation numbers. This explicit citation repair is a generation-path difference beyond the notebook, verified separately from first-payload equivalence. Browser/source excerpts are redacted; raw source is used only for embeddings. Network latency, provider model updates, cross-platform numeric tolerance, and model nondeterminism may change wording. No exact generated-text parity is claimed.
+The source/index/chunk/ranking path and first generation payload are compared separately from this additional website safeguard. Model verification can still make semantic mistakes; quote occurrence is a check of provenance, not a formal proof of entailment. No exact generated-text parity is claimed.
 
-Container scale-down can cause a fresh runtime index build. The canonical source/model persist in deployment artifacts and private configuration. See [Vercel Container Runtime documentation](https://vercel.com/docs/functions/runtimes/container).
+## Browser checks
 
+Desktop 1280px and mobile 390px checks passed for real OPAC answers, clickable worksheet references, mascot loading, no horizontal overflow, mobile navigation, and New Chat clearing all message articles. Final-generation answers will be checked again after the guard deploys. Prepared/private source files remain outside public/ and return 404.
 
-Citation repair uses [Groq strict Structured Outputs](https://console.groq.com/docs/structured-outputs) on the same gpt-oss-20b model. It is confined to the conditional retry; the first generation payload remains the notebook payload.
+## Deployment limits
+
+The Python container packages the model at build time. Source integrity is checked before initializing the model/index. Temporary Chroma storage is a reconstructible cache from deployment source plus private configuration, not the only source of truth. Scale-down can increase cold-start latency. Provider quota can limit bursts of evaluation requests; the live evaluator supports pacing and honors Retry-After.
+
+References: [Vercel Container Runtime](https://vercel.com/docs/functions/runtimes/container), [Groq strict Structured Outputs](https://console.groq.com/docs/structured-outputs).

@@ -1,4 +1,4 @@
-﻿# JRU Library-Assist
+# JRU Library-Assist
 
 A JRU navy-and-gold library chat app using the corrected conversational notebook's Python pipeline. The existing mascot, chat interface, responsive sidebar, New Chat button, and export remain. Numbered citations open only the passages retrieved for that answer; the app has no dataset inventory or bulk download page.
 
@@ -41,3 +41,5 @@ python scripts/evaluate-parity.py --url https://jru-library-assist.vercel.app --
 The local evaluator uses reviewed functions from the actual notebook and independently built Chroma collections. It checks record/chunk equality, all 12 retrieval rankings/scores, and exact Groq payloads using deterministic completion stubs. It does not claim live generation was tested. Remote mode calls real production Groq and compares rankings, valid passage citations, refusal rules, and conversational requests. Reports are ignored locally; publish only reviewed, redacted summaries.
 
 Conversations are browser-local and supplied per request, never shared server history. New Chat clears the active history. Groq receives the question, limited history, and current redacted evidence. API keys never enter browser code. Older Git history can contain earlier public exports; removing current website files does not rewrite that history.
+
+Beyond the notebook, a non-refusal draft gets one structured evidence check using exact supporting quotes and current passage IDs. Unsupported multi-part answers are refused. This additional provider request can increase latency and quota use; rate limits return HTTP 429 with Retry-After.

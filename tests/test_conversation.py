@@ -4,13 +4,17 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace as Obj
 import unittest
 from unittest.mock import patch
-from rag_backend.core import ROOT, SPEC, REFUSAL, Config, load_workbook_records, clean_history, prepare_source, resolve_source
+from rag_backend.core import ROOT, SPEC, REFUSAL, Config, load_workbook_records, clean_history, prepare_source, resolve_source, safe_excerpt
 from rag_backend.generation import ConversationalGroq, render_cited_repair
 from rag_backend.service import ChatService
 
 
 def completion(value):
     return Obj(choices=[Obj(message=Obj(content=value))])
+
+
+def verified(text, quote, n=1):
+    return json.dumps({'refused':False,'claims':[{'text':text,'passage_number':n,'source_quote':quote}]})
 
 
 def generator_with(create):
@@ -38,7 +42,9 @@ class ConversationTests(unittest.TestCase):
 
     def test_answer_prompt_uses_current_passages_and_history_separately(self):
         calls = []
-        def create(**kwargs): calls.append(kwargs); return completion('The library opens at seven. [1]')
+        def create(**kwargs):
+            calls.append(kwargs)
+            return completion(verified('The library opens at seven.','CURRENT PASSAGE') if 'response_format' in kwargs else 'The library opens at seven. [1]')
         gen = generator_with(create)
         result = gen.answer('When does it open?', [{'source_ref': 'Basic Information!4', 'text': 'CURRENT PASSAGE'}], [{'role': 'user', 'content': 'PRIOR TURN'}], 'When does the library open?')
         self.assertIn('[1]', result)
@@ -118,14 +124,16 @@ class ConversationTests(unittest.TestCase):
 
     def test_payment_text_is_redacted_before_groq(self):
         calls = []
-        def create(**kwargs): calls.append(kwargs); return completion('Please confirm payment details with staff. [1]')
+        def create(**kwargs):
+            calls.append(kwargs)
+            return completion(verified('Please confirm payment details with staff.',safe_excerpt('Account number: 123456789012')) if 'response_format' in kwargs else 'Please confirm payment details with staff. [1]')
         generator_with(create).answer('How do I pay?', [{'source_ref':'Fines!5','text':'Account number: 123456789012'}], [], 'How do I pay?')
         self.assertNotIn('123456789012', calls[0]['messages'][1]['content'])
         self.assertIn('[REDACTED', calls[0]['messages'][1]['content'])
 
     def test_missing_citations_get_one_repair_with_same_evidence_and_settings(self):
         calls = []
-        responses = iter(['Saturday hours are seven to five.', json.dumps({'refused':False,'claims':[{'text':'Saturday hours are seven to five.','passage_number':1}]})])
+        responses = iter(['Saturday hours are seven to five.', verified('Saturday hours are seven to five.','Saturday: 7 AM to 5 PM')])
         def create(**kwargs): calls.append(kwargs); return completion(next(responses))
         answer = generator_with(create).answer('Saturday hours?', [{'source_ref':'Basic Information!4','text':'Saturday: 7 AM to 5 PM'}], [], 'Saturday hours?')
         self.assertEqual(answer, 'Saturday hours are seven to five. [1]')
@@ -151,13 +159,36 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
 
     def test_structured_repairs_cannot_invent_passage_numbers(self):
-        self.assertEqual(render_cited_repair(json.dumps({'refused':True,'claims':[]}),3),REFUSAL)
+        self.assertEqual(render_cited_repair(json.dumps({'refused':True,'claims':[]}),[{'text':'Catalog'}]*3),REFUSAL)
         for result in [
             {'refused':False,'claims':[]},
             {'refused':False,'claims':[{'text':'Unsupported','passage_number':4}]},
             {'refused':False,'claims':[{'text':'Unsupported','passage_number':True}]},
             {'refused':'false','claims':[{'text':'Unsupported','passage_number':1}]}]:
-            with self.assertRaises(ValueError): render_cited_repair(json.dumps(result),3)
+            with self.assertRaises(ValueError): render_cited_repair(json.dumps(result),[{'text':'Catalog'}]*3)
+
+    def test_supporting_quotes_must_exist_and_duplicate_claims_are_merged(self):
+        passages = [{'text':'Online Public Access Catalog'}]*2
+        with self.assertRaisesRegex(ValueError, 'supporting quote'):
+            render_cited_repair(verified('The catalog.','Nonexistent policy'),passages)
+        payload = {'refused':False,'claims':[
+            {'text':'The catalog.','passage_number':1,'source_quote':'Public Access Catalog'},
+            {'text':'The catalog.','passage_number':2,'source_quote':'Public Access Catalog'}]}
+        self.assertEqual(render_cited_repair(json.dumps(payload),passages),'The catalog. [1][2]')
+
+    def test_rate_limits_are_reported_as_429_with_retry_after(self):
+        from groq import RateLimitError
+        import httpx
+        from rag_backend.app import create_app
+        item = {'rank':1,'chunk_id':'a_0','record_id':'a','source_ref':'OPAC!3','similarity':.9,'question':'OPAC?','option':'','text':'Catalog'}
+        def limited(*args):
+            raise RateLimitError('limit',response=httpx.Response(429,headers={'retry-after':'2.1'},request=httpx.Request('POST','https://api.groq.com/openai/v1/chat/completions')),body=None)
+        gen = Obj(standalone_question=lambda q,h:q,answer=limited)
+        client = create_app(engine=Obj(config=Config(),retrieve=lambda q:[item]),generator=gen).test_client()
+        response = client.post('/api/chat',json={'message':'What is OPAC?'})
+        self.assertEqual(response.status_code,429)
+        self.assertEqual(response.headers['Retry-After'],'3')
+        self.assertIn('request limit',response.json['error'])
 
     def test_prepared_source_rejects_missing_or_changed_private_override(self):
         from rag_backend import core

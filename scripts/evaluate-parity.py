@@ -70,9 +70,12 @@ def oracle(notebook_path, workbook_path, encoder, client):
 
 
 class Capture:
-    def __init__(self): self.calls = []
+    def __init__(self): self.calls = []; self.passages = []
     def create(self, **kwargs):
         self.calls.append(kwargs)
+        if 'response_format' in kwargs:
+            content = json.dumps({'refused':False,'claims':[{'text':'A supported response.', 'passage_number':1, 'source_quote':safe_excerpt(self.passages[0]['text'][:120])}]})
+            return Obj(choices=[Obj(message=Obj(content=content))])
         # Shared visible completion tests prompt equivalence; not an LLM evaluation.
         return Obj(choices=[Obj(message=Obj(content='A supported response. [1]'))])
 
@@ -104,10 +107,12 @@ def local(args):
             q = case['question']
             captured_reference.calls.clear(); captured_app.calls.clear()
             reference = ns['answer_question'](q)
+            captured_app.passages = reference['passages']
             actual = service.chat(q)
             left, right = trace(reference['passages']), actual['retrieval']
             ranking = same_ranking(left, right)
-            prompts = captured_reference.calls == captured_app.calls
+            prompts = (captured_reference.calls == captured_app.calls[:len(captured_reference.calls)] and
+                       (len(captured_app.calls)==2 if captured_reference.calls else not captured_app.calls))
             refused = reference['refused'] == actual['refused'] and reference['answer'] == actual['answer']
             gold_refs = case.get('gold_sources', case.get('gold_refs', []))
             required = {ns['source_to_id'][ref] for ref in gold_refs}
@@ -115,6 +120,7 @@ def local(args):
             coverage = len(required & retrieved)/len(required) if required else None
             result = {**case, 'ranking_match':ranking, 'groq_payload_match':prompts,
                       'turn_path_match':refused, 'gold_coverage':coverage, 'retrieval':left,
+                      'extra_verification_calls':max(0,len(captured_app.calls)-len(captured_reference.calls)),
                       'expected_refusal':reference['refused'], 'passed':ranking and prompts and refused}
             cases.append(result)
             print(f"{case.get('id',case.get('qid'))}: {'PASS' if result['passed'] else 'FAIL'}; gold coverage={coverage}", flush=True)
@@ -144,11 +150,19 @@ def remote(args):
     def post(message, history=None):
         data = json.dumps({'message':message,'history':history or []}).encode()
         req = urllib.request.Request(args.url.rstrip('/')+'/api/chat', data=data, headers={'Content-Type':'application/json'})
-        try:
-            with urllib.request.urlopen(req,timeout=240) as response: return response.status,json.load(response)
-        except urllib.error.HTTPError as exc:
-            return exc.code, {'error':'HTTP request failed'}
-    for case in baseline['cases']:
+        if args.pause: time.sleep(args.pause)
+        for attempt in range(2):
+            try:
+                with urllib.request.urlopen(req,timeout=240) as response: return response.status,json.load(response)
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429 and attempt == 0:
+                    delay = min(180,max(1,int(float(exc.headers.get('Retry-After','60')))))
+                    print(f'Provider rate limit; respecting Retry-After ({delay}s)',flush=True)
+                    while delay:
+                        step = min(30,delay); time.sleep(step); delay -= step
+                    continue
+                return exc.code, {'error':'HTTP request failed'}
+    for case in ([] if args.conversation_only else baseline['cases']):
         status, result = post(case['question'])
         ranking = same_ranking(case['retrieval'], result.get('retrieval',[]), tolerance=1e-4)
         citations = [int(n) for n in re.findall(r'\[(\d+)\]',result.get('answer',''))]
@@ -173,6 +187,7 @@ def remote(args):
         conversation.append({'question':q,'http_status':status,'retrieval_query':result.get('retrieval_query'),
             'answer':safe_excerpt(result.get('answer','')),'retrieval':result.get('retrieval',[]),'refused':result.get('refused')})
         if status==200: history.extend([{'role':'user','content':q},{'role':'assistant','content':result['answer']}])
+        else: break
     status,reset = post('What does OPAC stand for?',[])
     conversation.append({'question':'What does OPAC stand for?','new_session':True,'http_status':status,
                          'retrieval_query':reset.get('retrieval_query'),'answer':safe_excerpt(reset.get('answer','')),
@@ -180,6 +195,11 @@ def remote(args):
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps({'mode':'deployed-live-groq','url':args.url,'cases':cases,'conversation':conversation},ensure_ascii=False,indent=2),encoding='utf8')
     assert all(c['passed'] for c in cases), 'Inspect report for deployment differences'
+    assert len(conversation)==4 and all(c['http_status']==200 for c in conversation), 'Conversation request failed'
+    assert 'faculty' in conversation[1]['retrieval_query'].casefold(), 'Faculty follow-up was not resolved'
+    assert 'laptop' in conversation[1]['retrieval_query'].casefold(), 'Laptop context was lost'
+    assert conversation[2]['retrieval_query'] == 'What does OPAC stand for?', 'Topic switch carried old context'
+    assert conversation[3]['retrieval_query'] == 'What does OPAC stand for?', 'New session carried old context'
 
 
 if __name__ == '__main__':
@@ -187,6 +207,8 @@ if __name__ == '__main__':
     parser.add_argument('--notebook',type=Path)
     parser.add_argument('--workbook',type=Path)
     parser.add_argument('--url')
+    parser.add_argument('--conversation-only',action='store_true')
+    parser.add_argument('--pause',type=float,default=0,help='Seconds between live requests to respect provider quotas')
     parser.add_argument('--baseline',type=Path,default=ROOT/'.rag-results/notebook-parity-reference.json')
     parser.add_argument('--output',type=Path,default=ROOT/'.rag-results/notebook-parity-reference.json')
     args = parser.parse_args()

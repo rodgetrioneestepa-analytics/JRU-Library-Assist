@@ -1,7 +1,9 @@
 import logging
 import os
 import threading
+import math
 from flask import Flask, jsonify, request
+from groq import RateLimitError
 from .core import ROOT, SPEC, Config, SemanticIndex, resolve_source
 from .generation import ConversationalGroq
 from .service import ChatService
@@ -80,6 +82,13 @@ def create_app(engine=None, generator=None, source=None):
         try:
             service = runtime.initialize()
             return jsonify(service.chat(question, data.get("history")))
+        except RateLimitError as error:
+            try: delay = max(1, math.ceil(float(error.response.headers.get("retry-after", "60"))))
+            except (TypeError, ValueError, OverflowError): delay = 60
+            app.logger.warning("Generation request rate limited; retry after %s seconds", delay)
+            response = jsonify(error=f"The assistant has reached its request limit. Please try again in {delay} seconds.", retry_after_seconds=delay)
+            response.headers['Retry-After'] = str(delay)
+            return response, 429
         except ValueError:
             app.logger.exception("RAG response validation failed")
             return jsonify(error="I couldn't verify that response. Please try again."), 502

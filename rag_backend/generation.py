@@ -2,7 +2,7 @@
 import logging
 import re
 import json
-from .core import SPEC, REFUSAL, clean_history, safe_excerpt, looks_like_refusal
+from .core import SPEC, REFUSAL, clean, clean_history, safe_excerpt, looks_like_refusal
 
 
 def completion_content(completion):
@@ -11,7 +11,7 @@ def completion_content(completion):
     return getattr(message, "content", None) or ""
 
 
-def render_cited_repair(content, passage_count):
+def render_cited_repair(content, passages):
     """Render only explicit model-selected references; never infer a source number."""
     result = json.loads(content)
     if not isinstance(result, dict) or type(result.get("refused")) is not bool:
@@ -19,14 +19,19 @@ def render_cited_repair(content, passage_count):
     if result["refused"]: return REFUSAL
     claims = result.get("claims")
     if not isinstance(claims, list) or not claims: raise ValueError("No supported claims in citation response.")
-    answer = []
+    answer = {}
     for claim in claims:
         if not isinstance(claim, dict): raise ValueError("Invalid claim.")
-        n, text = claim.get("passage_number"), claim.get("text")
-        if type(n) is not int or not 1 <= n <= passage_count or not isinstance(text, str) or not text.strip():
+        n, text, quote = claim.get("passage_number"), claim.get("text"), claim.get("source_quote")
+        if type(n) is not int or not 1 <= n <= len(passages) or not isinstance(text, str) or not text.strip():
             raise ValueError("Invalid claim citation.")
-        answer.append(f"{safe_excerpt(text.strip())} [{n}]")
-    return "\n".join(answer)
+        if not isinstance(quote, str) or not clean(quote) or clean(safe_excerpt(quote)).casefold() not in clean(safe_excerpt(passages[n-1]['text'])).casefold():
+            raise ValueError("The supporting quote does not occur in the selected passage.")
+        text = safe_excerpt(text.strip())
+        key = clean(text).casefold()
+        entry = answer.setdefault(key, {"text":text,"numbers":[]})
+        if n not in entry['numbers']: entry['numbers'].append(n)
+    return "\n".join(p['text']+' '+''.join(f'[{n}]' for n in p['numbers']) for p in answer.values())
 
 
 class ConversationalGroq:
@@ -67,30 +72,33 @@ class ConversationalGroq:
             return safe_excerpt(completion_content(response).strip() or REFUSAL)
 
         answer = complete(messages)
-        citations = [int(n) for n in re.findall(r"\[(\d+)\]", answer)]
-        if not looks_like_refusal(answer) and (not citations or any(n < 1 or n > len(passages) for n in citations)):
-            # Extra website safeguard: repair a malformed citation response once.
-            # Keep the notebook's first request, evidence, model and token settings intact.
-            logging.getLogger(__name__).warning("Retrying Groq response with missing or invalid citations")
+        if looks_like_refusal(answer): return REFUSAL
+        # Extra website safeguard: one evidence check after the notebook draft.
+        # Keep the notebook's first request, evidence, model and token settings intact.
+        if answer:
             schema = {"type":"object", "properties":{
                 "refused":{"type":"boolean"},
                 "claims":{"type":"array", "items":{"type":"object", "properties":{
                     "text":{"type":"string"},
+                    "source_quote":{"type":"string"},
                     "passage_number":{"type":"integer", "enum":list(range(1,len(passages)+1))}},
-                    "required":["text","passage_number"], "additionalProperties":False}}},
+                    "required":["text","passage_number","source_quote"], "additionalProperties":False}}},
                 "required":["refused","claims"], "additionalProperties":False}
             content = complete(messages + [
                 {"role": "assistant", "content": answer},
                 {"role": "user", "content": (
-                    "Check that draft using only the CURRENT VERIFIED FAQ PASSAGES above. "
+                    "Verify and correct that draft using only the CURRENT VERIFIED FAQ PASSAGES above. "
                     "Return JSON with refused and claims. For an answer, set refused=false and provide "
-                    "at most two concise claims. Each claim must contain text and the passage_number "
-                    "of the CURRENT passage supporting that entire claim. The text must not contain citation "
+                    "at most three concise claims. Each claim must contain text, passage_number, and source_quote. "
+                    "Copy a short exact supporting quote from that CURRENT passage. It must establish the entire "
+                    "claim, not just a related topic. Do not infer guarantees or new permissions from a restriction. "
+                    "The text must not contain citation "
                     "markers; the selected passage_number will be rendered as its citation. Use only passage "
                     "numbers that exist above. Remove unsupported claims; do not treat the draft as evidence. "
-                    "If the current evidence cannot establish the answer, set refused=true and claims=[]. "
+                    "If ANY part of the student's question is not established by the current passages, "
+                    "set refused=true and claims=[] instead of answering only part or guessing. "
                     "Do not describe the check or the draft.")}
             ], response_format={"type":"json_schema", "json_schema":{
                 "name":"cited_library_answer", "strict":True, "schema":schema}})
-            answer = render_cited_repair(content, len(passages))
+            answer = render_cited_repair(content, passages)
         return answer
