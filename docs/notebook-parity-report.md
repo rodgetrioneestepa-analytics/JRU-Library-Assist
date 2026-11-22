@@ -1,70 +1,64 @@
 # Notebook parity verification
 
-Status: source configuration repaired; real production model and matching index initialized. Live evaluation revealed missing citations in four responses; a bounded citation retry is being verified.
+Result: production is working with live Groq generation. All 12 evaluation cases, four conversational requests, and browser checks passed. This verifies the core retrieval path and evidence-supported behavior; it does not claim identical generated wording.
 
-## Original differences
+## Original causes
 
-Production ran BM25 over whole records and returned stored answers because neither a Python backend URL nor Groq key was configured. It did not execute the notebook MiniLM/Chroma path. Browser rendering removed citations and replaced the refusal. The full workbook was already present, but payment redaction occurred before embeddings and review flags differed.
+The website previously ran BM25 over whole FAQ records and returned stored answers. It did not execute the notebook MiniLM/Chroma path. Production lacked the Python connection and Groq key, browser rendering removed citations and changed the refusal, review flags differed, and payment redaction happened before embedding. The full workbook was already present.
 
-## Implementation
+## Applied configuration
 
-- core.py: exact workbook parsers, deduplication, provenance/review strings, raw-text embeddings, private override integrity, configuration/model/content-versioned Chroma cache.
-- generation.py and notebook_spec.json: reviewed notebook answer/rewrite prompts, exact model and token budgets, guarded empty completions.
-- service.py and app.py: six-message per-request history, fresh retrieval, threshold/unsupported refusal, real citation metadata, fail-closed API errors. No shared visitor history.
-- lib/chat.mjs: proxy only; keyword retrieval removed.
-- public/app.mjs and chat-only.css: preserve answer text and make numbered citations open actual passages; existing interface retained.
-- Dockerfile.vercel, serve.py, build-model.py and vercel.json: Python container, model packaged at build, source outside public assets. Legacy Node API handlers removed.
-- prepare-chatbot.py and evaluate-parity.py: reproducible source preparation and independent notebook comparison.
+- All 14 original worksheet names/order retained: 542 parsed rows, 293 deduplicated records, 296 chunks. Wide/topic parsing, continuation rows, duplicate provenance, and conflict flags match the notebook.
+- Normalized sentence-transformers/all-MiniLM-L6-v2 on CPU; Chroma cosine; RecursiveCharacterTextSplitter 800 characters, 100 overlap, top 3, minimum similarity 0.35 (active B).
+- Groq openai/gpt-oss-20b; temperature 0; initial completion budget 700. Follow-up rewriting uses 450 tokens and six messages. Initial prompts and request settings match the notebook.
+- Workbook SHA256: `87c3407927e546fa50682b6c92052d34ee5f33221f189d18bd274b6646cb1adb`.
 
-## Configuration
+The published source is sanitized. One ignored/private override restores original text only for notebook-equivalent embeddings; evidence and browser excerpts are redacted. The source hashes are checked before indexing. The deployment packages model weights and prepared source; temporary Chroma storage is a reconstructible cache. Index identity includes source, configuration, chunks, weights and library versions. No keyword/stored-answer fallback remains.
 
-All 14 named worksheets processed, preserving source order: 542 parsed rows, 293 unique records, 296 chunks. Workbook SHA256: `87c3407927e546fa50682b6c92052d34ee5f33221f189d18bd274b6646cb1adb`.
+## Main changes
 
-Normalized all-MiniLM-L6-v2 embeddings on CPU; Chroma cosine; RecursiveCharacterTextSplitter 800 characters/100 overlap/top 3; minimum similarity 0.35. Groq openai/gpt-oss-20b, temperature 0, completion limit 700; follow-up limit 450; history six messages. These are the notebook active B settings.
+| Files | Result |
+|---|---|
+| rag_backend/core.py | Exact workbook parsing, deduplication, source integrity, versioned index, normalized retrieval. |
+| generation.py, service.py, notebook_spec.json | Notebook prompts/settings, guarded rewrites, fresh retrieval, exact refusals and real passage citations. |
+| app.py, serve.py, Dockerfile.vercel, vercel.json | Python production runtime, readiness checks, clear unavailable/rate-limit responses. |
+| lib/chat.mjs | Development proxy only; lexical implementation removed. |
+| public/app.mjs, chat-only.css | Preserve answers/citations, clickable worksheet excerpts, session reset; existing JRU interface retained. |
+| prepare-chatbot.py, evaluate-parity.py, tests | Reproducible preparation and independent notebook comparison, paced live evaluation. |
 
-Canonical source consists of the sanitized prepared file plus a private environment override for one payment record, checked against fingerprints before indexing. The model is baked into the image. Temporary Chroma storage is a reconstructible cache, never the only source. Account information is redacted before Groq and browser responses.
+## Verification
 
-## Local results
+17 backend and 6 frontend checks passed. The local comparator ran reviewed functions from the supplied notebook and built independent Chroma collections with a shared actual encoder. Records and chunks were equal; all 12 rankings/scores matched within 1e-6. Initial Groq payloads matched using deterministic stubs; these local stubs were not treated as live generation tests.
 
-16 Python checks and 6 Node checks passed. The independent comparator ran reviewed functions from the supplied notebook, not a reimplementation of its retrieval oracle. Records and chunks were equal. It built two independent Chroma collections using a shared actual encoder; all ranks/IDs/scores matched within 1e-6. Initial Groq request payloads were compared with deterministic completion stubs; these are not live LLM quality tests.
+Production returned the same index fingerprint as the local reference. Live rankings matched within 1e-4. Every returned citation selected an actual current passage; unsupported requests used the exact refusal. The final live evaluation used real Groq and paced requests to respect provider limits.
 
-| Case | Notebook evaluation question | Rank/score/prompt parity | Gold source coverage |
+| Case | Question tested | Live result | Gold-record recall@3 |
 |---|---|---|---|
-| E1 | What does OPAC stand for? | PASS | 100% |
-| E2 | What are the Main Library's Saturday hours according to the FAQ? | PASS | 100% |
-| E3 | How many Learning Commons reservations can students make per day? | PASS | 100% |
-| A1 | What are the online and email ways to renew a library book? | PASS | 50% |
-| A2 | How does a student pay a library fine at the cashier? | PASS | 100% |
-| A3 | What should a student do if they left their ID at home? | PASS | 100% |
-| D1 | What should a student with an overdue book and unpaid fines do about renewal and payment? | PASS | 100% |
-| D2 | Can a student take a borrowed library laptop into class and install extra workstation software themselves? | PASS | 50% |
-| D3 | How long may a student borrow a library laptop and reserve a Learning Commons room? | PASS | 50% |
-| U1 | What is the actual Wi-Fi password for JRU LIB3? | PASS | Not applicable (refusal) |
-| U2 | How many seats are empty in the Main Library right now? | PASS | Not applicable (refusal) |
-| U3 | Which librarian is physically on duty at this exact moment? | PASS | Not applicable (refusal) |
+| E1 | What does OPAC stand for? | PASS: cited answer | 100% |
+| E2 | What are the Main Library's Saturday hours according to the FAQ? | PASS: cited answer | 100% |
+| E3 | How many Learning Commons reservations can students make per day? | PASS: cited answer | 100% |
+| A1 | What are the online and email ways to renew a library book? | PASS: cited answer | 50% |
+| A2 | How does a student pay a library fine at the cashier? | PASS: cited answer | 100% |
+| A3 | What should a student do if they left their ID at home? | PASS: cited answer | 100% |
+| D1 | What should a student with an overdue book and unpaid fines do about renewal and payment? | PASS: cited answer | 100% |
+| D2 | Can a student take a borrowed library laptop into class and install extra workstation software themselves? | PASS: refused | 50% |
+| D3 | How long may a student borrow a library laptop and reserve a Learning Commons room? | PASS: refused | 50% |
+| U1 | What is the actual Wi-Fi password for JRU LIB3? | PASS: refused | N/A |
+| U2 | How many seats are empty in the Main Library right now? | PASS: refused | N/A |
+| U3 | Which librarian is physically on duty at this exact moment? | PASS: refused | N/A |
 
-Duplicate records retain their first canonical worksheet reference and all aliases. Gold coverage is measured by deduplicated record IDs, so a valid citation such as FAQs!8 can also cover its OPAC!3 duplicate.
+Duplicate records keep their first canonical worksheet reference and all aliases; gold recall is computed using record IDs. The notebook retrieval itself reaches only 50% of its gold records for A1, D2 and D3. A1 is answered from overlapping wide-format evidence. D2 and D3 are refused because the current top-three passages do not establish the entire question. Rankings were not changed to conceal these limitations.
 
-The notebook itself retrieves only half the gold entries for A1, D2, and D3. Matching retrieval does not mean every multi-part question has complete evidence. No custom ranking bonus was added to mask these notebook limitations.
+Manual review confirmed OPAC, Saturday 7 AM to 6 PM, one Learning Commons reservation/day, renewal methods, cashier payment/receipt, and the temporary ID permit. The overdue/fines answer now states the documented online-renewal restriction and payment steps without inventing a promise of renewed eligibility.
 
-Follow-up, topic-switch, and new-session rewrite prompt comparisons also passed. Empty/error rewrite responses preserve the original query. Missing key/override and unsupported/low-similarity branches fail closed. Payment evidence is redacted before the provider call.
+Conversation checks passed: students borrowing a laptop, faculty follow-up rewritten with laptop context, a switch to OPAC, and a fresh request without history. The faculty answer uses its own newly retrieved eight-hour policy. Browser checks passed at desktop 1280px and mobile 390px: mascot, citations opening real worksheet excerpts, navigation, no horizontal overflow, and New Chat clearing messages. Prepared/private source URLs returned 404.
 
-## Production verification
+## Explicit differences and limits
 
-Both production secrets are configured without displaying their values. The deployed MiniLM/Chroma index fingerprint matched the independent local reference and Groq accepted the key. The 12 live ranking/citation/refusal checks passed after structured citation repair, but a follow-up request hit the provider rate limit and manual review found unsupported renewal extrapolation in a numbered answer. Final verification is pending the stronger grounding guard described below; a successful numbered citation is not alone proof of semantic support.
+The website adds one structured evidence review after each non-refusal notebook draft. It uses the same current passages, model, temperature and 700-token limit, with low reasoning effort for this extra review. Claims explicitly select valid current passage IDs; identical claims are merged. Strict output can fall back to provider JSON mode while the same server validation remains. This additional step corrected observed uncited and unsupported extrapolations, but adds latency/quota use and is a generation-path difference from the notebook. Passage-ID validation and model review are not formal proofs of semantic entailment.
 
-## Website evidence guard beyond the notebook
+Groq limits can interrupt bursts; HTTP 429 and Retry-After now give clear retry guidance. Cold instances rebuild the disposable index from durable deployment artifacts/configuration. No exact generated-text parity is claimed. Earlier failed citation/verification runs were corrected and rerun; the final cases above all passed.
 
-The notebook's initial generation request is preserved. Every non-refusal draft gets one additional structured evidence check with the same current passages, Groq model, temperature 0, and 700-token limit. Each claim must identify a current passage and copy an exact supporting quote. The server checks quote occurrence and passage bounds, merges identical claims, and renders only model-selected references. The verifier must refuse an entire multi-part question when any requested part lacks evidence. Invalid output fails closed. This adds latency and quota usage and is an explicit generation-path difference from the notebook. Groq rate limits now return HTTP 429 and Retry-After, never a keyword or stored-answer substitution.
+Verified runtime commit: `e5a04bd8b540344296c00eb7b6120f7273a5f10a`. Production deployment: `dpl_BC9jsmjL6Tfy9qwp2v4ScUADYR2S`.
 
-The source/index/chunk/ranking path and first generation payload are compared separately from this additional website safeguard. Model verification can still make semantic mistakes; quote occurrence is a check of provenance, not a formal proof of entailment. No exact generated-text parity is claimed.
-
-## Browser checks
-
-Desktop 1280px and mobile 390px checks passed for real OPAC answers, clickable worksheet references, mascot loading, no horizontal overflow, mobile navigation, and New Chat clearing all message articles. Final-generation answers will be checked again after the guard deploys. Prepared/private source files remain outside public/ and return 404.
-
-## Deployment limits
-
-The Python container packages the model at build time. Source integrity is checked before initializing the model/index. Temporary Chroma storage is a reconstructible cache from deployment source plus private configuration, not the only source of truth. Scale-down can increase cold-start latency. Provider quota can limit bursts of evaluation requests; the live evaluator supports pacing and honors Retry-After.
-
-References: [Vercel Container Runtime](https://vercel.com/docs/functions/runtimes/container), [Groq strict Structured Outputs](https://console.groq.com/docs/structured-outputs).
+References: [Vercel Container Runtime](https://vercel.com/docs/functions/runtimes/container), [Groq Structured Outputs](https://console.groq.com/docs/structured-outputs).

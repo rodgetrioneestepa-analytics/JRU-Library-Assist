@@ -42,4 +42,4 @@ The local evaluator uses reviewed functions from the actual notebook and indepen
 
 Conversations are browser-local and supplied per request, never shared server history. New Chat clears the active history. Groq receives the question, limited history, and current redacted evidence. API keys never enter browser code. Older Git history can contain earlier public exports; removing current website files does not rewrite that history.
 
-Beyond the notebook, a non-refusal draft gets one structured evidence check using exact supporting quotes and current passage IDs. Unsupported multi-part answers are refused. This additional provider request can increase latency and quota use; rate limits return HTTP 429 with Retry-After.
+Beyond the notebook, a non-refusal draft gets one structured evidence check using current passage IDs. Unsupported multi-part answers are refused. This additional provider request can increase latency and quota use; rate limits return HTTP 429 with Retry-After.
