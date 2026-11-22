@@ -69,8 +69,12 @@ class ConversationalGroq:
                 response = self.client.chat.completions.create(model=self.model, temperature=0,
                     max_completion_tokens=700, messages=turns, **options)
             except BadRequestError as error:
+                body = error.body if isinstance(error.body,dict) else {}
+                detail = body.get('error',body)
+                detail = detail if isinstance(detail,dict) else {}
                 logging.getLogger(__name__).error("Groq request rejected: stage=%s code=%s param=%s",
-                    "verification" if options else "notebook-draft", getattr(error,'code',None), getattr(error,'param',None))
+                    "verification" if options else "notebook-draft", detail.get('code'), detail.get('param'))
+                logging.getLogger(__name__).error("Groq error summary: %s", safe_excerpt(str(detail.get('message','')))[:350].replace('\n',' '))
                 raise
             choices = getattr(response, "choices", None) or []
             if choices and getattr(choices[0], "finish_reason", None) == "length":
@@ -107,11 +111,11 @@ class ConversationalGroq:
             ]
             try:
                 content = complete(review_turns, response_format={"type":"json_schema", "json_schema":{
-                    "name":"cited_library_answer", "strict":True, "schema":schema}})
+                    "name":"cited_library_answer", "strict":True, "schema":schema}}, reasoning_effort="low")
             except BadRequestError:
                 # Some provider deployments reject strict schemas. JSON mode still
                 # uses exactly the same server-side quote and source validation.
                 logging.getLogger(__name__).warning("Using provider JSON mode for evidence verification")
-                content = complete(review_turns, response_format={"type":"json_object"})
+                content = complete(review_turns, response_format={"type":"json_object"}, reasoning_effort="low")
             answer = render_cited_repair(content, passages)
         return answer
