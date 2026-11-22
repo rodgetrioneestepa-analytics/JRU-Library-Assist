@@ -158,7 +158,8 @@ def remote(args):
             s['ref'] == result['retrieval'][s['n']-1]['source_ref'] for s in sources)
         refused = result.get('refused')
         citation_valid = (not sources if refused else bool(citations) and all(n in {s['n'] for s in sources} for n in citations))
-        refusal_valid = not case['expected_refusal'] or (refused and result.get('answer') == REFUSAL)
+        refusal_valid = ((refused and result.get('answer') == REFUSAL) if case['expected_refusal']
+                         else (not refused if case['gold_coverage'] == 1 else True))
         safe = not re.search(r'account\s*(?:number|no\.?)[^\n:]*[:\s]+\d[\d -]{5,}',result.get('answer',''),re.I)
         passed = status==200 and ranking and source_valid and citation_valid and refusal_valid and safe
         item = {**case,'http_status':status,'ranking_match':ranking,'citation_valid':bool(source_valid and citation_valid),

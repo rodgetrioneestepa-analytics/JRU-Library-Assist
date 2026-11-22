@@ -1,4 +1,6 @@
-# Corrected conversational chatbot verification
+﻿Current verification: see [notebook-parity-report.md](notebook-parity-report.md). The observations below describe the earlier implementation and are retained as history.
+
+# Historical verification before notebook parity
 
 The applied implementation follows `PewPewPew_Final_RAG_Chatbot_Conversational_Fixed.ipynb` and the supplied workbook.
 
@@ -14,3 +16,4 @@ The applied implementation follows `PewPewPew_Final_RAG_Chatbot_Conversational_F
 - Browser checks confirmed real OPAC retrieval, the chat-only interface, mascot loading, and no browser console errors.
 
 Injected-provider tests cover the corrected empty-response bug without consuming provider quota. They do not establish that a live Groq generation request was made. The Node deployment uses lexical retrieval unless connected to the Python service with RAG_BACKEND_URL; the optional Groq prompt and follow-up code are configured using GROQ_API_KEY.
+
