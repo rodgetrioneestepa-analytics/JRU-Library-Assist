@@ -2,6 +2,7 @@
 import logging
 import re
 import json
+from groq import BadRequestError
 from .core import SPEC, REFUSAL, clean, clean_history, safe_excerpt, looks_like_refusal
 
 
@@ -64,8 +65,13 @@ class ConversationalGroq:
                   f"CURRENT VERIFIED FAQ PASSAGES:\n{evidence}\n\nStudent's latest message: {question}\nRetrieval interpretation: {retrieval_query}")
         messages = [{"role": "system", "content": SPEC["ANSWER_PROMPT"]}, {"role": "user", "content": prompt}]
         def complete(turns, **options):
-            response = self.client.chat.completions.create(model=self.model, temperature=0,
-                max_completion_tokens=700, messages=turns, **options)
+            try:
+                response = self.client.chat.completions.create(model=self.model, temperature=0,
+                    max_completion_tokens=700, messages=turns, **options)
+            except BadRequestError as error:
+                logging.getLogger(__name__).error("Groq request rejected: stage=%s code=%s param=%s",
+                    "verification" if options else "notebook-draft", getattr(error,'code',None), getattr(error,'param',None))
+                raise
             choices = getattr(response, "choices", None) or []
             if choices and getattr(choices[0], "finish_reason", None) == "length":
                 logging.getLogger(__name__).warning("Groq completion reached the notebook token limit")
@@ -84,7 +90,7 @@ class ConversationalGroq:
                     "passage_number":{"type":"integer", "enum":list(range(1,len(passages)+1))}},
                     "required":["text","passage_number","source_quote"], "additionalProperties":False}}},
                 "required":["refused","claims"], "additionalProperties":False}
-            content = complete(messages + [
+            review_turns = messages + [
                 {"role": "assistant", "content": answer},
                 {"role": "user", "content": (
                     "Verify and correct that draft using only the CURRENT VERIFIED FAQ PASSAGES above. "
@@ -98,7 +104,14 @@ class ConversationalGroq:
                     "If ANY part of the student's question is not established by the current passages, "
                     "set refused=true and claims=[] instead of answering only part or guessing. "
                     "Do not describe the check or the draft.")}
-            ], response_format={"type":"json_schema", "json_schema":{
-                "name":"cited_library_answer", "strict":True, "schema":schema}})
+            ]
+            try:
+                content = complete(review_turns, response_format={"type":"json_schema", "json_schema":{
+                    "name":"cited_library_answer", "strict":True, "schema":schema}})
+            except BadRequestError:
+                # Some provider deployments reject strict schemas. JSON mode still
+                # uses exactly the same server-side quote and source validation.
+                logging.getLogger(__name__).warning("Using provider JSON mode for evidence verification")
+                content = complete(review_turns, response_format={"type":"json_object"})
             answer = render_cited_repair(content, passages)
         return answer

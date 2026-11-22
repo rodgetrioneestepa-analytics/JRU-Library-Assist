@@ -190,6 +190,21 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(response.headers['Retry-After'],'3')
         self.assertIn('request limit',response.json['error'])
 
+    def test_schema_rejection_uses_json_mode_without_relaxing_quote_checks(self):
+        import httpx
+        from groq import BadRequestError
+        calls=[]
+        def create(**kwargs):
+            calls.append(kwargs)
+            mode=kwargs.get('response_format',{}).get('type')
+            if mode=='json_schema':
+                raise BadRequestError('schema unsupported',response=httpx.Response(400,request=httpx.Request('POST','https://api.groq.com/openai/v1/chat/completions')),body={'error':{'code':'invalid_request_error'}})
+            return completion(verified('The catalog.','Public Access Catalog') if mode=='json_object' else 'The catalog. [1]')
+        answer=generator_with(create).answer('OPAC?', [{'source_ref':'OPAC!3','text':'Online Public Access Catalog'}],[],'OPAC?')
+        self.assertEqual(answer,'The catalog. [1]')
+        self.assertEqual([c.get('response_format',{}).get('type') for c in calls],[None,'json_schema','json_object'])
+        self.assertEqual(calls[1]['messages'],calls[2]['messages'])
+
     def test_prepared_source_rejects_missing_or_changed_private_override(self):
         from rag_backend import core
         source = {'worksheets':core.EXPECTED_SHEETS, 'records':[{'record_id':'a','answer':'Account number: 123456789012'}]}
