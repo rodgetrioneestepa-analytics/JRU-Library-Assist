@@ -123,6 +123,30 @@ class ConversationTests(unittest.TestCase):
         self.assertNotIn('123456789012', calls[0]['messages'][1]['content'])
         self.assertIn('[REDACTED', calls[0]['messages'][1]['content'])
 
+    def test_missing_citations_get_one_repair_with_same_evidence_and_settings(self):
+        calls = []
+        responses = iter(['Saturday hours are seven to five.', 'Saturday hours are seven to five. [1]'])
+        def create(**kwargs): calls.append(kwargs); return completion(next(responses))
+        answer = generator_with(create).answer('Saturday hours?', [{'source_ref':'Basic Information!4','text':'Saturday: 7 AM to 5 PM'}], [], 'Saturday hours?')
+        self.assertEqual(answer, 'Saturday hours are seven to five. [1]')
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1]['messages'][:2], calls[0]['messages'])
+        self.assertEqual(calls[1]['messages'][2]['role'], 'assistant')
+        self.assertIn('do not treat the draft as evidence', calls[1]['messages'][3]['content'])
+        for call in calls:
+            self.assertEqual(call['model'], SPEC['GROQ_MODEL'])
+            self.assertEqual(call['temperature'], 0)
+            self.assertEqual(call['max_completion_tokens'], 700)
+
+    def test_citation_repair_is_bounded_and_still_fails_closed(self):
+        calls = []
+        def create(**kwargs): calls.append(kwargs); return completion('Uncited draft.')
+        gen = generator_with(create)
+        item = {'rank':1,'chunk_id':'a_0','record_id':'a','source_ref':'OPAC!3','similarity':.9,'question':'OPAC?','option':'','text':'Catalog'}
+        with self.assertRaises(ValueError):
+            ChatService(Obj(config=Config(),retrieve=lambda q:[item]),gen).chat('What is OPAC?')
+        self.assertEqual(len(calls), 2)
+
     def test_prepared_source_rejects_missing_or_changed_private_override(self):
         from rag_backend import core
         source = {'worksheets':core.EXPECTED_SHEETS, 'records':[{'record_id':'a','answer':'Account number: 123456789012'}]}

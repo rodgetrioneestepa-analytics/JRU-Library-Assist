@@ -1,6 +1,6 @@
 # Notebook parity verification
 
-Status: local comparison passed. Python container deployed, but source initialization is blocked by malformed private configuration; live Groq evaluation is pending.
+Status: source configuration repaired; real production model and matching index initialized. Live evaluation revealed missing citations in four responses; a bounded citation retry is being verified.
 
 ## Original differences
 
@@ -26,7 +26,7 @@ Canonical source consists of the sanitized prepared file plus a private environm
 
 ## Local results
 
-11 Python checks and 6 Node checks passed. The independent comparator ran reviewed functions from the supplied notebook, not a reimplementation of its retrieval oracle. Records and chunks were equal. It built two independent Chroma collections using a shared actual encoder; all ranks/IDs/scores matched within 1e-6. Exact Groq request payloads were compared with deterministic completion stubs; these are not live LLM quality tests.
+13 Python checks and 6 Node checks passed. The independent comparator ran reviewed functions from the supplied notebook, not a reimplementation of its retrieval oracle. Records and chunks were equal. It built two independent Chroma collections using a shared actual encoder; all ranks/IDs/scores matched within 1e-6. Exact Groq request payloads were compared with deterministic completion stubs; these are not live LLM quality tests.
 
 | Case | Notebook evaluation question | Rank/score/prompt parity | Gold source coverage |
 |---|---|---|---|
@@ -51,13 +51,13 @@ Follow-up, topic-switch, and new-session rewrite prompt comparisons also passed.
 
 ## Production verification
 
-GROQ_API_KEY and RAG_PRIVATE_RECORD_OVERRIDES are present as production variables. Their values were not retrieved or displayed. Production deployment dpl_FsKdeghs2eft1dUZkVPduFdBspaA built the actual model image and is assigned to the public URL. However, /api/status returned HTTP 503 and logs report JSONDecodeError during source initialization: the private override is malformed JSON. The user was asked to replace it with the complete ignored local file contents. Provider acceptance, live generated answers, deployed ranking, and citations cannot be verified until the secret is corrected and a fresh production deployment receives it. Local prompt equivalence is not proof of working production generation.
+Both production secrets are configured without retrieving or displaying their values. After the private JSON was corrected, deployment dpl_5pWyaBuFjFEARgDVwaC72fifdqvZ initialized successfully: HTTP 200, pipeline minilm-chroma-groq, and the exact local reference index fingerprint. Successful live answers confirm Groq accepts the API key. Initial live evaluation had eight passing cases and four HTTP 502 responses (E2, A2, D1, D2): the model omitted citation markers, so validation rejected those outputs. A bounded citation retry is being verified. All returned retrieval rankings matched the reference; failed HTTP responses did not expose retrieval metadata.
 
 The first preview inherited the previous static project preset and finished without building a model. The project framework was explicitly changed to Container, build overrides cleared, and large-function support enabled. The successful image builds installed CPU Torch 2.15.0, sentence-transformers 5.7.0, transformers 4.57.6, Chroma 1.5.9 and splitter 1.1.3, matching the local comparison. The browser confirmed the preview interface renders and fails closed without Preview secrets. Flask checks returned 404 for raw/prepared/private source URLs. Desktop/mobile production conversation checks remain pending at the broken initialization boundary.
 
 ## Remaining differences
 
-The website validates citation numbers and rejects a factual generation without a citation, an additional fail-closed check beyond the notebook. Browser/source excerpts are redacted; raw source is used only for embeddings. Network latency, provider model updates, cross-platform numeric tolerance, and model nondeterminism may change wording. No exact generated-text parity is claimed.
+The first generation payload matches the notebook. The website additionally retries once when the model omits citations or cites an unavailable passage, using the same current evidence, provider/model, temperature and token budget. A second invalid response still fails closed. The app never appends invented citation markers. This explicit citation repair is a generation-path difference beyond the notebook, verified separately from first-payload equivalence. Browser/source excerpts are redacted; raw source is used only for embeddings. Network latency, provider model updates, cross-platform numeric tolerance, and model nondeterminism may change wording. No exact generated-text parity is claimed.
 
 Container scale-down can cause a fresh runtime index build. The canonical source/model persist in deployment artifacts and private configuration. See [Vercel Container Runtime documentation](https://vercel.com/docs/functions/runtimes/container).
 
