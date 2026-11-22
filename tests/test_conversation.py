@@ -5,7 +5,7 @@ from types import SimpleNamespace as Obj
 import unittest
 from unittest.mock import patch
 from rag_backend.core import ROOT, SPEC, REFUSAL, Config, load_workbook_records, clean_history, prepare_source, resolve_source
-from rag_backend.generation import ConversationalGroq
+from rag_backend.generation import ConversationalGroq, render_cited_repair
 from rag_backend.service import ChatService
 
 
@@ -125,7 +125,7 @@ class ConversationTests(unittest.TestCase):
 
     def test_missing_citations_get_one_repair_with_same_evidence_and_settings(self):
         calls = []
-        responses = iter(['Saturday hours are seven to five.', 'Saturday hours are seven to five. [1]'])
+        responses = iter(['Saturday hours are seven to five.', json.dumps({'refused':False,'claims':[{'text':'Saturday hours are seven to five.','passage_number':1}]})])
         def create(**kwargs): calls.append(kwargs); return completion(next(responses))
         answer = generator_with(create).answer('Saturday hours?', [{'source_ref':'Basic Information!4','text':'Saturday: 7 AM to 5 PM'}], [], 'Saturday hours?')
         self.assertEqual(answer, 'Saturday hours are seven to five. [1]')
@@ -133,6 +133,9 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(calls[1]['messages'][:2], calls[0]['messages'])
         self.assertEqual(calls[1]['messages'][2]['role'], 'assistant')
         self.assertIn('do not treat the draft as evidence', calls[1]['messages'][3]['content'])
+        self.assertNotIn('response_format', calls[0])
+        self.assertTrue(calls[1]['response_format']['json_schema']['strict'])
+        self.assertEqual(calls[1]['response_format']['json_schema']['schema']['properties']['claims']['items']['properties']['passage_number']['enum'], [1])
         for call in calls:
             self.assertEqual(call['model'], SPEC['GROQ_MODEL'])
             self.assertEqual(call['temperature'], 0)
@@ -146,6 +149,15 @@ class ConversationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ChatService(Obj(config=Config(),retrieve=lambda q:[item]),gen).chat('What is OPAC?')
         self.assertEqual(len(calls), 2)
+
+    def test_structured_repairs_cannot_invent_passage_numbers(self):
+        self.assertEqual(render_cited_repair(json.dumps({'refused':True,'claims':[]}),3),REFUSAL)
+        for result in [
+            {'refused':False,'claims':[]},
+            {'refused':False,'claims':[{'text':'Unsupported','passage_number':4}]},
+            {'refused':False,'claims':[{'text':'Unsupported','passage_number':True}]},
+            {'refused':'false','claims':[{'text':'Unsupported','passage_number':1}]}]:
+            with self.assertRaises(ValueError): render_cited_repair(json.dumps(result),3)
 
     def test_prepared_source_rejects_missing_or_changed_private_override(self):
         from rag_backend import core

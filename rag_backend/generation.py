@@ -1,6 +1,7 @@
 """Conversational Groq generation, including the corrected empty-rewrite guard."""
 import logging
 import re
+import json
 from .core import SPEC, REFUSAL, clean_history, safe_excerpt, looks_like_refusal
 
 
@@ -8,6 +9,24 @@ def completion_content(completion):
     choices = getattr(completion, "choices", None) or []
     message = getattr(choices[0], "message", None) if choices else None
     return getattr(message, "content", None) or ""
+
+
+def render_cited_repair(content, passage_count):
+    """Render only explicit model-selected references; never infer a source number."""
+    result = json.loads(content)
+    if not isinstance(result, dict) or type(result.get("refused")) is not bool:
+        raise ValueError("Invalid structured citation response.")
+    if result["refused"]: return REFUSAL
+    claims = result.get("claims")
+    if not isinstance(claims, list) or not claims: raise ValueError("No supported claims in citation response.")
+    answer = []
+    for claim in claims:
+        if not isinstance(claim, dict): raise ValueError("Invalid claim.")
+        n, text = claim.get("passage_number"), claim.get("text")
+        if type(n) is not int or not 1 <= n <= passage_count or not isinstance(text, str) or not text.strip():
+            raise ValueError("Invalid claim citation.")
+        answer.append(f"{safe_excerpt(text.strip())} [{n}]")
+    return "\n".join(answer)
 
 
 class ConversationalGroq:
@@ -39,9 +58,9 @@ class ConversationalGroq:
         prompt = (f"RECENT CHAT (reference resolution only; not a source of facts):\n{recent or '(none)'}\n\n"
                   f"CURRENT VERIFIED FAQ PASSAGES:\n{evidence}\n\nStudent's latest message: {question}\nRetrieval interpretation: {retrieval_query}")
         messages = [{"role": "system", "content": SPEC["ANSWER_PROMPT"]}, {"role": "user", "content": prompt}]
-        def complete(turns):
+        def complete(turns, **options):
             response = self.client.chat.completions.create(model=self.model, temperature=0,
-                max_completion_tokens=700, messages=turns)
+                max_completion_tokens=700, messages=turns, **options)
             choices = getattr(response, "choices", None) or []
             if choices and getattr(choices[0], "finish_reason", None) == "length":
                 logging.getLogger(__name__).warning("Groq completion reached the notebook token limit")
@@ -53,14 +72,25 @@ class ConversationalGroq:
             # Extra website safeguard: repair a malformed citation response once.
             # Keep the notebook's first request, evidence, model and token settings intact.
             logging.getLogger(__name__).warning("Retrying Groq response with missing or invalid citations")
-            answer = complete(messages + [
+            schema = {"type":"object", "properties":{
+                "refused":{"type":"boolean"},
+                "claims":{"type":"array", "items":{"type":"object", "properties":{
+                    "text":{"type":"string"},
+                    "passage_number":{"type":"integer", "enum":list(range(1,len(passages)+1))}},
+                    "required":["text","passage_number"], "additionalProperties":False}}},
+                "required":["refused","claims"], "additionalProperties":False}
+            content = complete(messages + [
                 {"role": "assistant", "content": answer},
                 {"role": "user", "content": (
                     "Check that draft using only the CURRENT VERIFIED FAQ PASSAGES above. "
-                    "Return a corrected answer in at most two short sentences, with the applicable "
-                    "[1], [2], or [3] citation next to every library fact. Use only passage numbers "
-                    "that exist above. Remove unsupported claims; do not treat the draft as evidence. "
-                    "If the current evidence cannot establish the answer, return the established refusal exactly. "
+                    "Return JSON with refused and claims. For an answer, set refused=false and provide "
+                    "at most two concise claims. Each claim must contain text and the passage_number "
+                    "of the CURRENT passage supporting that entire claim. The text must not contain citation "
+                    "markers; the selected passage_number will be rendered as its citation. Use only passage "
+                    "numbers that exist above. Remove unsupported claims; do not treat the draft as evidence. "
+                    "If the current evidence cannot establish the answer, set refused=true and claims=[]. "
                     "Do not describe the check or the draft.")}
-            ])
+            ], response_format={"type":"json_schema", "json_schema":{
+                "name":"cited_library_answer", "strict":True, "schema":schema}})
+            answer = render_cited_repair(content, len(passages))
         return answer
